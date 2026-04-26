@@ -1,0 +1,55 @@
+[debug] [2026-04-26T07:52:42.550Z] ----------------------------------------------------------------------
+[debug] [2026-04-26T07:52:42.552Z] Command:       /usr/local/nvm/versions/node/v24.14.1/bin/node /usr/local/node_packages/node_modules/.bin/firebase init hosting
+[debug] [2026-04-26T07:52:42.553Z] CLI Version:   15.10.1
+[debug] [2026-04-26T07:52:42.553Z] Platform:      linux
+[debug] [2026-04-26T07:52:42.553Z] Node Version:  v24.14.1
+[debug] [2026-04-26T07:52:42.553Z] Time:          Sun Apr 26 2026 07:52:42 GMT+0000 (Coordinated Universal Time)
+[debug] [2026-04-26T07:52:42.554Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/eagleday82/buyeon-web
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-04-26T07:52:43.424Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-26T07:52:43.425Z] > authorizing via signed-in user (eagleday82@gmail.com)
+[debug] [2026-04-26T07:52:43.427Z] Checked if tokens are valid: true, expires at: 1777193167755
+[debug] [2026-04-26T07:52:43.427Z] Checked if tokens are valid: true, expires at: 1777193167755
+[debug] [2026-04-26T07:52:43.429Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/khbuyeon [none]
+[debug] [2026-04-26T07:52:43.429Z] >>> [apiv2][(partial)header] GET https://firebase.googleapis.com/v1beta1/projects/khbuyeon  x-goog-user-project=khbuyeon
+[debug] [2026-04-26T07:52:43.801Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/khbuyeon 200
+[debug] [2026-04-26T07:52:43.801Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/khbuyeon {"projectId":"khbuyeon","projectNumber":"834285040441","displayName":"KHBuyeon","name":"projects/khbuyeon","resources":{"hostingSite":"khbuyeon"},"state":"ACTIVE","etag":"1_ea36066b-094d-4625-b4e4-d00174fa35db"}
+[info] i  Using project khbuyeon (KHBuyeon) . 
+[info] 
+=== Hosting Setup
+[debug] [2026-04-26T07:52:43.816Z] Checked if tokens are valid: true, expires at: 1777193167755
+[debug] [2026-04-26T07:52:43.816Z] Checked if tokens are valid: true, expires at: 1777193167755
+[debug] [2026-04-26T07:52:43.816Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/khbuyeon [none]
+[debug] [2026-04-26T07:52:43.816Z] >>> [apiv2][(partial)header] GET https://firebase.googleapis.com/v1beta1/projects/khbuyeon  x-goog-user-project=khbuyeon
+[debug] [2026-04-26T07:52:44.089Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/khbuyeon 200
+[debug] [2026-04-26T07:52:44.090Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/khbuyeon {"projectId":"khbuyeon","projectNumber":"834285040441","displayName":"KHBuyeon","name":"projects/khbuyeon","resources":{"hostingSite":"khbuyeon"},"state":"ACTIVE","etag":"1_ea36066b-094d-4625-b4e4-d00174fa35db"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[info] 
+[info] i  Didn't detect a .git folder. Assuming /home/eagleday82/buyeon-web is the project root. 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=387629117&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
