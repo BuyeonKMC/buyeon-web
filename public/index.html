@@ -27,31 +27,55 @@
 1️⃣ 상단 네비게이션
 👉 메뉴 이름 / 링크 수정하는 곳
 ========================================================= -->
+<!-- =========================================================
+🔥 상단 헤더 (PC + 모바일 완전 대응)
+========================================================= -->
 <header class="w-full border-b bg-white sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-4">
 
-    <!-- 🔥 로고 텍스트 (이미지로 바꿔도 됨) -->
-    <div class="text-lg font-semibold">
-      경희부연한의원
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+
+    <!-- 로고 -->
+    <div class="text-lg font-semibold whitespace-nowrap">
+      <a href="index.html">경희부연한의원</a>
     </div>
 
-    <!-- 🔥 메뉴 링크 수정 -->
-    <nav class="hidden md:flex gap-6 text-sm">
-      <a href="about.html">한의원 소개</a>
+    <!-- PC 메뉴 -->
+    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm">
+      <a href="about.html">소개</a>
       <a href="obesity.html">비만</a>
       <a href="rhinitis.html">비염</a>
       <a href="pain.html">통증</a>
       <a href="digestive.html">소화불량</a>
-      <a href="rls.html">하지불안증후군</a>
+      <a href="rls.html">하지불안</a>
       <a href="postnatal.html">산후보양</a>
       <a href="pediatric.html">소아보양</a>
       <a href="accident.html">교통사고</a>
       <a href="faq.html">FAQ</a>
     </nav>
 
-  </div>
-</header>
+    <!-- 모바일 버튼 -->
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">
+      ☰
+    </button>
 
+  </div>
+
+  <!-- 모바일 메뉴 -->
+  <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
+    <a href="index.html" class="py-2 border-b">홈</a>
+    <a href="about.html" class="py-2 border-b">한의원 소개</a>
+    <a href="obesity.html" class="py-2 border-b">비만</a>
+    <a href="rhinitis.html" class="py-2 border-b">비염</a>
+    <a href="pain.html" class="py-2 border-b">통증</a>
+    <a href="digestive.html" class="py-2 border-b">소화불량</a>
+    <a href="rls.html" class="py-2 border-b">하지불안증후군</a>
+    <a href="postnatal.html" class="py-2 border-b">산후보양</a>
+    <a href="pediatric.html" class="py-2 border-b">소아보양</a>
+    <a href="accident.html" class="py-2 border-b">교통사고</a>
+    <a href="faq.html" class="py-2">FAQ</a>
+  </div>
+
+</header>
 
 
 <!-- =========================================================
