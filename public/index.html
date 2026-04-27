@@ -62,27 +62,31 @@
   class="h-[70vh] md:h-screen flex items-center justify-center text-white text-center"
   
   <!-- 🔥🔥🔥 가장 중요한 부분 (이미지 교체) -->
+ <section
   style="
     height:500px;
     background-image:url('/hero.png');
     background-size:cover;
     background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
   "
 >
->
-
-  <!-- 👉 글 가독성용 어두운 배경 -->
-  <div class="bg-black/40 p-6 md:p-10 rounded-xl">
-
-    <!-- 🔥 메인 문구 -->
-    <h1 class="text-2xl md:text-5xl font-semibold mb-4 leading-snug">
+  <div style="background:rgba(0,0,0,0.4); padding:20px; border-radius:10px;">
+    
+    <h1 style="font-size:28px; margin-bottom:10px;">
       몸의 균형을 바로잡는 치료
     </h1>
 
-    <!-- 🔥 보조 문구 -->
-    <p class="text-sm md:text-lg mb-6">
+    <p style="font-size:16px;">
       증상이 아닌 ‘원인’을 다룹니다
     </p>
+
+  </div>
+</section>
 
     <!-- 👉 클릭 시 진료 영역으로 이동 -->
     <a href="#services"
