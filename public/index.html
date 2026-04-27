@@ -58,25 +58,34 @@
 2️⃣ HERO (첫 화면 - 가장 중요)
 👉 이미지 + 문구만 신경쓰면 됨
 ========================================================= -->
-<section
-  class="h-[70vh] md:h-screen flex items-center justify-center text-white text-center">
-  
-  <!-- 🔥🔥🔥 가장 중요한 부분 (이미지 교체) -->
- <section
-   style="background-image:url('hero.jpg'); background-size:cover; background-position:center;"
+<section style="height:500px; position:relative; overflow:hidden;">
 
->
-  <div style="background:rgba(0,0,0,0.4); padding:20px; border-radius:10px;">
-    
-    <h1 style="font-size:28px; margin-bottom:10px;">
+  <!-- 실제 이미지 -->
+  <img src="/hero.png"
+       style="
+         width:100%;
+         height:100%;
+         object-fit:cover;
+         object-position:right center;
+       "
+  >
+
+  <!-- 왼쪽 텍스트 영역 (겹치기) -->
+  <div style="
+    position:absolute;
+    left:10%;
+    top:50%;
+    transform:translateY(-50%);
+    color:#3a312a;
+  ">
+    <h1 style="font-size:32px; margin-bottom:10px;">
       몸의 균형을 바로잡는 치료
     </h1>
-
     <p style="font-size:16px;">
       증상이 아닌 ‘원인’을 다룹니다
     </p>
-
   </div>
+
 </section>
 
     <!-- 👉 클릭 시 진료 영역으로 이동 -->
