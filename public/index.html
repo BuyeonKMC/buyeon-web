@@ -285,6 +285,15 @@
 
 </footer>
 
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    // hidden 클래스가 있으면 제거하고, 없으면 추가함
+    menu.classList.toggle('hidden');
+    // 세로 정렬을 위해 flex 클래스도 함께 조절
+    menu.classList.toggle('flex');
+  }
+</script>
 
 </body>
 </html>
