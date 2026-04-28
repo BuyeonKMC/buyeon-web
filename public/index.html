@@ -238,26 +238,34 @@
 
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
 
-    <!-- 🔥 진료시간 -->
-    <div>
-      <h3 class="font-semibold mb-4">진료시간</h3>
-
-      <!-- 👉 실제 시간으로 수정 -->
-      <p class="text-sm">월~금 09:00 - 18:30</p>
-      <p class="text-sm">화/목 야간 20:30</p>
-      <p class="text-sm">토요일 13:00</p>
-      <p class="text-sm text-red-500 mt-2">일요일/공휴일 휴진</p>
+    <div class="flex flex-col justify-center">
+      <h3 class="font-bold text-xl mb-4">진료시간</h3>
+      <div class="space-y-1 text-base">
+        <p>월~금 <span class="font-medium ml-2">09:00 - 18:30</span></p>
+        <p>화/목 <span class="font-medium ml-2 text-blue-600">야간진료 ~ 20:30</span></p>
+        <p>토요일 <span class="font-medium ml-2">09:00 - 13:00</span></p>
+<p>점심시간 앖이 진료합니다. <span class="font-medium ml-2"></span></p>
+        <p class="text-red-500 mt
+-2 font-medium">일요일/공휴일 휴진</p>
+      </div>
     </div>
 
-    <!-- 🔥 지도 -->
-    <div class="w-full h-64 bg-gray-300 flex items-center justify-center">
-      <!-- 지도 영역 (네이버/카카오 iframe 넣기) -->
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.671039564579!2d127.02498840000001!3d37.6498044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbc1debc50bc3%3A0xe8588466f324e18d!2z6rK97Z2s67aA7Jew7ZWc7J2Y7JuQ!5e1!3m2!1sko!2skr!4v1777373668462!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="w-full h-80 md:h-full min-h-[300px] rounded-2xl overflow-hidden shadow-md border border-gray-200">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.671039564579!2d127.02498840000001!3d37.6498044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbc1debc50bc3%3A0xe8588466f324e18d!2z6rK97Z2s67aA7Jew7ZWc7J2Y7JuQ!5e1!3m2!1sko!2skr!4v1777373668462!5m2!1sko!2skr" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
 
   </div>
 
 </section>
+
 
 
 
