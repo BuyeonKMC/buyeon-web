@@ -159,11 +159,20 @@
   <p class="text-gray-600 max-w-2xl mx-auto mb-10">
     기력을 회복하고 어혈을 제거하여 몸의 균형을 바로잡습니다.
   </p>
-  
-  <div class="max-w-3xl mx-auto bg-white p-4 rounded-xl shadow-md">
-    <img src="/postnatal-diagram.jpg" class="w-full h-auto" alt="산후보양 치료 원리 도표">
-  </div>
+ <img src="/postnatal-diagram.jpg" onclick="openModal(this.src)"
+         class="mx-auto max-w-xl w-full">
+ 
+
 </section>
+<!-- 🔥 모달 (이미지 확대) -->
+<div id="modal"
+     class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50"
+     onclick="closeModal()">
+
+  <img id="modalImg" class="max-w-[90%] max-h-[90%] rounded-lg">
+</div> 
+
+
 
 <footer class="py-12 text-center text-sm text-gray-500 border-t">
   Tel. 02) 905 - 7553 | 서울시 도봉구 도당로 7 벽산 송화프라자 3층 <br><br>
