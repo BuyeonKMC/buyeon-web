@@ -15,7 +15,7 @@
 
 <body class="bg-white text-gray-800">
 
-<!-- =========================================================
+  <!-- =========================================================
 🔥 상단 헤더 (PC + 모바일 완전 대응)
 ========================================================= -->
 <!-- 상단 -->
@@ -68,6 +68,65 @@
   </div>
 
 </header>
+
+<!-- 모바일 가로 스크롤 메뉴 코드 -->
+  <style>
+  .hide-scroll::-webkit-scrollbar { display: none; }
+  .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+  .nav-gradient-left { background: linear-gradient(to right, white, transparent); }
+  .nav-gradient-right { background: linear-gradient(to left, white, transparent); }
+</style>
+
+<nav class="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-2 relative group">
+    
+    <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-2 nav-gradient-left opacity-0 transition-opacity pointer-events-none">
+      <span class="text-stone-400 text-xl">❮</span>
+    </div>
+
+    <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-4 space-x-7 text-[15px] hide-scroll md:justify-center">
+      <li><a href="/about.html" class="text-gray-400 hover:text-stone-800 transition-colors">소개</a></li>
+      <li><a href="/obesity.html" class="text-gray-400 hover:text-stone-800 transition-colors">비만</a></li>
+      <li><a href="/rhinitis.html" class="text-gray-400 hover:text-stone-800 transition-colors">비염</a></li>
+      <li><a href="/pain.html" class="text-gray-400 hover:text-stone-800 transition-colors">통증</a></li>
+      <li><a href="/digestive.html" class="text-gray-400 hover:text-stone-800 transition-colors">소화불량</a></li>
+      <li><a href="/rls.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[13px]">하지불안</a></li>
+      <li><a href="/postnatal.html" class="text-stone-400">산후보양</a></li>
+      <li><a href="/pediatric.html" class="text-stone-400">소아보양</a></li>
+      <li><a href="/accident.html" class="text-stone-400">교통사고</a></li>
+      <li><a href="/faq.html" class="text-stone-400">자주묻는질문</a></li>
+    </ul>
+
+    <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right opacity-100 transition-opacity pointer-events-none">
+      <span class="text-stone-400 text-xl">❯</span>
+    </div>
+
+  </div>
+</nav>
+
+<script>
+  const scrollContainer = document.getElementById('menuScroll');
+  const leftArrow = document.getElementById('leftArrow');
+  const rightArrow = document.getElementById('rightArrow');
+
+  function updateArrows() {
+    const scrollLeft = scrollContainer.scrollLeft;
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+    // 왼쪽 화살표: 조금이라도 오른쪽으로 밀었으면 표시
+    leftArrow.style.opacity = scrollLeft > 10 ? "1" : "0";
+    
+    // 오른쪽 화살표: 끝까지 도달하지 않았으면 표시
+    rightArrow.style.opacity = scrollLeft < maxScroll - 10 ? "1" : "0";
+  }
+
+  // 스크롤 할 때마다 화살표 상태 업데이트
+  scrollContainer.addEventListener('scroll', updateArrows);
+  // 처음 로딩될 때 한 번 실행
+  window.addEventListener('load', updateArrows);
+  // 화면 크기 바뀔 때 실행
+  window.addEventListener('resize', updateArrows);
+</script>
   <!-- =========================
   1️⃣ HERO
   ========================= -->
