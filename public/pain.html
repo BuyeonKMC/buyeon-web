@@ -4,266 +4,140 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>통증 치료 | 경희부연한의원</title>
-
 <script src="https://cdn.tailwindcss.com"></script>
-
 <style>
-body {
-  font-family: 'Pretendard', sans-serif;
-  line-height: 1.7;
-}
-</style>
-</head>
-
-<body>
-
-  <!-- =========================================================
-🔥 상단 헤더 (PC + 모바일 완전 대응)
-========================================================= -->
-<!-- 상단 -->
-<header class="w-full border-b bg-white sticky top-0 z-50">
-
-  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
-
-    <!-- 로고 -->
-    <div class="text-lg font-semibold whitespace-nowrap">
-      <a href="index.html" class="flex items-center gap-2">
-    <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-8 w-auto object-contain">
-    <span>경희부연한의원 HOME</span>
-  </a>
-    </div>
-
-    <!-- PC 메뉴 -->
-    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm">
-      <a href="about.html">소개</a>
-      <a href="obesity.html">비만</a>
-      <a href="rhinitis.html">비염</a>
-      <a href="pain.html">통증</a>
-      <a href="digestive.html">소화불량</a>
-      <a href="rls.html">하지불안</a>
-      <a href="postnatal.html">산후보양</a>
-      <a href="pediatric.html">소아보양</a>
-      <a href="accident.html">교통사고</a>
-      <a href="faq.html">FAQ</a>
-    </nav>
-
-    <!-- 모바일 버튼 -->
-    <button onclick="toggleMenu()" class="md:hidden text-2xl">
-      ☰
-    </button>
-
-  </div>
-
-  <!-- 모바일 메뉴 -->
-  <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
-    <a href="index.html" class="py-2 border-b">홈</a>
-    <a href="about.html" class="py-2 border-b">한의원 소개</a>
-    <a href="obesity.html" class="py-2 border-b">비만</a>
-    <a href="rhinitis.html" class="py-2 border-b">비염</a>
-    <a href="pain.html" class="py-2 border-b">통증</a>
-    <a href="digestive.html" class="py-2 border-b">소화불량</a>
-    <a href="rls.html" class="py-2 border-b">하지불안증후군</a>
-    <a href="postnatal.html" class="py-2 border-b">산후보양</a>
-    <a href="pediatric.html" class="py-2 border-b">소아보양</a>
-    <a href="accident.html" class="py-2 border-b">교통사고</a>
-    <a href="faq.html" class="py-2">FAQ</a>
-  </div>
-
-</header>
-
-<!-- 모바일 가로 스크롤 메뉴 코드 -->
-  <style>
+  body { font-family: 'Pretendard', sans-serif; line-height: 1.7; }
   .hide-scroll::-webkit-scrollbar { display: none; }
   .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
   .nav-gradient-left { background: linear-gradient(to right, white, transparent); }
   .nav-gradient-right { background: linear-gradient(to left, white, transparent); }
+  /* 아코디언 화살표 예쁘게 만들기 */
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after { content: '▼'; float: right; font-size: 0.8rem; color: #a8a29e; transition: 0.3s; }
+  details[open] summary::after { transform: rotate(180deg); }
 </style>
+</head>
 
-<nav class="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
-  <div class="max-w-6xl mx-auto px-2 relative group">
-    
-    <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-2 nav-gradient-left opacity-0 transition-opacity pointer-events-none">
-      <span class="text-stone-400 text-xl">❮</span>
+<body class="bg-gray-50">
+
+<header class="w-full border-b bg-white sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+    <div class="text-lg font-semibold whitespace-nowrap">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="logo.jpg" alt="경희부연한의원 로고" class="h-8 w-auto object-contain">
+        <span>경희부연한의원</span>
+      </a>
     </div>
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+    <nav class="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+      <a href="about.html">소개</a>
+      <a href="obesity.html">비만</a>
+      <a href="rhinitis.html">비염</a>
+      <a href="pain.html" class="text-stone-900 font-bold">통증</a>
+      <a href="digestive.html">소화불량</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
 
+<nav class="sticky top-[68px] z-40 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-2 relative">
+    <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-10 z-10 flex items-center nav-gradient-left opacity-0 pointer-events-none transition-opacity">
+      <span class="text-stone-400 pl-2">❮</span>
+    </div>
     <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-4 space-x-7 text-[15px] hide-scroll md:justify-center">
-      <li><a href="/about.html" class="text-gray-400 hover:text-stone-800 transition-colors">소개</a></li>
-      <li><a href="/obesity.html" class="text-gray-400 hover:text-stone-800 transition-colors">비만</a></li>
-      <li><a href="/rhinitis.html" class="text-gray-400 hover:text-stone-800 transition-colors">비염</a></li>
-      <li><a href="/pain.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[13px]">통증</a></li>
-      <li><a href="/digestive.html" class="text-gray-400 hover:text-stone-800 transition-colors">소화불량</a></li>
-      <li><a href="/rls.html" class="text-stone-400">하지불안</a></li>
-      <li><a href="/postnatal.html" class="text-stone-400">산후보양</a></li>
-      <li><a href="/pediatric.html" class="text-stone-400">소아보양</a></li>
-      <li><a href="/accident.html" class="text-stone-400">교통사고</a></li>
-      <li><a href="/faq.html" class="text-stone-400">교통사고</a></li>
+      <li><a href="about.html" class="text-gray-400 hover:text-stone-800">소개</a></li>
+      <li><a href="obesity.html" class="text-gray-400 hover:text-stone-800">비만</a></li>
+      <li><a href="rhinitis.html" class="text-gray-400 hover:text-stone-800">비염</a></li>
+      <li><a href="pain.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[13px]">통증</a></li>
+      <li><a href="digestive.html" class="text-gray-400 hover:text-stone-800">소화불량</a></li>
+      <li><a href="rls.html" class="text-gray-400">하지불안</a></li>
+      <li><a href="postnatal.html" class="text-gray-400">산후보양</a></li>
+      <li><a href="pediatric.html" class="text-gray-400">소아보양</a></li>
+      <li><a href="accident.html" class="text-gray-400">교통사고</a></li>
     </ul>
-
-    <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right opacity-100 transition-opacity pointer-events-none">
-      <span class="text-stone-400 text-xl">❯</span>
+    <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-10 z-10 flex items-center justify-end nav-gradient-right opacity-100 pointer-events-none transition-opacity">
+      <span class="text-stone-400 pr-2">❯</span>
     </div>
-
   </div>
 </nav>
 
-<script>
-  const scrollContainer = document.getElementById('menuScroll');
-  const leftArrow = document.getElementById('leftArrow');
-  const rightArrow = document.getElementById('rightArrow');
-
-  function updateArrows() {
-    const scrollLeft = scrollContainer.scrollLeft;
-    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-    // 왼쪽 화살표: 조금이라도 오른쪽으로 밀었으면 표시
-    leftArrow.style.opacity = scrollLeft > 10 ? "1" : "0";
-    
-    // 오른쪽 화살표: 끝까지 도달하지 않았으면 표시
-    rightArrow.style.opacity = scrollLeft < maxScroll - 10 ? "1" : "0";
-  }
-
-  // 스크롤 할 때마다 화살표 상태 업데이트
-  scrollContainer.addEventListener('scroll', updateArrows);
-  // 처음 로딩될 때 한 번 실행
-  window.addEventListener('load', updateArrows);
-  // 화면 크기 바뀔 때 실행
-  window.addEventListener('resize', updateArrows);
-</script>
-  
-<!-- =========================
-1️⃣ HERO
-========================= -->
-<section class="bg-gray-50 py-20 text-center px-4">
-
-  <h1 class="text-3xl font-semibold mb-4">
-    통증은 참는 것이 아닙니다
-  </h1>
-
-  <p class="text-gray-600 mb-10">
-    방치할수록 회복은 더 늦어집니다
-  </p>
-
+<section class="py-16 text-center px-4 bg-white">
+  <h1 class="text-3xl font-bold text-stone-800 mb-4">통증은 참는 것이 아닙니다</h1>
+  <p class="text-gray-500">방치할수록 회복은 더 늦어집니다. 근본부터 치료하세요.</p>
 </section>
 
+<section class="py-12 px-4 max-w-3xl mx-auto">
+  <h2 class="text-2xl font-bold text-center mb-10 text-stone-800">주요 통증 질환</h2>
+  <div class="space-y-4">
 
-<!-- =========================
-2️⃣ 질환 카드
-========================= -->
-<!-- =========================================================
-3️⃣ 주요 통증 질환 (자세히보기 아코디언)
-========================================================= -->
-<section class="bg-gray-50 py-16 px-4">
-
-  <h2 class="text-2xl font-semibold text-center mb-10">
-    주요 통증 질환
-  </h2>
-
-  <div class="max-w-3xl mx-auto space-y-4">
-
-    <!-- 🔥 디스크 -->
-    <details class="bg-white rounded-lg shadow p-4 cursor-pointer">
-      <summary class="font-semibold text-lg">
+    <details class="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <summary class="flex justify-between items-center font-semibold text-lg p-5 cursor-pointer hover:bg-gray-50 list-none">
         디스크 (추간판 탈출증)
       </summary>
-
-      <div class="mt-4 text-gray-600 space-y-2">
-
-        <p>
-          허리의 충격을 흡수하는 디스크가 탈출하여 통증을 유발하는 질환입니다.
-        </p>
-
-        <!-- 🔥 이미지 (선택) -->
-        <img src="disc.jpg" class="rounded-lg">
-
-        <p>
-          ✔ 주요 증상: 허리 통증, 다리 저림
-        </p>
-
-        <p>
-          ✔ 치료기간: 평균 3개월 이상
-        </p>
-
-        <p>
-          ✔ 치료방법: 침, 부항, 한약 치료
-        </p>
-
+      <div class="p-5 pt-0 text-gray-600 border-t border-gray-50 space-y-4">
+        <p class="leading-relaxed">허리의 충격을 흡수하는 디스크가 탈출하여 신경을 압박하고 통증을 유발하는 질환입니다.</p>
+        <img src="disc.jpg" class="rounded-lg w-full max-w-md mx-auto shadow-sm" alt="디스크">
+        <div class="bg-stone-50 p-4 rounded-lg space-y-2 text-sm">
+          <p><strong>✔ 주요 증상:</strong> 허리 통증, 다리 저림, 힘 빠짐</p>
+          <p><strong>✔ 치료기간:</strong> 증상에 따라 평균 3개월 내외</p>
+          <p><strong>✔ 치료방법:</strong> 침, 약침, 추나, 한약 치료</p>
+        </div>
       </div>
     </details>
 
-
-    <!-- 🔥 오십견 -->
-    <details class="bg-white rounded-lg shadow p-4 cursor-pointer">
-      <summary class="font-semibold text-lg">
-        오십견 (Frozen Shoulder)
+    <details class="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <summary class="flex justify-between items-center font-semibold text-lg p-5 cursor-pointer hover:bg-gray-50 list-none">
+        오십견 (동결견)
       </summary>
-
-      <div class="mt-4 text-gray-600 space-y-2">
-
-        <p>
-          어깨 관절의 움직임이 제한되며 통증이 발생하는 질환입니다.
-        </p>
-
-        <img src="shoulder.jpg" class="rounded-lg">
-
-        <p>✔ 주요 증상: 어깨 통증, 움직임 제한</p>
-        <p>✔ 치료기간: 약 2개월 이상</p>
-        <p>✔ 치료방법: 침, 약침, 온열치료</p>
-
+      <div class="p-5 pt-0 text-gray-600 border-t border-gray-50 space-y-4">
+        <p>어깨 관절막에 염증이 생겨 굳어지며, 움직임이 심하게 제한되는 질환입니다.</p>
+        <img src="shoulder.jpg" class="rounded-lg w-full max-w-md mx-auto shadow-sm" alt="오십견">
+        <div class="bg-stone-50 p-4 rounded-lg space-y-2 text-sm">
+          <p><strong>✔ 주요 증상:</strong> 극심한 어깨 통증, 밤에 심해지는 통증</p>
+          <p><strong>✔ 치료방법:</strong> 염증 제거 침치료, 관절 가동 약침</p>
+        </div>
       </div>
     </details>
 
-
-    <!-- 🔥 안면마비 -->
-    <details class="bg-white rounded-lg shadow p-4 cursor-pointer">
-      <summary class="font-semibold text-lg">
-        안면마비
+    <details class="group bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <summary class="flex justify-between items-center font-semibold text-lg p-5 cursor-pointer hover:bg-gray-50 list-none">
+        안면마비 (구안와사)
       </summary>
-
-      <div class="mt-4 text-gray-600 space-y-2">
-
-        <p>
-          면역력 저하로 발생하며 조기 치료가 매우 중요합니다.
-        </p>
-
-        <img src="face.jpg" class="rounded-lg">
-
-        <p>✔ 종류: 벨마비 / 람세이헌트</p>
-        <p>✔ 치료방법: 침 + 한약 병행</p>
-
-      </div>
-    </details>
-
-
-    <!-- 🔥 기타 통증 -->
-    <details class="bg-white rounded-lg shadow p-4 cursor-pointer">
-      <summary class="font-semibold text-lg">
-        기타 통증 (목, 허리, 관절 등)
-      </summary>
-
-      <div class="mt-4 text-gray-600 space-y-2">
-
-        <p>
-          일상 속 반복된 자세와 습관으로 인해 다양한 부위에서 통증이 발생할 수 있습니다.
-        </p>
-
-        <p>
-          ✔ 목 / 허리 / 어깨 / 무릎 통증
-        </p>
-
-        <p>
-          ✔ 방치 시 만성화 가능
-        </p>
-
-        <p>
-          ✔ 치료방법: 침, 뜸, 부항, 한약 치료
-        </p>
-
+      <div class="p-5 pt-0 text-gray-600 border-t border-gray-50 space-y-4">
+        <p>갑작스러운 안면 근육 마비는 초기 골든타임 치료가 회복률을 결정합니다.</p>
+        <img src="face.jpg" class="rounded-lg w-full max-w-md mx-auto shadow-sm" alt="안면마비">
+        <div class="bg-stone-50 p-4 rounded-lg space-y-2 text-sm">
+          <p><strong>✔ 치료핵심:</strong> 신경 재생을 돕는 고농도 한약 및 침치료</p>
+        </div>
       </div>
     </details>
 
   </div>
-
 </section>
+
+<script>
+  // 화살표 스크립트 (기존 기능 유지)
+  const scrollContainer = document.getElementById('menuScroll');
+  const leftArrow = document.getElementById('leftArrow');
+  const rightArrow = document.getElementById('rightArrow');
+  function updateArrows() {
+    const scrollLeft = scrollContainer.scrollLeft;
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    leftArrow.style.opacity = scrollLeft > 10 ? "1" : "0";
+    rightArrow.style.opacity = scrollLeft < maxScroll - 10 ? "1" : "0";
+  }
+  scrollContainer.addEventListener('scroll', updateArrows);
+  window.addEventListener('load', updateArrows);
+  window.addEventListener('resize', updateArrows);
+
+  // 모바일 메뉴 토글
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
+  }
+</script>
 
 </body>
 </html>
