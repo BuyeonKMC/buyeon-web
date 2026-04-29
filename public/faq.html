@@ -1,9 +1,97 @@
-<!-- =========================================================
-1️⃣ HERO (신뢰 + 안내)
-========================================================= -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자주 묻는 질문 | 경희부연한의원</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body {
+  font-family: 'Pretendard', sans-serif;
+  line-height: 1.7;
+}
+/* 가로 스크롤바 숨기기 */
+.hide-scroll::-webkit-scrollbar { display: none; }
+.hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+.nav-gradient-left { background: linear-gradient(to right, white, transparent); }
+.nav-gradient-right { background: linear-gradient(to left, white, transparent); }
+</style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+<header class="w-full border-b bg-white sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+    <div class="text-lg font-semibold whitespace-nowrap">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-8 w-auto object-contain">
+        <span>경희부연한의원 HOME</span>
+      </a>
+    </div>
+
+    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm">
+      <a href="about.html">소개</a>
+      <a href="obesity.html">비만</a>
+      <a href="rhinitis.html">비염</a>
+      <a href="pain.html">통증</a>
+      <a href="digestive.html">소화불량</a>
+      <a href="rls.html">하지불안</a>
+      <a href="postnatal.html">산후보양</a>
+      <a href="pediatric.html">소아보양</a>
+      <a href="accident.html">교통사고</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+  </div>
+
+  <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
+    <a href="index.html" class="py-2 border-b">홈</a>
+    <a href="about.html" class="py-2 border-b">한의원 소개</a>
+    <a href="obesity.html" class="py-2 border-b">비만</a>
+    <a href="rhinitis.html" class="py-2 border-b">비염</a>
+    <a href="pain.html" class="py-2 border-b">통증</a>
+    <a href="digestive.html" class="py-2 border-b">소화불량</a>
+    <a href="rls.html" class="py-2 border-b">하지불안증후군</a>
+    <a href="postnatal.html" class="py-2 border-b">산후보양</a>
+    <a href="pediatric.html" class="py-2 border-b">소아보양</a>
+    <a href="accident.html" class="py-2 border-b">교통사고</a>
+    <a href="faq.html" class="py-2">FAQ</a>
+  </div>
+</header>
+
+<nav class="sticky top-0 z-40 w-full bg-white border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-2 relative group">
+    
+    <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-2 nav-gradient-left opacity-0 transition-opacity pointer-events-none">
+      <span class="text-stone-400 text-xl">❮</span>
+    </div>
+
+    <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-4 space-x-7 text-[15px] hide-scroll md:justify-center">
+      <li><a href="/about.html" class="text-gray-400">소개</a></li>
+      <li><a href="/obesity.html" class="text-gray-400">비만</a></li>
+      <li><a href="/rhinitis.html" class="text-gray-400">비염</a></li>
+      <li><a href="/pain.html" class="text-gray-400">통증</a></li>
+      <li><a href="/digestive.html" class="text-gray-400">소화불량</a></li>
+      <li><a href="/rls.html" class="text-gray-400">하지불안</a></li>
+      <li><a href="/postnatal.html" class="text-gray-400">산후보양</a></li>
+      <li><a href="/pediatric.html" class="text-gray-400">소아보양</a></li>
+      <li><a href="/accident.html" class="text-gray-400">교통사고</a></li>
+      <li><a href="/faq.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[13px]">자주묻는질문</a></li>
+    </ul>
+
+    <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right opacity-100 transition-opacity pointer-events-none">
+      <span class="text-stone-400 text-xl">❯</span>
+    </div>
+
+  </div>
+</nav>
+
 <section class="bg-gray-50 py-20 text-center px-4">
 
-  <h1 class="text-3xl md:text-4xl font-semibold mb-4">
+  <h1 class="text-3xl md:text-4xl font-semibold mb-4 text-stone-800">
     자주 묻는 질문
   </h1>
 
@@ -18,167 +106,126 @@
 </section>
 
 
-<!-- =========================================================
-2️⃣ FAQ 리스트 (🔥 핵심 구조)
-========================================================= -->
 <section class="py-16 px-4 max-w-4xl mx-auto space-y-6">
 
-
-  <!-- =====================================================
-  Q1
-  ===================================================== -->
-  <div class="border rounded-xl p-6">
-
-    <h2 class="font-semibold text-lg mb-3">
+  <div class="border border-stone-100 rounded-xl p-8 shadow-sm bg-white">
+    <h2 class="font-semibold text-xl mb-4 text-stone-800">
       Q1. 한약에는 중금속이 있다던데 사실인가요?
     </h2>
-
-    <!-- 핵심 요약 -->
-    <p class="text-blue-600 font-medium mb-4">
+    <p class="text-blue-600 font-bold mb-4">
       사실이 아닙니다.
     </p>
-
-    <!-- 상세 설명 -->
-    <p class="text-gray-700 leading-relaxed">
-      정식으로 관능검사, 정밀검사, 위해물질 검사를 통해 검증된 한약재만 한의원에 사용됩니다.
-    </p>
-
-    <p class="text-gray-700 mt-3">
-      또한 서울시에서 한약재뿐 아니라 한의원에서 제조된 한약에 대해서도
-      안정성 검사를 실시한 결과,
-    </p>
-
-    <p class="text-gray-700 mt-3">
-      잔류농약은 검출되지 않았으며,
-      중금속 및 이산화황 함유량 역시 생약 기준보다 낮아 안전한 것으로 확인되었습니다.
-    </p>
-
+    <div class="text-gray-700 space-y-3">
+      <p>정식으로 관능검사, 정밀검사, 위해물질 검사를 통해 검증된 한약재만 한의원에 사용됩니다.</p>
+      <p>또한 서울시에서 한약재뿐 아니라 한의원에서 제조된 한약에 대해서도 안정성 검사를 실시한 결과, 잔류농약은 검출되지 않았습니다.</p>
+      <p>중금속 및 이산화황 함유량 역시 생약 기준보다 낮아 안전한 것으로 확인되었습니다.</p>
+    </div>
   </div>
 
-
-
-  <!-- =====================================================
-  Q2
-  ===================================================== -->
-  <div class="border rounded-xl p-6">
-
-    <h2 class="font-semibold text-lg mb-3">
+  <div class="border border-stone-100 rounded-xl p-8 shadow-sm bg-white">
+    <h2 class="font-semibold text-xl mb-4 text-stone-800">
       Q2. 한약재는 무조건 국산이 좋은 것 아닌가요?
     </h2>
-
-    <p class="text-blue-600 font-medium mb-4">
+    <p class="text-blue-600 font-bold mb-4">
       무조건 좋은 것은 아닙니다.
     </p>
-
     <ul class="list-disc pl-5 text-gray-700 space-y-2">
       <li>국내에서 생산되지 않는 약재도 있습니다.</li>
       <li>같은 이름이라도 세부 종에 따라 품질이 다릅니다.</li>
       <li>같은 종이라도 약재 상태에 따라 품질이 달라집니다.</li>
     </ul>
-
   </div>
 
-
-
-  <!-- =====================================================
-  Q3
-  ===================================================== -->
-  <div class="border rounded-xl p-6">
-
-    <h2 class="font-semibold text-lg mb-3">
+  <div class="border border-stone-100 rounded-xl p-8 shadow-sm bg-white">
+    <h2 class="font-semibold text-xl mb-4 text-stone-800">
       Q3. 한약을 먹으면 간수치가 올라가지 않나요?
     </h2>
-
-    <p class="text-blue-600 font-medium mb-4">
+    <p class="text-blue-600 font-bold mb-4">
       반드시 그렇지 않습니다.
     </p>
-
-    <p class="text-gray-700">
-      간수치가 높은 분들이 처방받는 양약 중 하나인 레가론은
-      carduus marianus 성분으로 구성되어 있습니다.
-    </p>
-
-    <p class="text-gray-700 mt-3">
-      이는 실리마린, 즉 엉겅퀴에서 유래된 성분이며
-      한약재인 대계와 같은 계열입니다.
-    </p>
-
-    <p class="text-gray-700 mt-3">
-      즉, 간을 보호하는 성분 역시 한약재에서 유래된 것입니다.
-    </p>
-
-    <p class="text-gray-700 mt-3">
-      물론 전문가의 처방 없이 복용할 경우 문제가 생길 수 있지만,
-      한의사의 정확한 처방 하에 복용하는 한약은 안전합니다.
-    </p>
-
+    <div class="text-gray-700 space-y-3">
+      <p>간수치가 높은 분들이 처방받는 양약 중 하나인 레가론은 엉겅퀴에서 유래된 성분으로 구성되어 있습니다.</p>
+      <p>이는 한약재인 대계와 같은 계열로, 간을 보호하는 성분 역시 한약재에서 유래된 것입니다.</p>
+      <p>한의사의 정확한 진단과 처방 하에 복용하는 한약은 매우 안전합니다.</p>
+    </div>
   </div>
 
-
-
-  <!-- =====================================================
-  Q4
-  ===================================================== -->
-  <div class="border rounded-xl p-6">
-
-    <h2 class="font-semibold text-lg mb-3">
+  <div class="border border-stone-100 rounded-xl p-8 shadow-sm bg-white">
+    <h2 class="font-semibold text-xl mb-4 text-stone-800">
       Q4. 보약을 먹으면 살이 찌나요?
     </h2>
-
-    <p class="text-blue-600 font-medium mb-4">
+    <p class="text-blue-600 font-bold mb-4">
       보약 자체가 살을 찌게 하는 것은 아닙니다.
     </p>
-
-    <p class="text-gray-700">
-      보약을 복용하면 몸 상태가 좋아지면서 식욕이 증가할 수 있습니다.
-    </p>
-
-    <p class="text-gray-700 mt-3">
-      이때 평소보다 많이 섭취하게 되면 체중이 증가할 수 있습니다.
-    </p>
-
-    <p class="text-gray-700 mt-3">
-      따라서 식사량을 적절히 조절하면 체중 증가를 걱정할 필요는 없습니다.
-    </p>
-
+    <div class="text-gray-700 space-y-3">
+      <p>보약 복용 후 몸 상태가 좋아지면서 식욕이 일시적으로 증가할 수 있습니다.</p>
+      <p>이때 식사량을 적절히 조절하신다면 체중 증가를 걱정하실 필요는 전혀 없습니다.</p>
+    </div>
   </div>
 
-
-
-  <!-- =====================================================
-  Q5
-  ===================================================== -->
-  <div class="border rounded-xl p-6">
-
-    <h2 class="font-semibold text-lg mb-3">
+  <div class="border border-stone-100 rounded-xl p-8 shadow-sm bg-white">
+    <h2 class="font-semibold text-xl mb-4 text-stone-800">
       Q5. 한약은 먹을 때만 효과 있고 의미가 없지 않나요?
     </h2>
-
-    <p class="text-blue-600 font-medium mb-4">
+    <p class="text-blue-600 font-bold mb-4">
       맞는 말이지만, 동시에 당연한 이야기입니다.
     </p>
-
-    <p class="text-gray-700">
-      기계를 오래 사용하려면 정기적인 관리가 필요하듯,
-      사람의 몸도 지속적인 관리가 필요합니다.
-    </p>
-
-    <p class="text-gray-700 mt-3">
-      충분한 휴식, 수면, 식사, 운동이 중요하지만
-      이를 꾸준히 실천하는 경우는 많지 않습니다.
-    </p>
-
-    <p class="text-gray-700 mt-3">
-      따라서 한약 치료는 부족한 부분을 보완하고
-      몸의 균형을 회복하는 역할을 합니다.
-    </p>
-
-    <p class="text-gray-700 mt-3">
-      복용 이후 생활습관을 어떻게 관리하느냐에 따라
-      효과의 지속 기간이 달라집니다.
-    </p>
-
+    <div class="text-gray-700 space-y-3">
+      <p>기계를 오래 사용하려면 정기적인 관리가 필요하듯, 사람의 몸도 지속적인 관리가 중요합니다.</p>
+      <p>한약 치료는 부족한 기력을 보완하고 몸의 균형을 회복하는 징검다리 역할을 합니다.</p>
+      <p>복용 이후 원장님의 가이드에 따라 생활습관을 관리하시면 효과를 더 오래 유지하실 수 있습니다.</p>
+    </div>
   </div>
 
-
 </section>
+
+
+<footer class="py-12 text-center text-sm text-gray-500 border-t bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    Tel.  02 ) 905 - 7553 | 서울시 도봉구 도당로 7 벽산 송화프라자 3층 <br><br>
+    사업자명  경희부연한의원 | 대표 전진영 | 사업자번호 210-92-17097<br>
+    COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED
+  </div>
+</footer>
+
+<script>
+  // 모바일 햄버거 메뉴 토글
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (menu) {
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
+    }
+  }
+
+  // 상단 가로 스크롤 메뉴 화살표 로직
+  const scrollContainer = document.getElementById('menuScroll');
+  const leftArrow = document.getElementById('leftArrow');
+  const rightArrow = document.getElementById('rightArrow');
+
+  function updateArrows() {
+    if (!scrollContainer) return;
+    const scrollLeft = scrollContainer.scrollLeft;
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+    if (leftArrow) leftArrow.style.opacity = scrollLeft > 10 ? "1" : "0";
+    if (rightArrow) rightArrow.style.opacity = scrollLeft < maxScroll - 10 ? "1" : "0";
+  }
+
+  if (scrollContainer) {
+    scrollContainer.addEventListener('scroll', updateArrows);
+    window.addEventListener('load', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    
+    // 로딩 시 현재 활성화된 메뉴(FAQ)로 스크롤 위치 이동
+    window.addEventListener('load', () => {
+      const activeMenu = scrollContainer.querySelector('.font-bold');
+      if (activeMenu) {
+        activeMenu.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
