@@ -1,74 +1,184 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오시는 길 - 경희부연한의원</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; }</style>
-</head>
-<body class="bg-gray-50 text-gray-800">
+<!-- =========================================================
+1️⃣ HERO (신뢰 + 안내)
+========================================================= -->
+<section class="bg-gray-50 py-20 text-center px-4">
 
-    <nav class="bg-white sticky top-0 z-50 border-b shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-green-800 tracking-tight">🌿 경희부연한의원</a>
-        </div>
-        <div class="bg-green-50/50 border-t overflow-x-auto">
-            <div class="max-w-6xl mx-auto px-6 py-3 flex space-x-6 text-sm font-medium text-gray-600 whitespace-nowrap">
-                <a href="about.html" class="hover:text-green-700">인사말</a>
-                <a href="location.html" class="hover:text-green-700">오시는 길</a>
-                <a href="gallery.html" class="hover:text-green-700">둘러보기</a>
-                <a href="obesity.html" class="hover:text-green-700 text-pink-700">비만</a>
-                <a href="rhinitis.html" class="hover:text-green-700">비염</a>
-                <a href="pain.html" class="hover:text-green-700 text-blue-700">통증/마비 질환</a>
-                <a href="pain_other.html" class="hover:text-green-700 text-blue-700">기타 통증</a>
-                <a href="indigestion.html" class="hover:text-green-700">소화불량</a>
-                <a href="rls.html" class="hover:text-green-700">하지불안증후군</a>
-                <a href="postpartum.html" class="hover:text-green-700 text-orange-700">산후보양</a>
-                <a href="pediatric.html" class="hover:text-green-700 text-orange-700">소아보양</a>
-                <a href="traffic.html" class="hover:text-green-700">교통사고</a>
-                <a href="faq.html" class="hover:text-green-700">FAQ</a>
-            </div>
-        </div>
-    </nav>
+  <h1 class="text-3xl md:text-4xl font-semibold mb-4">
+    자주 묻는 질문
+  </h1>
 
-    <main class="max-w-4xl mx-auto px-6 py-16 min-h-screen">
-        <h2 class="text-3xl font-bold mb-8 border-b pb-4 text-gray-900">오시는 길 및 진료시간</h2>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-            
-            <div class="bg-white p-8 rounded-2xl shadow-sm border">
-                <h3 class="text-xl font-bold text-green-800 mb-6 flex items-center">📍 주소</h3>
-                <p class="text-lg text-gray-700">서울특별시 도봉구 도당로 7, 3층 (쌍문동)</p>
-            </div>
-            
-            <div class="bg-white p-8 rounded-2xl shadow-sm border">
-                <h3 class="text-xl font-bold text-green-800 mb-6 flex items-center">🕒 진료시간</h3>
-                
-                <ul class="space-y-4 text-gray-700 font-medium">
-                    <li class="flex justify-between border-b pb-2">
-                        <span>월 · 수 · 금</span> <span>09:00 - 18:30</span>
-                    </li>
-                    <li class="flex justify-between border-b pb-2 text-blue-700 font-bold">
-                        <span>화 · 목 (야간)</span> <span>09:00 - 20:30</span>
-                    </li>
-                    <li class="flex justify-between border-b pb-2">
-                        <span>토요일 (점심X)</span> <span>09:00 - 13:00</span>
-                    </li>
-                    <li class="flex justify-between text-red-500">
-                        <span>일 · 공휴일</span> <span>휴진</span>
-                    </li>
-                </ul>
-            </div>
-            
-        </div>
-    </main>
+  <p class="text-gray-600 mb-2">
+    많은 분들이 궁금해하시는 내용을 정리했습니다
+  </p>
 
-    <footer class="bg-gray-800 text-gray-400 py-10 text-center text-sm border-t border-gray-700">
-        <p>서울특별시 도봉구 도당로 7, 3층 (쌍문동) | 대표원장: 전진영</p>
-        <p class="mt-2">© 2026 경희부연한의원. All rights reserved.</p>
-    </footer>
+  <p class="text-gray-500 text-sm">
+    더 궁금하신 사항은 전화로 문의해주세요
+  </p>
 
-</body>
-</html>
+</section>
+
+
+<!-- =========================================================
+2️⃣ FAQ 리스트 (🔥 핵심 구조)
+========================================================= -->
+<section class="py-16 px-4 max-w-4xl mx-auto space-y-6">
+
+
+  <!-- =====================================================
+  Q1
+  ===================================================== -->
+  <div class="border rounded-xl p-6">
+
+    <h2 class="font-semibold text-lg mb-3">
+      Q1. 한약에는 중금속이 있다던데 사실인가요?
+    </h2>
+
+    <!-- 핵심 요약 -->
+    <p class="text-blue-600 font-medium mb-4">
+      사실이 아닙니다.
+    </p>
+
+    <!-- 상세 설명 -->
+    <p class="text-gray-700 leading-relaxed">
+      정식으로 관능검사, 정밀검사, 위해물질 검사를 통해 검증된 한약재만 한의원에 사용됩니다.
+    </p>
+
+    <p class="text-gray-700 mt-3">
+      또한 서울시에서 한약재뿐 아니라 한의원에서 제조된 한약에 대해서도
+      안정성 검사를 실시한 결과,
+    </p>
+
+    <p class="text-gray-700 mt-3">
+      잔류농약은 검출되지 않았으며,
+      중금속 및 이산화황 함유량 역시 생약 기준보다 낮아 안전한 것으로 확인되었습니다.
+    </p>
+
+  </div>
+
+
+
+  <!-- =====================================================
+  Q2
+  ===================================================== -->
+  <div class="border rounded-xl p-6">
+
+    <h2 class="font-semibold text-lg mb-3">
+      Q2. 한약재는 무조건 국산이 좋은 것 아닌가요?
+    </h2>
+
+    <p class="text-blue-600 font-medium mb-4">
+      무조건 좋은 것은 아닙니다.
+    </p>
+
+    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+      <li>국내에서 생산되지 않는 약재도 있습니다.</li>
+      <li>같은 이름이라도 세부 종에 따라 품질이 다릅니다.</li>
+      <li>같은 종이라도 약재 상태에 따라 품질이 달라집니다.</li>
+    </ul>
+
+  </div>
+
+
+
+  <!-- =====================================================
+  Q3
+  ===================================================== -->
+  <div class="border rounded-xl p-6">
+
+    <h2 class="font-semibold text-lg mb-3">
+      Q3. 한약을 먹으면 간수치가 올라가지 않나요?
+    </h2>
+
+    <p class="text-blue-600 font-medium mb-4">
+      반드시 그렇지 않습니다.
+    </p>
+
+    <p class="text-gray-700">
+      간수치가 높은 분들이 처방받는 양약 중 하나인 레가론은
+      carduus marianus 성분으로 구성되어 있습니다.
+    </p>
+
+    <p class="text-gray-700 mt-3">
+      이는 실리마린, 즉 엉겅퀴에서 유래된 성분이며
+      한약재인 대계와 같은 계열입니다.
+    </p>
+
+    <p class="text-gray-700 mt-3">
+      즉, 간을 보호하는 성분 역시 한약재에서 유래된 것입니다.
+    </p>
+
+    <p class="text-gray-700 mt-3">
+      물론 전문가의 처방 없이 복용할 경우 문제가 생길 수 있지만,
+      한의사의 정확한 처방 하에 복용하는 한약은 안전합니다.
+    </p>
+
+  </div>
+
+
+
+  <!-- =====================================================
+  Q4
+  ===================================================== -->
+  <div class="border rounded-xl p-6">
+
+    <h2 class="font-semibold text-lg mb-3">
+      Q4. 보약을 먹으면 살이 찌나요?
+    </h2>
+
+    <p class="text-blue-600 font-medium mb-4">
+      보약 자체가 살을 찌게 하는 것은 아닙니다.
+    </p>
+
+    <p class="text-gray-700">
+      보약을 복용하면 몸 상태가 좋아지면서 식욕이 증가할 수 있습니다.
+    </p>
+
+    <p class="text-gray-700 mt-3">
+      이때 평소보다 많이 섭취하게 되면 체중이 증가할 수 있습니다.
+    </p>
+
+    <p class="text-gray-700 mt-3">
+      따라서 식사량을 적절히 조절하면 체중 증가를 걱정할 필요는 없습니다.
+    </p>
+
+  </div>
+
+
+
+  <!-- =====================================================
+  Q5
+  ===================================================== -->
+  <div class="border rounded-xl p-6">
+
+    <h2 class="font-semibold text-lg mb-3">
+      Q5. 한약은 먹을 때만 효과 있고 의미가 없지 않나요?
+    </h2>
+
+    <p class="text-blue-600 font-medium mb-4">
+      맞는 말이지만, 동시에 당연한 이야기입니다.
+    </p>
+
+    <p class="text-gray-700">
+      기계를 오래 사용하려면 정기적인 관리가 필요하듯,
+      사람의 몸도 지속적인 관리가 필요합니다.
+    </p>
+
+    <p class="text-gray-700 mt-3">
+      충분한 휴식, 수면, 식사, 운동이 중요하지만
+      이를 꾸준히 실천하는 경우는 많지 않습니다.
+    </p>
+
+    <p class="text-gray-700 mt-3">
+      따라서 한약 치료는 부족한 부분을 보완하고
+      몸의 균형을 회복하는 역할을 합니다.
+    </p>
+
+    <p class="text-gray-700 mt-3">
+      복용 이후 생활습관을 어떻게 관리하느냐에 따라
+      효과의 지속 기간이 달라집니다.
+    </p>
+
+  </div>
+
+
+</section>
