@@ -149,47 +149,117 @@ body {
 <!-- =========================
 2️⃣ 질환 카드
 ========================= -->
-<section class="py-16 px-4 max-w-5xl mx-auto space-y-10">
+<!-- =========================================================
+3️⃣ 주요 통증 질환 (자세히보기 아코디언)
+========================================================= -->
+<section class="bg-gray-50 py-16 px-4">
 
-  <!-- 디스크 -->
-  <div class="flex flex-col md:flex-row gap-6">
-    <img src="disc.jpg" class="w-full md:w-1/3 rounded">
-    <div>
-      <h3 class="text-xl font-semibold mb-2">허리디스크</h3>
-      <p>허리 통증과 다리 저림이 나타나는 대표적인 질환입니다.</p>
-    </div>
-  </div>
+  <h2 class="text-2xl font-semibold text-center mb-10">
+    주요 통증 질환
+  </h2>
 
-  <!-- 오십견 -->
-  <div class="flex flex-col md:flex-row gap-6">
-    <img src="shoulder.jpg" class="w-full md:w-1/3 rounded">
-    <div>
-      <h3 class="text-xl font-semibold mb-2">오십견</h3>
-      <p>어깨 움직임 제한과 통증이 특징입니다.</p>
-    </div>
-  </div>
+  <div class="max-w-3xl mx-auto space-y-4">
 
-  <!-- 안면마비 -->
-  <div>
-    <h3 class="text-xl font-semibold mb-2">안면마비</h3>
-    <p>면역력 저하로 발생하는 신경 질환입니다.</p>
-  </div>
+    <!-- 🔥 디스크 -->
+    <details class="bg-white rounded-lg shadow p-4 cursor-pointer">
+      <summary class="font-semibold text-lg">
+        디스크 (추간판 탈출증)
+      </summary>
 
-</section>
+      <div class="mt-4 text-gray-600 space-y-2">
+
+        <p>
+          허리의 충격을 흡수하는 디스크가 탈출하여 통증을 유발하는 질환입니다.
+        </p>
+
+        <!-- 🔥 이미지 (선택) -->
+        <img src="disc.jpg" class="rounded-lg">
+
+        <p>
+          ✔ 주요 증상: 허리 통증, 다리 저림
+        </p>
+
+        <p>
+          ✔ 치료기간: 평균 3개월 이상
+        </p>
+
+        <p>
+          ✔ 치료방법: 침, 부항, 한약 치료
+        </p>
+
+      </div>
+    </details>
 
 
-<!-- =========================
-3️⃣ 치료 방법
-========================= -->
-<section class="bg-gray-50 py-16 text-center">
+    <!-- 🔥 오십견 -->
+    <details class="bg-white rounded-lg shadow p-4 cursor-pointer">
+      <summary class="font-semibold text-lg">
+        오십견 (Frozen Shoulder)
+      </summary>
 
-  <h2 class="text-2xl font-semibold mb-8">치료 방법</h2>
+      <div class="mt-4 text-gray-600 space-y-2">
 
-  <div class="flex justify-center gap-10">
+        <p>
+          어깨 관절의 움직임이 제한되며 통증이 발생하는 질환입니다.
+        </p>
 
-    <div>침 치료</div>
-    <div>뜸 치료</div>
-    <div>한약 치료</div>
+        <img src="shoulder.jpg" class="rounded-lg">
+
+        <p>✔ 주요 증상: 어깨 통증, 움직임 제한</p>
+        <p>✔ 치료기간: 약 2개월 이상</p>
+        <p>✔ 치료방법: 침, 약침, 온열치료</p>
+
+      </div>
+    </details>
+
+
+    <!-- 🔥 안면마비 -->
+    <details class="bg-white rounded-lg shadow p-4 cursor-pointer">
+      <summary class="font-semibold text-lg">
+        안면마비
+      </summary>
+
+      <div class="mt-4 text-gray-600 space-y-2">
+
+        <p>
+          면역력 저하로 발생하며 조기 치료가 매우 중요합니다.
+        </p>
+
+        <img src="face.jpg" class="rounded-lg">
+
+        <p>✔ 종류: 벨마비 / 람세이헌트</p>
+        <p>✔ 치료방법: 침 + 한약 병행</p>
+
+      </div>
+    </details>
+
+
+    <!-- 🔥 기타 통증 -->
+    <details class="bg-white rounded-lg shadow p-4 cursor-pointer">
+      <summary class="font-semibold text-lg">
+        기타 통증 (목, 허리, 관절 등)
+      </summary>
+
+      <div class="mt-4 text-gray-600 space-y-2">
+
+        <p>
+          일상 속 반복된 자세와 습관으로 인해 다양한 부위에서 통증이 발생할 수 있습니다.
+        </p>
+
+        <p>
+          ✔ 목 / 허리 / 어깨 / 무릎 통증
+        </p>
+
+        <p>
+          ✔ 방치 시 만성화 가능
+        </p>
+
+        <p>
+          ✔ 치료방법: 침, 뜸, 부항, 한약 치료
+        </p>
+
+      </div>
+    </details>
 
   </div>
 
