@@ -157,36 +157,93 @@
     </div>
   </div>
 
-  <!-- 섹션 3: 경희부연한의원의 치료법 -->
-  <div class="space-y-10">
-    <h2 class="text-2xl font-bold text-stone-800 flex items-center gap-3 border-b pb-4">
-      <span class="w-2 h-6 bg-slate-600 block rounded-full"></span>
-      경희부연한의원의 치료법
-    </h2>
+<!-- 섹션 3: 경희부연한의원의 치료법 (침·뜸·부항·약침 이미지 포함 버전) -->
+<div class="space-y-12">
+  <h2 class="text-2xl font-bold text-stone-800 flex items-center gap-3 border-b pb-4">
+    <span class="w-2 h-6 bg-slate-600 block rounded-full"></span>
+    경희부연한의원의 치료법
+  </h2>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- 치료법 1 -->
-      <div class="bg-white p-6 rounded-2xl border border-stone-100 shadow-sm">
-        <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-            <span class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded text-sm">1</span> 
-            침·뜸·부항
-        </h3>
-        <p class="text-stone-600 leading-relaxed">
-            사고 충격에 의해 발생한 몸의 구조적 불균형을 바로잡고 통증을 완화시켜 줍니다.
-        </p>
+  <!-- 치료법 그리드: 침, 뜸, 부항, 약침 -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <!-- 1. 침 치료 -->
+    <div class="bg-white rounded-2xl border border-stone-100 overflow-hidden shadow-sm flex flex-col">
+      <div class="aspect-[4/3] bg-stone-100 overflow-hidden">
+        <!-- 원내 침 치료 사진 파일명으로 src를 교체하세요 -->
+        <img src="acupuncture_img.jpg" alt="침 치료" class="w-full h-full object-cover">
       </div>
-
-      <!-- 치료법 2 -->
-      <div class="bg-white p-6 rounded-2xl border border-stone-100 shadow-sm">
-        <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-            <span class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded text-sm">2</span> 
-            한약 요법
+      <div class="p-5 flex-1">
+        <h3 class="font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <span class="text-slate-400 text-sm font-mono tracking-tighter">01</span> 침 치료
         </h3>
-        <p class="text-stone-600 leading-relaxed">
-            사고의 충격으로 경락과 장부에 발생한 어혈을 풀어내서 기혈 순환을 고르게 하여 후유증을 줄여줍니다.
+        <p class="text-stone-600 text-sm leading-relaxed">
+          충격에 의해 발생한 몸의 구조적 불균형을 바로잡고 통증을 완화시켜 줍니다.
         </p>
       </div>
     </div>
+
+    <!-- 2. 뜸 요법 -->
+    <div class="bg-white rounded-2xl border border-stone-100 overflow-hidden shadow-sm flex flex-col">
+      <div class="aspect-[4/3] bg-stone-100 overflow-hidden">
+        <img src="moxibustion_img.jpg" alt="뜸 요법" class="w-full h-full object-cover">
+      </div>
+      <div class="p-5 flex-1">
+        <h3 class="font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <span class="text-slate-400 text-sm font-mono tracking-tighter">02</span> 뜸 요법
+        </h3>
+        <p class="text-stone-600 text-sm leading-relaxed">
+          따뜻한 기운을 통해 경직된 근육을 이완시키고 혈액순환을 촉진합니다.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3. 부항 요법 -->
+    <div class="bg-white rounded-2xl border border-stone-100 overflow-hidden shadow-sm flex flex-col">
+      <div class="aspect-[4/3] bg-stone-100 overflow-hidden">
+        <img src="cupping_img.jpg" alt="부항 요법" class="w-full h-full object-cover">
+      </div>
+      <div class="p-5 flex-1">
+        <h3 class="font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <span class="text-slate-400 text-sm font-mono tracking-tighter">03</span> 부항 요법
+        </h3>
+        <p class="text-stone-600 text-sm leading-relaxed">
+          음압을 이용해 체내의 독소와 어혈을 제거하여 기혈 흐름을 돕습니다.
+        </p>
+      </div>
+    </div>
+
+    <!-- 4. 약침 요법 -->
+    <div class="bg-white rounded-2xl border border-stone-100 overflow-hidden shadow-sm flex flex-col">
+      <div class="aspect-[4/3] bg-stone-100 overflow-hidden">
+        <img src="pharmacopuncture_img.jpg" alt="약침 요법" class="w-full h-full object-cover">
+      </div>
+      <div class="p-5 flex-1">
+        <h3 class="font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <span class="text-slate-400 text-sm font-mono tracking-tighter">04</span> 약침 요법
+        </h3>
+        <p class="text-stone-600 text-sm leading-relaxed">
+          정제된 한약 성분을 경혈에 직접 주입하여 염좌와 통증을 빠르게 진정시킵니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 한약 요법 (단독 가로형 배치) -->
+  <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 flex flex-col md:flex-row items-center gap-6 shadow-inner">
+    <div class="bg-white p-4 rounded-full shadow-sm">
+        <i class="fa-solid fa-mortar-pestle text-3xl text-slate-400"></i>
+    </div>
+    <div class="flex-1">
+      <h3 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+          <span class="text-slate-400 text-sm font-mono">05</span> 한약 요법
+      </h3>
+      <p class="text-stone-600 leading-relaxed text-[15px]">
+          사고의 충격으로 경락과 장부에 발생한 어혈을 풀어내서 기혈 순환을 고르게 하여 후유증을 줄여줍니다.
+      </p>
+    </div>
+  </div>
+</div>
 
     <!-- 시각 자료 (사진 대체 아이콘 블록) -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
