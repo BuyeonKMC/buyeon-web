@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>소아보양 | 경희부연한의원</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>소아보양 | 경희부연한의원</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<style>
-body {
-  font-family: 'Pretendard', sans-serif;
-  line-height: 1.7;
-}
-/* 가로 스크롤바 숨기기 */
-.hide-scroll::-webkit-scrollbar { display: none; }
-.hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-.nav-gradient-left { background: linear-gradient(to right, white, transparent); }
-.nav-gradient-right { background: linear-gradient(to left, white, transparent); }
-</style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+    .hide-scroll::-webkit-scrollbar { display: none; }
+    .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    /* 소아보양 메인 컬러: 에메랄드 그린 */
+    .text-emerald-point { color: #059669; }
+    .bg-emerald-point { background-color: #059669; }
+    .border-emerald-point { border-color: #059669; }
+
+    @media (max-width: 768px) {
+      body { padding-bottom: 64px; }
+    }
+  </style>
 </head>
 
-<body class="bg-white text-gray-800">
+<body class="bg-white text-stone-800">
 
+<!-- =========================================================
+1️⃣ 상단 헤더 (공통 스타일 유지)
+========================================================= -->
 <header class="w-full border-b bg-white sticky top-0 z-50">
   <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
     <div class="text-lg font-semibold whitespace-nowrap">
-      <a href="index.html" class="flex items-center gap-2">
-        <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-8 w-auto object-contain">
-        <span>경희부연한의원 HOME</span>
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-10 w-auto object-contain block">
+        <span class="text-stone-900">경희부연한의원 HOME</span>
       </a>
     </div>
-
-    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm">
+    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm font-medium text-stone-600">
       <a href="about.html">소개</a>
       <a href="obesity.html">비만</a>
       <a href="rhinitis.html">비염</a>
@@ -39,238 +50,208 @@ body {
       <a href="digestive.html">소화불량</a>
       <a href="rls.html">하지불안</a>
       <a href="postnatal.html">산후보양</a>
-      <a href="pediatric.html">소아보양</a>
+      <a href="pediatric.html" class="text-emerald-600 font-bold">소아보양</a>
       <a href="accident.html">교통사고</a>
       <a href="faq.html">FAQ</a>
     </nav>
-
     <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
-  </div>
-
-  <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
-    <a href="index.html" class="py-2 border-b">홈</a>
-    <a href="about.html" class="py-2 border-b">한의원 소개</a>
-    <a href="obesity.html" class="py-2 border-b">비만</a>
-    <a href="rhinitis.html" class="py-2 border-b">비염</a>
-    <a href="pain.html" class="py-2 border-b">통증</a>
-    <a href="digestive.html" class="py-2 border-b">소화불량</a>
-    <a href="rls.html" class="py-2 border-b">하지불안증후군</a>
-    <a href="postnatal.html" class="py-2 border-b">산후보양</a>
-    <a href="pediatric.html" class="py-2 border-b">소아보양</a>
-    <a href="accident.html" class="py-2 border-b">교통사고</a>
-    <a href="faq.html" class="py-2">FAQ</a>
   </div>
 </header>
 
-<nav class="sticky top-0 z-40 w-full bg-white border-b border-gray-100 shadow-sm">
-  <div class="max-w-6xl mx-auto px-2 relative group">
-    
-    <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-2 nav-gradient-left opacity-0 transition-opacity pointer-events-none">
-      <span class="text-stone-400 text-xl">❮</span>
-    </div>
-
+<!-- =========================================================
+2️⃣ 모바일 가로 스크롤 네비게이션
+========================================================= -->
+<nav class="sticky top-[73px] md:top-[81px] z-40 w-full bg-white border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-2 relative">
     <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-4 space-x-7 text-[15px] hide-scroll md:justify-center">
-      <li><a href="/about.html" class="text-gray-400 hover:text-stone-800 transition-colors">소개</a></li>
-      <li><a href="/obesity.html" class="text-gray-400 hover:text-stone-800 transition-colors">비만</a></li>
-      <li><a href="/rhinitis.html" class="text-gray-400 hover:text-stone-800 transition-colors">비염</a></li>
-      <li><a href="/pain.html" class="text-gray-400 hover:text-stone-800 transition-colors">통증</a></li>
-      <li><a href="/digestive.html" class="text-gray-400 hover:text-stone-800 transition-colors">소화불량</a></li>
-      <li><a href="/rls.html" class="text-gray-400 hover:text-stone-800 transition-colors">하지불안</a></li>
-      <li><a href="/postnatal.html" class="text-gray-400 hover:text-stone-800 transition-colors">산후보양</a></li>
+      <li><a href="/about.html" class="text-gray-400">소개</a></li>
+      <li><a href="/obesity.html" class="text-gray-400">비만</a></li>
+      <li><a href="/rhinitis.html" class="text-gray-400">비염</a></li>
+      <li><a href="/pain.html" class="text-gray-400">통증</a></li>
+      <li><a href="/digestive.html" class="text-gray-400">소화불량</a></li>
+      <li><a href="/rls.html" class="text-gray-400">하지불안</a></li>
+      <li><a href="/postnatal.html" class="text-gray-400">산후보양</a></li>
       <li><a href="/pediatric.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[13px]">소아보양</a></li>
-      <li><a href="/accident.html" class="text-gray-400 hover:text-stone-800 transition-colors">교통사고</a></li>
-      <li><a href="/faq.html" class="text-gray-400 hover:text-stone-800 transition-colors">자주묻는질문</a></li>
+      <li><a href="/accident.html" class="text-gray-400">교통사고</a></li>
+      <li><a href="/location.html" class="text-gray-400">오시는길</a></li>
     </ul>
-
-    <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right opacity-100 transition-opacity pointer-events-none">
-      <span class="text-stone-400 text-xl">❯</span>
-    </div>
-
   </div>
 </nav>
 
-<section class="bg-gray-50 py-16 text-center px-4">
-
-  <div class="max-w-4xl mx-auto px-4 mb-10">
-    <img src="/pediatric-hero.png"
-         alt="소아보양"
-         class="w-full h-auto rounded-xl shadow-sm block mx-auto">
-  </div>
-
-  <h1 class="text-3xl md:text-4xl font-semibold mb-4 leading-snug">
-    내 아이의 행동을 잘 살펴보세요
-  </h1>
-
-  <p class="text-gray-600">
-    아이가 보내는 신호일 수 있습니다
-  </p>
-
-</section>
-
-<section class="py-16 px-4 max-w-4xl mx-auto">
-
-  <h2 class="text-2xl font-semibold mb-6">
-    어린 아이가 보양이 필요한 이유
-  </h2>
-
-  <p class="text-gray-700 leading-relaxed">
-    아이들은 어른들과는 다른 이유로 더 많은 에너지가 필요합니다.
-  </p>
-
-  <p class="text-gray-700 mt-4">
-    어른은 일상적인 활동에서 기력을 소모하지만,
-    아이들은 ‘성장’과 ‘면역력 형성’까지 동시에 이루어야 합니다.
-  </p>
-
-  <p class="text-gray-700 mt-4">
-    즉, 겉으로는 멀쩡해 보여도 내부적으로는
-    에너지가 부족한 상태일 수 있습니다.
-  </p>
-
-</section>
-
-<section class="bg-gray-50 py-16 px-4">
-
-  <h2 class="text-2xl font-semibold text-center mb-10">
-    우리 아이가 보내는 신호
-  </h2>
-
-  <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-gray-700">
-    <p>✔ 배가 자주 아프다</p>
-    <p>✔ 머리가 자주 아프다</p>
-    <p>✔ 팔과 다리가 자주 아프다</p>
-    <p>✔ 감기와 몸살이 잦다</p>
-    <p>✔ 조금만 움직여도 땀이 많다</p>
-    <p>✔ 자다가 경기를 일으킨다</p>
-    <p>✔ 야뇨가 잦다</p>
-    <p>✔ 코피를 자주 흘린다</p>
-  </div>
-
-  <div class="mt-10 text-center bg-white border rounded-lg p-6 max-w-xl mx-auto shadow-sm">
-    <p class="text-red-500 font-semibold">
-      위 항목 중 2가지 이상 해당된다면
-    </p>
-    <p class="text-gray-700 mt-2">
-      아이의 체력이 약해졌다는 신호일 수 있습니다
+<!-- =========================================================
+3️⃣ HERO Section
+========================================================= -->
+<section class="bg-emerald-50 py-24 text-center px-4 relative overflow-hidden">
+  <div class="max-w-4xl mx-auto relative z-10">
+    <h1 class="text-3xl md:text-5xl font-bold mb-6 text-stone-900 tracking-tight leading-tight">
+      내 아이의 행동을 잘 체크해보세요!
+    </h1>
+    <p class="text-lg md:text-2xl text-emerald-700 font-bold">
+      아이가 보내는 신호 일 수도 있습니다.
     </p>
   </div>
-
+  <i class="fa-solid fa-child-reaching absolute -bottom-10 -right-10 text-[18rem] text-emerald-100/50 rotate-12"></i>
 </section>
 
-<section class="py-16 px-4 text-center">
+<!-- =========================================================
+4️⃣ Main Content
+========================================================= -->
+<section class="py-20 px-4 max-w-5xl mx-auto space-y-28">
 
-  <h2 class="text-xl font-semibold mb-4">
-    단순한 성장 과정이 아닐 수 있습니다
-  </h2>
-
-  <p class="text-gray-600 max-w-2xl mx-auto">
-    반복되는 증상은 아이의 성장과 면역력 형성에 영향을 줄 수 있습니다.
-    적절한 시기에 관리하는 것이 중요합니다.
-  </p>
-
-</section>
-
-<section class="bg-gray-100 py-16 px-4 text-center">
-
-  <h2 class="text-2xl font-semibold mb-6">
-    한약 치료로 아이의 건강을 지켜줍니다
-  </h2>
-
-  <p class="text-gray-600 max-w-2xl mx-auto">
-    아이에게 나타나는 다양한 이상 신호를 한약 치료를 통해 개선하고,
-    건강한 성장과 면역력 향상을 돕습니다.
-  </p>
-
-</section>
-
-<section class="py-16 px-4">
-
-  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto text-center">
-    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-      <h3 class="font-semibold mb-2">성장 에너지</h3>
-      <p class="text-gray-600 text-sm">성장통 완화 및 균형 잡힌 발달</p>
+  <!-- 섹션 1: 보양이 필요한 이유 -->
+  <div class="flex flex-col md:flex-row items-center gap-12">
+    <div class="flex-1 space-y-6">
+      <h2 class="text-2xl md:text-3xl font-bold text-stone-800 flex items-center gap-3">
+        <span class="w-2 h-8 bg-emerald-point block rounded-full"></span>
+        어린 아이가 보양이 필요한 이유
+      </h2>
+      <div class="text-stone-700 text-lg leading-loose space-y-4">
+        <p>
+          아이들은 어른들과는 다른 이유로 영양이 필요하고, 또 부족한 상태 입니다.
+        </p>
+        <p>
+          어른의 경우 직장/공부/집안 일 등의 여러 활동으로만 기력을 사용하면 되지만 아이들은 <span class="text-emerald-700 font-bold">'성장'</span>과 <span class="text-emerald-700 font-bold">'면역력 향상'</span>이라는 활동까지 해야하는 만큼 오히려 어른보다 훨씬 더 영양이 절실한 상태라고 할 수 있습니다.
+        </p>
+      </div>
     </div>
-    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-      <h3 class="font-semibold mb-2">면역력 향상</h3>
-      <p class="text-gray-600 text-sm">잦은 감기 및 잔병치레 개선</p>
+    <div class="w-full md:w-1/3 flex justify-center">
+        <div class="bg-emerald-100 rounded-full w-64 h-64 flex items-center justify-center relative">
+            <i class="fa-solid fa-seedling text-8xl text-emerald-500"></i>
+            <i class="fa-solid fa-sun absolute top-6 right-6 text-4xl text-amber-400 animate-pulse"></i>
+        </div>
     </div>
-    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-      <h3 class="font-semibold mb-2">체질 개선</h3>
-      <p class="text-gray-600 text-sm">코피·야뇨 등 반복 증상 완화</p>
+  </div>
+
+  <!-- 섹션 2: 허약한 어린이의 특징 (체크리스트 스타일) -->
+  <div class="bg-stone-50 rounded-3xl p-8 md:p-12 border border-stone-100 shadow-sm">
+    <div class="text-center mb-12">
+        <h2 class="text-2xl font-bold text-stone-800 mb-2">허약한 어린이의 특징</h2>
+        <p class="text-stone-500 italic">우리 아이의 상태를 체크해보세요.</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-5 mb-10">
+      <!-- 증상 1~8 -->
+      <div class="flex gap-4 items-center p-3 bg-white rounded-xl shadow-sm border border-stone-100">
+        <span class="text-emerald-500 font-bold text-lg w-6">1.</span>
+        <p class="text-stone-700">배가 자주 아프다.</p>
+      </div>
+      <div class="flex gap-4 items-center p-3 bg-white rounded-xl shadow-sm border border-stone-100">
+        <span class="text-emerald-500 font-bold text-lg w-6">2.</span>
+        <p class="text-stone-700">머리가 자주 아프다.</p>
+      </div>
+      <div class="flex gap-4 items-center p-3 bg-white rounded-xl shadow-sm border border-stone-100">
+        <span class="text-emerald-500 font-bold text-lg w-6">3.</span>
+        <p class="text-stone-700">팔과 다리가 자주 아프다.</p>
+      </div>
+      <div class="flex gap-4 items-center p-3 bg-white rounded-xl shadow-sm border border-stone-100">
+        <span class="text-emerald-500 font-bold text-lg w-6">4.</span>
+        <p class="text-stone-700">몸살과 감기에 잘 걸린다.</p>
+      </div>
+      <div class="flex gap-4 items-center p-3 bg-white rounded-xl shadow-sm border border-stone-100">
+        <span class="text-emerald-500 font-bold text-lg w-6">5.</span>
+        <p class="text-stone-700">조금만 움직여도 땀을 많이 흘린다.</p>
+      </div>
+      <div class="flex gap-4 items-center p-3 bg-white rounded-xl shadow-sm border border-stone-100">
+        <span class="text-emerald-500 font-bold text-lg w-6">6.</span>
+        <p class="text-stone-700">자다가 경기를 자주 일으킨다.</p>
+      </div>
+      <div class="flex gap-4 items-center p-3 bg-white rounded-xl shadow-sm border border-stone-100">
+        <span class="text-emerald-500 font-bold text-lg w-6">7.</span>
+        <p class="text-stone-700">밤에 오줌을 자주 싼다.</p>
+      </div>
+      <div class="flex gap-4 items-center p-3 bg-white rounded-xl shadow-sm border border-stone-100">
+        <span class="text-emerald-500 font-bold text-lg w-6">8.</span>
+        <p class="text-stone-700">코피를 자주 흘린다.</p>
+      </div>
+    </div>
+    
+    <div class="text-center p-6 bg-rose-50 rounded-2xl border border-rose-100">
+        <p class="text-rose-700 font-bold text-lg">
+            ★ 위 항목 중 2가지 이상 해당되면 우리 아이가 허약하다는 신호입니다.
+        </p>
+    </div>
+  </div>
+
+  <!-- 섹션 3: 한약 치료의 효과 (인포그래픽) -->
+  <div class="space-y-12">
+    <div class="text-center">
+      <h2 class="text-2xl font-bold text-stone-800 mb-4">한약 치료로 우리 아이 튼튼하게 지켜주기</h2>
+      <p class="text-stone-600 max-w-3xl mx-auto leading-relaxed">
+        아이들에게 나타나는 여러 이상 증상들을 한약을 통해 잡아주고 <span class="text-emerald-700 font-bold underline underline-offset-4">건강한 성장을 할 수 있도록</span> 도와줄 수 있습니다.
+      </p>
+    </div>
+
+    <!-- 인포그래픽 영역 -->
+    <div class="max-w-5xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
+      
+      <!-- 성장 에너지 -->
+      <div class="w-full flex-1 bg-white border-2 border-emerald-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-emerald-100 transition-shadow">
+        <div class="bg-emerald-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-emerald-600 text-2xl font-bold">성장</div>
+        <h3 class="text-xl font-bold text-stone-800 mb-6 pb-2 border-b-2 border-stone-50">성장 에너지</h3>
+        <ul class="space-y-3 text-stone-600 font-medium">
+          <li>• 성장통 완화</li>
+          <li>• 균형 잡힌 성장</li>
+        </ul>
+      </div>
+
+      <div class="text-emerald-300 text-4xl font-light hidden lg:block">+</div>
+      <i class="fa-solid fa-plus text-emerald-300 lg:hidden text-2xl"></i>
+
+      <!-- 면역력 향상 -->
+      <div class="w-full flex-1 bg-emerald-600 rounded-2xl p-8 text-center shadow-xl transform scale-105 z-10">
+        <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold shadow-inner">면역</div>
+        <h3 class="text-xl font-bold text-white mb-6 pb-2 border-b-2 border-emerald-500/50">면역력 향상</h3>
+        <ul class="space-y-3 text-emerald-50 font-medium">
+          <li>• 잔병치레 개선</li>
+          <li>• 빠른 회복력</li>
+        </ul>
+      </div>
+
+      <div class="text-emerald-300 text-4xl font-light hidden lg:block">+</div>
+      <i class="fa-solid fa-plus text-emerald-300 lg:hidden text-2xl"></i>
+
+      <!-- 허약 체질개선 -->
+      <div class="w-full flex-1 bg-white border-2 border-emerald-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-emerald-100 transition-shadow">
+        <div class="bg-emerald-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-emerald-600 text-2xl font-bold">개선</div>
+        <h3 class="text-xl font-bold text-stone-800 mb-6 pb-2 border-b-2 border-stone-50">허약 체질개선</h3>
+        <ul class="space-y-3 text-stone-600 font-medium">
+          <li>• 잦은 코피 개선</li>
+          <li>• 야뇨증 개선</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 
 </section>
 
-
-<footer class="py-8 text-center text-sm text-gray-500 border-t">
-  Tel.  02 ) 905 - 7553 서울시 도봉구 도당로 7 벽산 송화프라자 3층 <br><br>
-  사업자명  경희부연한의원  대표  전진영    사업자번호  210-92-17097<br>
-  COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED
+<!-- =========================================================
+5️⃣ 푸터 (Clinic Info 반영)
+========================================================= -->
+<footer class="py-12 text-center text-sm text-stone-400 bg-white border-t">
+  <div class="max-w-6xl mx-auto px-4 leading-loose">
+    <p class="text-stone-600 font-bold mb-4">Tel. 02 ) 905 - 7553 | 서울시 도봉구 도봉로 7 벽산 송화프라자 3층</p>
+    <p>사업자명: 경희부연한의원 | 대표: 전진영 | 사업자번호: 210-92-17097</p>
+    <p class="text-xs uppercase tracking-widest mt-2 italic">COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED</p>
+  </div>
 </footer>
 
 <script>
-  // 모바일 메뉴 토글
   function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    if (menu) {
-      menu.classList.toggle('hidden');
-      menu.classList.toggle('flex');
-    }
+    const m = document.getElementById('mobileMenu');
+    m.classList.toggle('hidden'); m.classList.toggle('flex');
   }
 
-  // 상단 가로 스크롤 화살표 업데이트
   const scrollContainer = document.getElementById('menuScroll');
-  const leftArrow = document.getElementById('leftArrow');
-  const rightArrow = document.getElementById('rightArrow');
-
-  function updateArrows() {
-    if (!scrollContainer) return;
-    const scrollLeft = scrollContainer.scrollLeft;
-    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-    if (leftArrow) leftArrow.style.opacity = scrollLeft > 10 ? "1" : "0";
-    if (rightArrow) rightArrow.style.opacity = scrollLeft < maxScroll - 10 ? "1" : "0";
-  }
-
   if (scrollContainer) {
-    scrollContainer.addEventListener('scroll', updateArrows);
-    window.addEventListener('load', updateArrows);
-    window.addEventListener('resize', updateArrows);
+    window.addEventListener('load', () => {
+      const activeMenu = scrollContainer.querySelector('.font-bold');
+      if (activeMenu) {
+        activeMenu.scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+      }
+    });
   }
 </script>
 
-<div class="fixed bottom-0 left-0 right-0 z-[60] md:hidden">
-  <div class="flex h-16 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
-    
-    <a href="tel:02-905-7553" 
-       class="flex-1 bg-stone-800 text-white flex items-center justify-center gap-2 active:bg-stone-900 transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-      </svg>
-      <span class="font-bold tracking-tight">전화상담</span>
-    </a>
-
-    <a href="/location.html" 
-       target="_blank"
-       class="flex-1 bg-green-600 text-white flex items-center justify-center gap-2 active:bg-green-700 transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-      <span class="font-bold tracking-tight">오시는길</span>
-    </a>
-
-  </div>
-</div>
-
-<style>
-  @media (max-width: 768px) {
-    body { padding-bottom: 64px; }
-  }
-</style>
-
-
-  
 </body>
 </html>
