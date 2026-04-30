@@ -251,42 +251,50 @@ body {
 
 </div>
 
- <!-- 섹션 3: 한의원 치료요법 (수정 버전) -->
+<!-- 섹션 3: 한의원 치료요법 (약침 추가 및 4분할 레이아웃) -->
 <div class="bg-stone-50 p-8 md:p-12 rounded-[3rem] border border-stone-200">
-  <h2 class="text-2xl font-bold mb-10 text-stone-800 text-center">
+  <h2 class="text-2xl font-bold mb-10 text-stone-800 text-center font-['GmarketSans']">
     경희부연한의원의 치료요법
   </h2>
 
-  <!-- 이미지 영역 (기존 경로 유지) -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-    <div class="group overflow-hidden rounded-2xl shadow-lg bg-white p-2 text-center">
-      <img src="/pain-acu.JPG" alt="침 치료" class="w-full h-48 object-cover rounded-xl">
-      <p class="mt-3 font-bold text-stone-600">침 치료</p>
+  <!-- 이미지 영역 (4분할로 수정) -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+    <!-- 침 치료 -->
+    <div class="group overflow-hidden rounded-2xl shadow-lg bg-white p-2 text-center border border-stone-100">
+      <img src="/pain-acu.JPG" alt="침 치료" class="w-full h-32 md:h-40 object-cover rounded-xl transition-transform group-hover:scale-105">
+      <p class="mt-3 font-bold text-stone-600 text-sm md:text-base">침 치료</p>
     </div>
-    <div class="group overflow-hidden rounded-2xl shadow-lg bg-white p-2 text-center">
-      <img src="/pain-moxa.JPG" alt="뜸 치료" class="w-full h-48 object-cover rounded-xl">
-      <p class="mt-3 font-bold text-stone-600">뜸 치료</p>
+    <!-- 뜸 치료 -->
+    <div class="group overflow-hidden rounded-2xl shadow-lg bg-white p-2 text-center border border-stone-100">
+      <img src="/pain-moxa.JPG" alt="뜸 치료" class="w-full h-32 md:h-40 object-cover rounded-xl transition-transform group-hover:scale-105">
+      <p class="mt-3 font-bold text-stone-600 text-sm md:text-base">뜸 치료</p>
     </div>
-    <div class="group overflow-hidden rounded-2xl shadow-lg bg-white p-2 text-center">
-      <img src="/pain-cup.JPG" alt="부항 치료" class="w-full h-48 object-cover rounded-xl">
-      <p class="mt-3 font-bold text-stone-600">부항 치료</p>
+    <!-- 부항 치료 -->
+    <div class="group overflow-hidden rounded-2xl shadow-lg bg-white p-2 text-center border border-stone-100">
+      <img src="/pain-cup.JPG" alt="부항 치료" class="w-full h-32 md:h-40 object-cover rounded-xl transition-transform group-hover:scale-105">
+      <p class="mt-3 font-bold text-stone-600 text-sm md:text-base">부항 치료</p>
+    </div>
+    <!-- 약침 치료 (새로 추가됨) -->
+    <div class="group overflow-hidden rounded-2xl shadow-lg bg-white p-2 text-center border border-stone-100">
+      <img src="/pain_inj.jpg" alt="약침 치료" class="w-full h-32 md:h-40 object-cover rounded-xl transition-transform group-hover:scale-105">
+      <p class="mt-3 font-bold text-blue-700 text-sm md:text-base">약침 치료</p>
     </div>
   </div>
 
-  <!-- 🚨 문제의 박스 영역: 글자색을 진하게 수정했습니다 -->
-  <div class="flex flex-col gap-4 max-w-2xl mx-auto">
-    <!-- 침/뜸/부항 박스 -->
-    <div class="bg-white px-8 py-6 rounded-2xl shadow-sm border border-stone-100 text-center flex items-center justify-center gap-4">
-      <span class="font-bold text-2xl text-stone-900">침 · 뜸 · 부항</span>
-      <span class="text-stone-300 text-2xl">|</span>
-      <span class="text-stone-600 text-lg">기혈순환을 통한 통증완화</span>
+  <!-- 하단 요약 박스 -->
+  <div class="flex flex-col gap-4 max-w-3xl mx-auto">
+    <!-- 기본 물리치료 박스 -->
+    <div class="bg-white px-6 py-5 rounded-2xl shadow-sm border border-stone-100 text-center flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+      <span class="font-bold text-xl text-stone-900">침 · 뜸 · 부항 · 약침</span>
+      <span class="hidden md:inline text-stone-300 text-xl">|</span>
+      <span class="text-stone-600 font-medium">기혈순환 및 염증 억제를 통한 통증 완화</span>
     </div>
 
-    <!-- 한약 요법 박스: 배경을 포인트 컬러로 넣어 뚜렷하게 강조 -->
-    <div class="bg-blue-900 px-8 py-6 rounded-2xl shadow-md text-center flex items-center justify-center gap-4">
-      <span class="font-bold text-2xl text-white">한약 요법</span>
-      <span class="text-blue-400 text-2xl">|</span>
-      <span class="text-white/90 text-lg font-medium">근본원인을 개선하여 재발을 방지</span>
+    <!-- 한약 요법 박스 -->
+    <div class="bg-blue-900 px-6 py-5 rounded-2xl shadow-md text-center flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+      <span class="font-bold text-xl text-white">한약 요법</span>
+      <span class="hidden md:inline text-blue-400 text-xl">|</span>
+      <span class="text-white/90 font-medium font-['GmarketSans']">근본원인을 개선하여 재발을 방지</span>
     </div>
   </div>
 </div>
