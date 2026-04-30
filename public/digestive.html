@@ -4,215 +4,289 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>소화불량 클리닉 | 경희부연한의원</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
-    @font-face {
-      font-family: 'GmarketSans';
-      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      line-height: 1.7;
     }
-    body { font-family: 'Pretendard', sans-serif; word-break: keep-all; }
+    /* 가로 스크롤바 숨기기 */
+    .hide-scroll::-webkit-scrollbar { display: none; }
+    .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    .nav-gradient-left { background: linear-gradient(to right, white, transparent); }
+    .nav-gradient-right { background: linear-gradient(to left, white, transparent); }
+
+    /* 하단 바 공간 확보 */
+    @media (max-width: 768px) {
+      body { padding-bottom: 64px; }
+    }
   </style>
 </head>
-<body class="bg-white text-stone-900">
 
-  <!-- [1] 내비게이션 바 (공통 템플릿) -->
-  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-100">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <img src="/logo.png" alt="경희부연 로고" class="h-10">
-        <span class="text-xl font-bold tracking-tight text-stone-800 font-['GmarketSans']">경희부연한의원</span>
-      </div>
-      <div class="hidden md:flex items-center gap-8 font-medium text-stone-600">
-        <a href="#" class="hover:text-blue-900 transition-colors">한의원 소개</a>
-        <a href="#" class="hover:text-blue-900 transition-colors">비만</a>
-        <a href="#" class="hover:text-blue-900 transition-colors">비염</a>
-        <a href="#" class="hover:text-blue-900 transition-colors">통증</a>
-        <a href="#" class="text-blue-900 font-bold border-b-2 border-blue-900">소화불량</a>
-        <a href="#" class="hover:text-blue-900 transition-colors">교통사고</a>
-      </div>
-      <button class="md:hidden text-2xl text-stone-800"><i class="fa-solid fa-bars"></i></button>
+<body class="bg-white text-gray-800">
+
+<!-- =========================================================
+1️⃣ 상단 헤더 (공통)
+========================================================= -->
+<header class="w-full border-b bg-white sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+    <div class="text-lg font-semibold whitespace-nowrap">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-10 w-auto object-contain block">
+        <span class="text-stone-900">경희부연한의원 HOME</span>
+      </a>
     </div>
-  </nav>
+    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm font-medium">
+      <a href="about.html">소개</a>
+      <a href="obesity.html">비만</a>
+      <a href="rhinitis.html">비염</a>
+      <a href="pain.html">통증</a>
+      <a href="digestive.html" class="text-blue-700">소화불량</a>
+      <a href="rls.html">하지불안</a>
+      <a href="postnatal.html">산후보양</a>
+      <a href="pediatric.html">소아보양</a>
+      <a href="accident.html">교통사고</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+  </div>
 
-  <!-- [2] 히로 섹션 -->
-  <header class="py-24 bg-gradient-to-b from-blue-50/50 to-white overflow-hidden">
-    <div class="max-w-6xl mx-auto px-6 text-center relative">
-      <div class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-bold mb-6">INDIGESTION CLINIC</div>
-      <h1 class="text-3xl md:text-5xl font-extrabold text-stone-900 font-['GmarketSans'] leading-tight mb-6">
-        "난 소화는 잘 되는 편이야!" <br>
-        <span class="text-blue-700">자신 있으신가요?</span>
-      </h1>
-      <p class="text-lg md:text-xl text-stone-500 font-medium max-w-2xl mx-auto">
-        방심하지 말고 지금부터 체계적으로 관리하세요. <br class="hidden md:block">
-        경희부연한의원이 속 편한 일상을 되찾아 드립니다.
-      </p>
-      <!-- 배경 장식 이미지 (image_1d37f9.jpg 참고하여 캐릭터 배치 가능) -->
-      <div class="mt-12 flex justify-center opacity-80">
-         <i class="fa-solid fa-stomach text-9xl text-blue-100/50"></i>
-      </div>
+  <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
+    <a href="index.html" class="py-2 border-b">홈</a>
+    <a href="about.html" class="py-2 border-b">소개</a>
+    <a href="accident.html" class="py-2 border-b">교통사고</a>
+    <a href="faq.html" class="py-2">FAQ</a>
+  </div>
+</header>
+
+<!-- =========================================================
+2️⃣ 모바일 가로 스크롤 네비게이션 (공통)
+========================================================= -->
+<nav class="sticky top-[73px] md:top-[81px] z-40 w-full bg-white border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-2 relative group">
+    <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-2 nav-gradient-left opacity-0 transition-opacity pointer-events-none">
+      <span class="text-stone-400 text-xl">❮</span>
     </div>
-  </header>
-
-  <!-- [3] 소화불량 대표 증상 (섹션) -->
-  <section class="py-20 px-6 max-w-6xl mx-auto">
-    <div class="bg-white border border-stone-100 rounded-[3rem] p-8 md:p-16 shadow-xl shadow-stone-100/50">
-      <h2 class="text-2xl font-bold mb-12 text-stone-800 flex items-center gap-3 font-['GmarketSans']">
-        <span class="bg-blue-900 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">?</span>
-        소화불량의 대표 증상
-      </h2>
-
-      <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
-        <ul class="space-y-4">
-          <li class="flex items-start gap-4 p-5 rounded-2xl bg-stone-50/50 border border-transparent hover:border-blue-100 hover:bg-blue-50/30 transition-all">
-            <span class="text-blue-600 font-bold">01</span>
-            <p class="text-stone-700 leading-relaxed">식사가 끝난 한참 뒤에도 <strong class="text-blue-900 underline decoration-blue-200 decoration-4 underline-offset-4 font-bold">위에 음식이 남아있는 것 같다.</strong></p>
-          </li>
-          <li class="flex items-start gap-4 p-5 rounded-2xl bg-stone-50/50 transition-all">
-            <span class="text-blue-600 font-bold">02</span>
-            <p class="text-stone-700 leading-relaxed">식사를 시작하면 <strong class="text-red-500 font-bold">금방 배가 불러</strong> 더 먹을 수가 없다.</p>
-          </li>
-          <li class="flex items-start gap-4 p-5 rounded-2xl bg-stone-50/50 transition-all">
-            <span class="text-blue-600 font-bold">03</span>
-            <p class="text-stone-700 leading-relaxed">배가 <strong class="text-red-500 font-bold">빵빵하게 부푼 느낌</strong> 또는 <strong class="text-red-500 font-bold">더부룩한 느낌</strong>이 있다.</p>
-          </li>
-          <li class="flex items-start gap-4 p-5 rounded-2xl bg-stone-50/50 transition-all">
-            <span class="text-blue-600 font-bold">04</span>
-            <p class="text-stone-700 leading-relaxed">토할 것 같이 <strong class="text-red-600 font-bold">미식거린다.</strong></p>
-          </li>
-        </ul>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-4 p-5 rounded-2xl bg-stone-50/50 transition-all">
-            <span class="text-blue-600 font-bold">05</span>
-            <p class="text-stone-700 leading-relaxed"><strong class="text-red-600 font-bold">명치</strong>에 불편한 느낌이 있다.</p>
-          </li>
-          <li class="flex items-start gap-4 p-5 rounded-2xl bg-stone-50/50 transition-all">
-            <span class="text-blue-600 font-bold">06</span>
-            <p class="text-stone-700 leading-relaxed">속이 종종 <strong class="text-red-600 font-bold">쓰리곤 한다.</strong></p>
-          </li>
-          <li class="flex items-start gap-4 p-5 rounded-2xl bg-stone-50/50 transition-all border-2 border-red-50">
-            <span class="text-blue-600 font-bold">07</span>
-            <div>
-              <p class="text-stone-700 leading-relaxed">식사 시간이 되어도 <strong class="text-red-600 font-bold underline underline-offset-4">배가 고프지 않다.</strong></p>
-              <p class="text-xs text-stone-400 mt-1">(먹긴 하지만 배가 고픈 건 아닙니다)</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-4 space-x-7 text-[15px] hide-scroll md:justify-center">
+      <li><a href="/about.html" class="text-gray-400">소개</a></li>
+      <li><a href="/obesity.html" class="text-gray-400">비만</a></li>
+      <li><a href="/rhinitis.html" class="text-gray-400">비염</a></li>
+      <li><a href="/pain.html" class="text-gray-400">통증</a></li>
+      <!-- 현재 페이지 활성화 (소화불량) -->
+      <li><a href="/digestive.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[13px]">소화불량</a></li>
+      <li><a href="/rls.html" class="text-gray-400">하지불안</a></li>
+      <li><a href="/postnatal.html" class="text-gray-400">산후보양</a></li>
+      <li><a href="/pediatric.html" class="text-gray-400">소아보양</a></li>
+      <li><a href="/accident.html" class="text-gray-400">교통사고</a></li>
+      <li><a href="/location.html" class="text-gray-400">오시는길</a></li>
+      <li><a href="/faq.html" class="text-gray-400">FAQ</a></li>
+    </ul>
+    <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right opacity-100 transition-opacity pointer-events-none">
+      <span class="text-stone-400 text-xl">❯</span>
     </div>
-  </section>
+  </div>
+</nav>
 
-  <!-- [4] 한방치료가 꼭 필요한 이유 (인포그래픽 섹션) -->
-  <section class="py-20 bg-stone-50 px-6">
-    <div class="max-w-6xl mx-auto space-y-16">
-      <div class="text-center space-y-4">
-        <h2 class="text-3xl font-bold text-stone-900 font-['GmarketSans']">한방치료가 꼭 필요한 이유</h2>
-        <p class="text-stone-600 text-lg leading-relaxed">
-          단순히 증상만 억제하는 <span class="text-red-500 font-bold">일시적 완화</span>가 아닌, <br class="md:hidden">
-          <span class="text-stone-900 font-bold underline decoration-blue-400 decoration-4 underline-offset-4">근본 치료</span>를 통해 위장의 회복에 힘씁니다.
-        </p>
-      </div>
+<!-- =========================================================
+3️⃣ HERO Section
+========================================================= -->
+<section class="bg-stone-50 py-24 text-center px-4">
+  <h1 class="text-3xl md:text-5xl font-bold mb-4 text-stone-900 tracking-tight">
+    "난 소화는 잘 되는 편이야!"
+  </h1>
+  <p class="text-lg md:text-2xl text-blue-700 font-medium">
+    자신 있으신가요? 방심하지 말고 관리하세요!
+  </p>
+</section>
 
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <!-- 기존 방식 -->
-        <div class="bg-white p-10 rounded-[2.5rem] border border-stone-200 shadow-sm text-center">
-          <div class="text-stone-400 font-bold mb-8 uppercase tracking-widest text-sm">Case A: 제산제 복용</div>
-          <div class="flex flex-col items-center gap-6">
-            <div class="w-full py-4 bg-stone-100 rounded-xl text-stone-800 font-bold">위산 과다분비</div>
-            <i class="fa-solid fa-arrow-down text-stone-300"></i>
-            <div class="w-full py-4 bg-blue-900 text-white rounded-xl font-bold">제산제 복용</div>
-            <i class="fa-solid fa-arrow-down text-stone-300"></i>
-            <div class="flex gap-4 w-full">
-              <div class="flex-1 py-3 border border-stone-100 rounded-lg text-sm text-stone-400">불편감 해소</div>
-              <div class="flex-1 py-3 border border-stone-100 rounded-lg text-sm text-stone-400">산성도 하락</div>
-            </div>
-            <div class="mt-4 text-red-500 font-bold">
-              "회복되지 못한 위장은 계속 반복됩니다"
-            </div>
+<!-- =========================================================
+4️⃣ Main Content
+========================================================= -->
+<section class="py-20 px-4 max-w-5xl mx-auto space-y-24">
+
+  <!-- 섹션 1: 대표 증상 -->
+  <div>
+    <h2 class="text-2xl font-bold mb-8 text-stone-800 flex items-center gap-2">
+      <span class="w-2 h-6 bg-blue-600 block rounded-sm"></span> 소화불량의 대표 증상
+    </h2>
+    <div class="grid md:grid-cols-2 gap-6 bg-white p-8 rounded-3xl shadow-sm border border-stone-100">
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3 text-stone-700">
+          <span class="text-blue-500 font-bold">1.</span>
+          <span>식사가 끝난 한참 뒤에도 <strong class="text-blue-900 underline decoration-blue-200 decoration-4 underline-offset-4">위에 음식이 남아있는 것 같다.</strong></span>
+        </li>
+        <li class="flex items-start gap-3 text-stone-700">
+          <span class="text-blue-500 font-bold">2.</span>
+          <span>식사를 시작하면 <strong class="text-red-500 font-bold">금방 배가 불러</strong> 더 먹을 수가 없다.</span>
+        </li>
+        <li class="flex items-start gap-3 text-stone-700">
+          <span class="text-blue-500 font-bold">3.</span>
+          <span>배가 <strong class="text-red-500 font-bold">빵빵하게 부푼 느낌</strong> 또는 <strong class="text-red-500 font-bold">더부룩한 느낌</strong>이 있다.</span>
+        </li>
+        <li class="flex items-start gap-3 text-stone-700">
+          <span class="text-blue-500 font-bold">4.</span>
+          <span>토할 것 같이 <strong class="text-red-600 font-bold">미식거린다.</strong></span>
+        </li>
+      </ul>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3 text-stone-700">
+          <span class="text-blue-500 font-bold">5.</span>
+          <span><strong class="text-red-600 font-bold">명치</strong>에 불편한 느낌이 있다.</span>
+        </li>
+        <li class="flex items-start gap-3 text-stone-700">
+          <span class="text-blue-500 font-bold">6.</span>
+          <span>속이 종종 <strong class="text-red-600 font-bold">쓰리곤 한다.</strong></span>
+        </li>
+        <li class="flex items-start gap-3 text-stone-700">
+          <span class="text-blue-500 font-bold">7.</span>
+          <span>식사 시간이 되어도 <strong class="text-red-600 font-bold">배가 고프지 않다.</strong><br><span class="text-xs text-stone-400">(먹긴 하지만 배가 고픈 건 아니다)</span></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 섹션 2: 한방치료가 필요한 이유 -->
+  <div>
+    <h2 class="text-2xl font-bold mb-8 text-stone-800 flex items-center gap-2">
+      <span class="w-2 h-6 bg-blue-600 block rounded-sm"></span> 한방치료가 꼭 필요한 이유
+    </h2>
+    <p class="text-stone-700 leading-loose mb-12">
+      단순히 불편한 증상만 잠시 가려주고 억제하는 <span class="text-red-500 font-bold text-lg">일시적 완화가 아닌</span>,<br>
+      근본 치료를 통해서 위장의 회복에 힘씁니다.
+    </p>
+
+    <!-- 비교 인포그래픽 -->
+    <div class="grid md:grid-cols-2 gap-8 items-stretch">
+      <!-- 기존 방식 -->
+      <div class="bg-stone-50 border border-stone-200 p-8 rounded-3xl text-center">
+        <div class="text-stone-400 font-bold text-sm mb-6">위산 과다분비로 인한 소화불량</div>
+        <div class="space-y-4">
+          <div class="bg-white border-2 border-stone-100 p-4 rounded-xl text-stone-600 font-bold">위산 과다분비</div>
+          <i class="fa-solid fa-arrow-down text-stone-300"></i>
+          <div class="bg-stone-800 text-white p-4 rounded-xl font-bold">제산제 복용</div>
+          <div class="grid grid-cols-2 gap-3 mt-4">
+            <div class="bg-white p-3 rounded-lg text-xs text-stone-400">불편감 해소</div>
+            <div class="bg-white p-3 rounded-lg text-xs text-stone-400">산성도 하락</div>
           </div>
+          <p class="text-red-500 text-sm mt-4 font-bold">"BUT, 회복되지 못한 위장은 계속 반복"</p>
         </div>
-
-        <!-- 경희부연 방식 (image_1d37f9.jpg의 VS 우측 부분) -->
-        <div class="bg-blue-900 p-10 rounded-[2.5rem] shadow-2xl text-center relative overflow-hidden">
-          <div class="text-blue-300 font-bold mb-8 uppercase tracking-widest text-sm">Case B: 경희부연 근본치료</div>
-          <div class="flex flex-col items-center gap-6 relative z-10">
-            <div class="w-full py-5 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white font-medium">
-              <span class="text-blue-300 font-bold">침 또는 한약</span>으로 <br> 위장에 에너지 공급
-            </div>
-            <i class="fa-solid fa-plus text-blue-500 text-2xl"></i>
-            <div class="w-full py-5 bg-white rounded-2xl text-blue-900 font-bold text-xl shadow-xl">
-              위장의 운동능력을 <br> 자연적으로 회복
-            </div>
-            <i class="fa-solid fa-arrow-down text-blue-500"></i>
-            <div class="w-full py-5 bg-white/10 border border-white/20 rounded-2xl text-white">
-              회복된 위장 스스로 <br> <span class="font-bold">위산을 조절</span>
-            </div>
-            <div class="mt-4 text-blue-300 font-bold text-lg">
-              <i class="fa-solid fa-circle-check mr-2"></i>생활관리로 편안함 유지
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- [5] 합병증 알림 섹션 -->
-  <section class="py-20 px-6 max-w-6xl mx-auto">
-    <div class="bg-stone-900 rounded-[3rem] p-10 md:p-16 relative overflow-hidden">
-      <div class="relative z-10 flex flex-col md:flex-row gap-12 items-center">
-        <div class="flex-1 text-white space-y-6">
-          <h2 class="text-3xl font-bold font-['GmarketSans'] leading-tight">
-            근본 치료가 되지 않아 <br>
-            <span class="text-red-500">발생할 수 있는 질병</span>
-          </h2>
-          <p class="text-stone-400 text-lg">소화불량을 방치하면 전신 건강이 무너질 수 있습니다.</p>
-        </div>
-        <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-          <div class="p-5 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors">
-            <i class="fa-solid fa-circle-exclamation text-red-500"></i>
-            <span class="text-white font-medium">심한 복통</span>
-          </div>
-          <div class="p-5 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors">
-            <i class="fa-solid fa-circle-exclamation text-red-500"></i>
-            <span class="text-white font-medium text-sm md:text-base">비염 (콧물, 코막힘 등)</span>
-          </div>
-          <div class="p-5 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors">
-            <i class="fa-solid fa-circle-exclamation text-red-500"></i>
-            <span class="text-white font-medium">어지럼증 및 두통</span>
-          </div>
-          <div class="p-5 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors">
-            <i class="fa-solid fa-circle-exclamation text-red-500"></i>
-            <span class="text-white font-medium">역류성 식도염 증상</span>
-          </div>
+      <!-- 경희부연 방식 -->
+      <div class="bg-blue-50 border-2 border-blue-100 p-8 rounded-3xl text-center shadow-sm relative overflow-hidden">
+        <div class="text-blue-700 font-bold text-sm mb-6">경희부연의 근본 회복 치료</div>
+        <div class="space-y-4 relative z-10">
+          <div class="bg-white p-4 rounded-xl text-blue-900 font-bold border border-blue-100">침 또는 한약으로 <br> 위장에 에너지 공급</div>
+          <i class="fa-solid fa-arrow-down text-blue-300"></i>
+          <div class="bg-blue-600 text-white p-4 rounded-xl font-bold shadow-lg">위장의 운동능력을 <br> 자연적으로 회복</div>
+          <i class="fa-solid fa-arrow-down text-blue-300"></i>
+          <div class="bg-white p-4 rounded-xl text-blue-900 font-bold border border-blue-100">회복된 위장 스스로 <br> 위산을 조절</div>
+          <p class="text-blue-600 font-bold mt-4">"생활관리로 편안함 유지"</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- [6] 푸터 (공통 템플릿) -->
-  <footer class="bg-stone-50 border-t border-stone-200 py-16 px-6 text-stone-600">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-      <div class="space-y-6">
-        <div class="flex items-center gap-2">
-          <img src="/logo.png" alt="경희부연 로고" class="h-8 grayscale opacity-50">
-          <span class="text-lg font-bold font-['GmarketSans']">경희부연한의원</span>
-        </div>
-        <p class="text-sm leading-relaxed max-w-sm">
-          정성을 다하는 진료로 환자분들의 몸과 마음을 치유하겠습니다. <br>
-          경희부연은 근본 치료를 최우선으로 합니다.
-        </p>
+  <!-- 섹션 3: 방치 시 위험 질병 (검은색 박스 리뉴얼) -->
+  <div class="bg-stone-900 rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden">
+    <div class="relative z-10 flex flex-col md:flex-row gap-12 items-center">
+      <div class="flex-1 text-white space-y-6">
+        <h2 class="text-3xl font-bold leading-tight">
+          근본 치료가 되지 않아 <br>
+          <span class="text-red-500 font-extrabold">발생할 수 있는 질병</span>
+        </h2>
+        <p class="text-stone-400 text-lg">소화불량을 방치하면 전신 건강이 무너질 수 있습니다.</p>
       </div>
-      <div class="space-y-4">
-        <p class="text-sm"><strong>주소:</strong> 서울시 도봉구 도봉로 7 벽산 송화프라자 3층</p>
-        <p class="text-sm"><strong>전화:</strong> 02-XXX-XXXX</p>
-        <p class="text-sm"><strong>대표:</strong> 원장님 성함</p>
-        <p class="text-xs text-stone-400 mt-8">© 2026 Kyunghee Buyeon Korean Medicine Clinic. All rights reserved.</p>
+      <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+        <div class="p-6 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors">
+          <i class="fa-solid fa-circle-exclamation text-red-500"></i>
+          <span class="text-white font-medium">심한 복통</span>
+        </div>
+        <div class="p-6 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors">
+          <i class="fa-solid fa-circle-exclamation text-red-500"></i>
+          <span class="text-white font-medium">비염 (콧물, 코막힘 등)</span>
+        </div>
+        <div class="p-6 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors">
+          <i class="fa-solid fa-circle-exclamation text-red-500"></i>
+          <span class="text-white font-medium">어지럼증 및 두통</span>
+        </div>
+        <div class="p-6 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors">
+          <i class="fa-solid fa-circle-exclamation text-red-500"></i>
+          <span class="text-white font-medium">역류성 식도염 증상</span>
+        </div>
       </div>
     </div>
-  </footer>
+  </div>
+
+</section>
+
+<!-- =========================================================
+🚀 하단 고정 액션 바 (모바일 전용 - 공통)
+========================================================= -->
+<div class="fixed bottom-0 left-0 right-0 z-[60] md:hidden">
+  <div class="flex h-16 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
+    <a href="tel:02-905-7553" class="flex-1 bg-stone-800 text-white flex items-center justify-center gap-2 active:bg-stone-900 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+      </svg>
+      <span class="font-bold tracking-tight">전화상담</span>
+    </a>
+    <a href="/location.html" target="_blank" class="flex-1 bg-green-600 text-white flex items-center justify-center gap-2 active:bg-green-700 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+      <span class="font-bold tracking-tight">오시는길</span>
+    </a>
+  </div>
+</div>
+
+<!-- =========================================================
+5️⃣ 푸터 (비만 페이지 공통 푸터 반영)
+========================================================= -->
+<footer class="py-12 text-center text-sm text-gray-400 bg-white border-t">
+  <div class="max-w-6xl mx-auto px-4 leading-loose">
+    <p class="text-gray-500 font-medium mb-4">Tel. 02 ) 905 - 7553 | 서울시 도봉구 도당로 7 벽산 송화프라자 3층</p>
+    <p>사업자명: 경희부연한의원 | 대표: 전진영 | 사업자번호: 210-92-17097</p>
+    <p class="text-xs uppercase tracking-widest mt-2">COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED</p>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const m = document.getElementById('mobileMenu');
+    m.classList.toggle('hidden'); m.classList.toggle('flex');
+  }
+
+  const scrollContainer = document.getElementById('menuScroll');
+  const leftArrow = document.getElementById('leftArrow');
+  const rightArrow = document.getElementById('rightArrow');
+
+  function updateArrows() {
+    if (!scrollContainer) return;
+    const sL = scrollContainer.scrollLeft;
+    const mS = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    if (leftArrow) leftArrow.style.opacity = sL > 10 ? "1" : "0";
+    if (rightArrow) rightArrow.style.opacity = sL < mS - 10 ? "1" : "0";
+  }
+
+  if (scrollContainer) {
+    scrollContainer.addEventListener('scroll', updateArrows);
+    window.addEventListener('load', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    
+    window.addEventListener('load', () => {
+      const activeMenu = scrollContainer.querySelector('.font-bold');
+      if (activeMenu) {
+        activeMenu.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
