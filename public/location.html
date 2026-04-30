@@ -1,238 +1,288 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>오시는 길 | 경희부연한의원</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오시는 길 | 경희부연한의원</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<style>
-body {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-  line-height: 1.7;
-}
-/* 가로 스크롤바 숨기기 */
-.hide-scroll::-webkit-scrollbar { display: none; }
-.hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-.nav-gradient-left { background: linear-gradient(to right, white, transparent); }
-.nav-gradient-right { background: linear-gradient(to left, white, transparent); }
-
-/* 하단 바 공간 확보 */
-@media (max-width: 768px) {
-  body { padding-bottom: 64px; }
-}
-</style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+    .hide-scroll::-webkit-scrollbar { display: none; }
+    .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    .nav-gradient-left { background: linear-gradient(to right, white, transparent); }
+    .nav-gradient-right { background: linear-gradient(to left, white, transparent); }
+    
+    @media (max-width: 768px) {
+      body { padding-bottom: 64px; }
+    }
+  </style>
 </head>
 
-<body class="bg-white text-gray-800">
+<body class="bg-stone-50 text-stone-800">
 
+<!-- =========================================================
+1️⃣ 상단 헤더
+========================================================= -->
 <header class="w-full border-b bg-white sticky top-0 z-50">
   <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
     <div class="text-lg font-semibold whitespace-nowrap">
-      <a href="index.html" class="flex items-center gap-2">
-        <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-8 w-auto object-contain">
-        <span>경희부연한의원 HOME</span>
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-9 w-auto object-contain block">
+        <span class="text-stone-900 tracking-tight">경희부연한의원 <span class="font-normal text-stone-500 text-sm ml-1">HOME</span></span>
       </a>
     </div>
-    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm font-medium">
-      <a href="about.html">소개</a>
-      <a href="obesity.html">비만</a>
-      <a href="rhinitis.html">비염</a>
-      <a href="pain.html">통증</a>
-      <a href="digestive.html">소화불량</a>
-      <a href="rls.html">하지불안</a>
-      <a href="postnatal.html">산후보양</a>
-      <a href="pediatric.html">소아보양</a>
-      <a href="accident.html">교통사고</a>
-      <a href="faq.html">FAQ</a>
+    
+    <nav class="hidden md:flex flex-wrap justify-end gap-5 text-[15px] font-medium text-stone-600">
+      <a href="about.html" class="hover:text-slate-800 transition-colors">소개</a>
+      <a href="obesity.html" class="hover:text-slate-800 transition-colors">비만</a>
+      <a href="rhinitis.html" class="hover:text-slate-800 transition-colors">비염</a>
+      <a href="pain.html" class="hover:text-slate-800 transition-colors">통증</a>
+      <a href="digestive.html" class="hover:text-slate-800 transition-colors">소화불량</a>
+      <a href="rls.html" class="hover:text-slate-800 transition-colors">하지불안</a>
+      <a href="postnatal.html" class="hover:text-slate-800 transition-colors">산후보양</a>
+      <a href="pediatric.html" class="hover:text-slate-800 transition-colors">소아보양</a>
+      <a href="accident.html" class="hover:text-slate-800 transition-colors">교통사고</a>
+      <a href="faq.html" class="hover:text-slate-800 transition-colors">FAQ</a>
     </nav>
-    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+    
+    <button onclick="toggleMenu()" class="md:hidden text-2xl text-stone-600">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </div>
 
-  <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
-    <a href="index.html" class="py-2 border-b">홈</a>
-    <a href="about.html" class="py-2 border-b">소개</a>
-    <a href="accident.html" class="py-2 border-b">교통사고</a>
-    <a href="faq.html" class="py-2">FAQ</a>
+  <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white font-medium text-stone-700">
+    <a href="about.html" class="py-3 border-b">한의원 소개</a>
+    <a href="obesity.html" class="py-3 border-b">비만</a>
+    <a href="rhinitis.html" class="py-3 border-b">비염</a>
+    <a href="pain.html" class="py-3 border-b">통증</a>
+    <a href="digestive.html" class="py-3 border-b">소화불량</a>
+    <a href="rls.html" class="py-3 border-b">하지불안증후군</a>
+    <a href="postnatal.html" class="py-3 border-b">산후보양</a>
+    <a href="pediatric.html" class="py-3 border-b">소아보양</a>
+    <a href="accident.html" class="py-3 border-b">교통사고</a>
+    <a href="faq.html" class="py-3">FAQ</a>
   </div>
 </header>
 
-<nav class="sticky top-0 z-40 w-full bg-white border-b border-gray-100 shadow-sm">
+<!-- =========================================================
+2️⃣ 모바일 가로 스크롤 네비게이션
+========================================================= -->
+<nav class="sticky top-[69px] md:top-[77px] z-40 w-full bg-white border-b border-gray-100 shadow-sm md:hidden">
   <div class="max-w-6xl mx-auto px-2 relative group">
-    <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-2 nav-gradient-left opacity-0 transition-opacity pointer-events-none">
-      <span class="text-stone-400 text-xl">❮</span>
-    </div>
-    <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-4 space-x-7 text-[15px] hide-scroll md:justify-center">
-      <li><a href="/about.html" class="text-gray-400">소개</a></li>
-      <li><a href="/obesity.html" class="text-gray-400">비만</a></li>
-      <li><a href="/rhinitis.html" class="text-gray-400">비염</a></li>
-      <li><a href="/pain.html" class="text-gray-400">통증</a></li>
-      <li><a href="/digestive.html" class="text-gray-400">소화불량</a></li>
-      <li><a href="/rls.html" class="text-gray-400">하지불안</a></li>
-      <li><a href="/postnatal.html" class="text-gray-400">산후보양</a></li>
-      <li><a href="/pediatric.html" class="text-gray-400">소아보양</a></li>
-      <li><a href="/accident.html" class="text-gray-400">교통사고</a></li>
-      <li><a href="/about.html#location" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[13px]">오시는길</a></li>
-      <li><a href="/faq.html" class="text-gray-400">FAQ</a></li>
+    <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-3.5 space-x-7 text-[15px] hide-scroll">
+      <li><a href="/about.html" class="text-stone-400">소개</a></li>
+      <li><a href="/obesity.html" class="text-stone-400">비만</a></li>
+      <li><a href="/rhinitis.html" class="text-stone-400">비염</a></li>
+      <li><a href="/pain.html" class="text-stone-400">통증</a></li>
+      <li><a href="/digestive.html" class="text-stone-400">소화불량</a></li>
+      <li><a href="/rls.html" class="text-stone-400">하지불안</a></li>
+      <li><a href="/location.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[11px]">오시는길</a></li>
+      <li><a href="/faq.html" class="text-stone-400">FAQ</a></li>
     </ul>
-    <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right opacity-100 transition-opacity pointer-events-none">
-      <span class="text-stone-400 text-xl">❯</span>
-    </div>
   </div>
 </nav>
 
-<section class="bg-gray-50 py-20 text-center px-4">
-  <h1 class="text-3xl md:text-4xl font-semibold mb-4 text-stone-800">오시는 길</h1>
-  <p class="text-gray-600">편하게 방문하실 수 있도록 안내드립니다</p>
+<!-- =========================================================
+3️⃣ 히어로 섹션
+========================================================= -->
+<section class="bg-slate-800 py-16 md:py-24 text-center px-4 relative overflow-hidden">
+  <div class="max-w-4xl mx-auto relative z-10">
+    <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">오시는 길</h1>
+    <p class="text-slate-300 text-lg">경희부연한의원을 쉽고 편안하게 찾아오시는 방법을 안내해 드립니다.</p>
+  </div>
 </section>
 
-<section class="py-20 px-4 max-w-5xl mx-auto">
-  <h2 class="text-2xl font-semibold mb-12 text-center text-stone-800">
-    <i class="fa-solid fa-bus-simple mr-2"></i>대중교통 이용 안내
-  </h2>
-
-  <div class="grid md:grid-cols-2 gap-6">
-    <div class="border border-stone-100 rounded-xl p-6 shadow-sm hover:bg-stone-50 transition-colors">
-      <h3 class="font-bold text-lg mb-3 text-stone-800 flex items-center gap-2">
-        <span class="w-2 h-2 bg-stone-400 rounded-full"></span>창동역 이용
-      </h3>
-      <p class="text-gray-600 text-sm leading-relaxed">
-        <span class="font-semibold text-stone-700">1·4호선 창동역 2번 출구</span> → 마을버스 <span class="text-blue-600">노원14번</span> 탑승 → <span class="bg-stone-100 px-1">『쌍문동 금호1차 삼익아파트』</span> 하차
-      </p>
+<!-- =========================================================
+4️⃣ 지도 및 주소 정보 (기존 약도 이미지 적용)
+========================================================= -->
+<section class="max-w-6xl mx-auto px-4 py-20">
+  <div class="flex flex-col lg:flex-row gap-12 items-start">
+    
+    <!-- 좌측: 새로 제작한 약도 이미지 -->
+    <div class="w-full lg:w-3/5">
+      <div class="bg-white p-4 rounded-3xl shadow-sm border border-stone-100 group">
+        <img src="watermarked_img_18011786688055903347.png" alt="경희부연한의원 약도" class="w-full h-auto rounded-2xl shadow-inner">
+      </div>
     </div>
 
-    <div class="border border-stone-100 rounded-xl p-6 shadow-sm hover:bg-stone-50 transition-colors">
-      <h3 class="font-bold text-lg mb-3 text-stone-800 flex items-center gap-2">
-        <span class="w-2 h-2 bg-stone-400 rounded-full"></span>쌍문역 (마을버스)
-      </h3>
-      <p class="text-gray-600 text-sm leading-relaxed">
-        <span class="font-semibold text-stone-700">4호선 쌍문역 2번 출구</span> → 마을버스 <span class="text-blue-600">도봉5번/6번</span> → <span class="bg-stone-100 px-1">『시립도봉노인종합복지관』</span> 하차 → 안경나라 방향으로 신호등 건너 도보 1분
-      </p>
-    </div>
-
-    <div class="border border-stone-100 rounded-xl p-6 shadow-sm hover:bg-stone-50 transition-colors">
-      <h3 class="font-bold text-lg mb-3 text-stone-800 flex items-center gap-2">
-        <span class="w-2 h-2 bg-stone-400 rounded-full"></span>쌍문역 (101번)
-      </h3>
-      <p class="text-gray-600 text-sm leading-relaxed">
-        <span class="font-semibold text-stone-700">4호선 쌍문역 2번 출구</span> → 지선버스 <span class="text-blue-600">101번</span> → <span class="bg-stone-100 px-1">『쌍문동 금호1차 삼익아파트』</span> 하차
-      </p>
-    </div>
-
-    <div class="border border-stone-100 rounded-xl p-6 shadow-sm hover:bg-stone-50 transition-colors">
-      <h3 class="font-bold text-lg mb-3 text-stone-800 flex items-center gap-2">
-        <span class="w-2 h-2 bg-stone-400 rounded-full"></span>쌍문역 (1126번)
-      </h3>
-      <p class="text-gray-600 text-sm leading-relaxed">
-        <span class="font-semibold text-stone-700">4호선 쌍문역 2번 출구</span> → 지선버스 <span class="text-blue-600">1126번</span> → <span class="bg-stone-100 px-1">『쌍문동 청구아파트』</span> 하차 → 발바닥공원 방향 신호등 건너 도보 1분
-      </p>
+    <!-- 우측: 주소 및 연락처 정보 -->
+    <div class="w-full lg:w-2/5 space-y-6">
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-stone-100">
+        <h2 class="text-2xl font-bold text-stone-800 mb-6 flex items-center gap-2">
+          <i class="fa-solid fa-location-dot text-slate-500"></i> 주소 안내
+        </h2>
+        <div class="space-y-6">
+          <div>
+            <p class="text-stone-400 text-sm mb-1 uppercase tracking-wider">Address</p>
+            <p class="text-lg text-stone-700 font-medium leading-relaxed">
+              서울시 도봉구 도당로 7 <br>벽산송화프라자 3층
+            </p>
+            <span class="inline-block mt-3 bg-slate-50 text-slate-600 px-4 py-1.5 rounded-full text-sm font-semibold">
+              <i class="fa-solid fa-building-circle-check mr-1 text-slate-400"></i> 다이소 건물 3층
+            </span>
+          </div>
+          <div class="pt-6 border-t border-stone-50">
+            <p class="text-stone-400 text-sm mb-1 uppercase tracking-wider">Contact</p>
+            <p class="text-2xl font-bold text-slate-800">02 - 905 - 7553</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 네이버 지도 바로가기 버튼 예시 -->
+      <a href="https://map.naver.com" target="_blank" class="flex items-center justify-center gap-3 w-full bg-[#03C75A] text-white py-5 rounded-2xl font-bold text-lg hover:brightness-95 transition shadow-md">
+        <span class="w-6 h-6 bg-white rounded-full text-[#03C75A] flex items-center justify-center font-black text-xs">N</span>
+        네이버 지도로 길찾기
+      </a>
     </div>
   </div>
 </section>
 
-<section class="bg-stone-50 py-20 px-4">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-2xl font-semibold mb-12 text-center text-stone-800">
-      <i class="fa-solid fa-car mr-2 text-blue-600"></i>주차 안내
-    </h2>
+<!-- =========================================================
+5️⃣ 대중교통 안내 (기존 텍스트 내용 기반)
+========================================================= -->
+<section class="bg-stone-100 py-20 px-4 border-y border-stone-200">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-stone-800 mb-4 tracking-tight">대중교통 이용 안내</h2>
+      <div class="w-12 h-1 bg-slate-400 mx-auto rounded-full"></div>
+    </div>
 
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-      <img src="parking.jpg" alt="주차 안내 이미지" class="w-full rounded-2xl shadow-md border border-stone-200">
-      
-      <div class="space-y-6">
-        <div class="flex flex-col gap-4">
-          <div class="flex items-start gap-3">
-            <span class="bg-stone-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">1</span>
-            <p class="text-stone-700 font-medium text-lg">한의원 건물 지하 3층 (리프트 이용)</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <span class="bg-stone-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">2</span>
-            <p class="text-stone-700 font-medium text-lg">동문교회 주차장</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <span class="bg-stone-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">3</span>
-            <p class="text-stone-700 font-medium text-lg">건물 공터 (파파이스 옆)</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- 1번 안내 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 hover:shadow-md transition">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-slate-800 text-white rounded-full flex items-center justify-center shrink-0 font-bold">1</div>
+          <div>
+            <p class="text-slate-600 font-bold mb-2">창동역 방면</p>
+            <p class="text-stone-600 leading-relaxed text-[15px]">
+              지하철 1, 4호선 <strong class="text-stone-800">창동역 2번 출구</strong> → <span class="text-red-600 font-semibold">마을버스 노원14번</span> 탑승 → <span class="underline underline-offset-4 decoration-stone-200">『쌍문동 금호1차 삼익아파트』</span>에서 하차
+            </p>
           </div>
         </div>
+      </div>
 
-        <div class="bg-white border-l-4 border-amber-400 rounded-lg p-5 shadow-sm">
-          <p class="font-bold text-amber-700 mb-2 flex items-center gap-2">
-            <i class="fa-solid fa-circle-exclamation"></i>주차 시 필수 확인!
-          </p>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            차량에 <span class="font-bold text-stone-800 underline">한의원 명함</span>을 올려주시고,<br>
-            데스크에 방문 시 <span class="font-bold text-stone-800 underline">차량 번호</span>를 꼭 말씀해주세요.
-          </p>
+      <!-- 2번 안내 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 hover:shadow-md transition">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-slate-800 text-white rounded-full flex items-center justify-center shrink-0 font-bold">2</div>
+          <div>
+            <p class="text-slate-600 font-bold mb-2">쌍문역 방면 (마을버스)</p>
+            <p class="text-stone-600 leading-relaxed text-[15px]">
+              지하철 4호선 <strong class="text-stone-800">쌍문역 2번 출구</strong> → <span class="text-red-600 font-semibold">마을버스 도봉5번 or 6번</span> 탑승 → <span class="underline underline-offset-4 decoration-stone-200">『시립도봉노인종합복지관』</span>에서 하차 → 인경나라 방면 신호등 건너 도보 1분
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3번 안내 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 hover:shadow-md transition">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-slate-800 text-white rounded-full flex items-center justify-center shrink-0 font-bold">3</div>
+          <div>
+            <p class="text-slate-600 font-bold mb-2">쌍문역 방면 (시내버스)</p>
+            <p class="text-stone-600 leading-relaxed text-[15px]">
+              지하철 4호선 <strong class="text-stone-800">쌍문역 2번 출구</strong> → <span class="text-blue-600 font-semibold">101번 버스</span> 탑승 → <span class="underline underline-offset-4 decoration-stone-200">『쌍문동 금호1차 삼익아파트』</span>에서 하차
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4번 안내 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 hover:shadow-md transition">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-slate-800 text-white rounded-full flex items-center justify-center shrink-0 font-bold">4</div>
+          <div>
+            <p class="text-slate-600 font-bold mb-2">쌍문역 방면 (시내버스)</p>
+            <p class="text-stone-600 leading-relaxed text-[15px]">
+              지하철 4호선 <strong class="text-stone-800">쌍문역 2번 출구</strong> → <span class="text-blue-600 font-semibold">1126번 버스</span> 탑승 → <span class="underline underline-offset-4 decoration-stone-200">『쌍문동 청구아파트』</span> 하차 → 발바닥 공원 방면 신호등 건너 도보 1분
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-20 px-4 text-center">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-2xl font-semibold mb-10 text-stone-800">위치 안내</h2>
-    <div class="overflow-hidden rounded-2xl shadow-xl border border-stone-200">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.671039564579!2d127.02498840000001!3d37.6498044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbc1debc50bc3%3A0xe8588466f324e18d!2z6rK97Z2s67aA7Jew7ZWc7J2Y7JuQ!5e1!3m2!1sko!2skr!4v1777373668462!5m2!1sko!2skr" 
-        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-      </iframe>
+<!-- =========================================================
+6️⃣ 주차 안내 (기존 내용 기반)
+========================================================= -->
+<section class="max-w-6xl mx-auto px-4 py-24">
+  <div class="bg-white rounded-[2.5rem] p-10 md:p-16 shadow-lg border border-stone-100 flex flex-col md:flex-row gap-12 items-center">
+    
+    <div class="w-full md:w-1/2">
+      <h2 class="text-3xl font-bold text-stone-800 mb-8 flex items-center gap-3">
+        <i class="fa-solid fa-square-p text-slate-500 text-4xl"></i> 주차 안내
+      </h2>
+      <ul class="space-y-5">
+        <li class="flex items-start gap-4 text-lg text-stone-700">
+          <span class="w-7 h-7 rounded-full bg-stone-100 flex items-center justify-center text-stone-500 font-bold text-sm shrink-0 mt-1">1</span>
+          <p>한의원 건물 <strong class="text-slate-700">지하 3층</strong> (리프트 탑승)</p>
+        </li>
+        <li class="flex items-start gap-4 text-lg text-stone-700">
+          <span class="w-7 h-7 rounded-full bg-stone-100 flex items-center justify-center text-stone-500 font-bold text-sm shrink-0 mt-1">2</span>
+          <p>동문교회 주차장</p>
+        </li>
+        <li class="flex items-start gap-4 text-lg text-stone-700">
+          <span class="w-7 h-7 rounded-full bg-stone-100 flex items-center justify-center text-stone-500 font-bold text-sm shrink-0 mt-1">3</span>
+          <p>건물 공터 (파파이스 옆)</p>
+        </li>
+      </ul>
+      
+      <div class="mt-10 p-6 bg-slate-50 rounded-2xl border border-slate-200 border-dashed">
+        <p class="text-slate-600 text-[15px] leading-relaxed">
+          <i class="fa-solid fa-circle-exclamation mr-1"></i> 주차하신 경우 차량 전면에 <strong class="text-slate-800 underline underline-offset-4 decoration-slate-300">한의원 명함</strong>을 올려주시고, 데스크에 <strong class="text-slate-800">차량 번호</strong>를 반드시 알려주세요.
+        </p>
+      </div>
     </div>
-    <p class="mt-6 text-stone-500 flex items-center justify-center gap-2">
-      <i class="fa-solid fa-location-dot text-red-500"></i>
-      서울시 도봉구 도당로 7 벽산 송화프라자 3층
-    </p>
+
+    <div class="w-full md:w-1/2">
+      <!-- 기존 주차안내 이미지를 유지하거나, 스타일을 통일한 일러스트로 교체 가능 -->
+      <img src="parking_guide.jpg" alt="주차장 위치 약도" class="w-full h-auto rounded-2xl border border-stone-100 shadow-sm">
+    </div>
+
   </div>
 </section>
 
+<!-- =========================================================
+7️⃣ 모바일 하단 고정 바 (편의성)
+========================================================= -->
 <div class="fixed bottom-0 left-0 right-0 z-[60] md:hidden">
-  <div class="flex h-16 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
-    <a href="tel:02-905-7553" class="flex-1 bg-stone-800 text-white flex items-center justify-center gap-2 active:bg-stone-900">
-      <i class="fa-solid fa-phone"></i><span class="font-bold">전화상담</span>
+  <div class="flex h-[64px] shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+    <a href="tel:02-905-7553" class="flex-1 bg-stone-800 text-white flex items-center justify-center gap-2 active:bg-stone-900 transition-colors">
+      <i class="fa-solid fa-phone-volume text-lg"></i>
+      <span class="font-bold tracking-tight">전화상담</span>
     </a>
-    <a href="https://m.map.naver.com/directions/main.naver?dout=true&dname=경희부연한의원" target="_blank" class="flex-1 bg-green-600 text-white flex items-center justify-center gap-2 active:bg-green-700">
-      <i class="fa-solid fa-map-location-dot"></i><span class="font-bold">오시는길</span>
+    <a href="https://map.naver.com" target="_blank" class="flex-1 bg-slate-700 text-white flex items-center justify-center gap-2 active:bg-slate-800 transition-colors">
+      <i class="fa-solid fa-map-location-dot text-lg"></i>
+      <span class="font-bold tracking-tight">길찾기</span>
     </a>
   </div>
 </div>
 
-<footer class="py-12 text-center text-sm text-gray-400 bg-white border-t">
+<!-- =========================================================
+8️⃣ 푸터
+========================================================= -->
+<footer class="py-12 text-center text-sm text-stone-400 bg-white border-t border-stone-100">
   <div class="max-w-6xl mx-auto px-4 leading-loose">
-    <p class="text-gray-500 font-medium mb-4">Tel. 02 ) 905 - 7553 | 서울시 도봉구 도당로 7 벽산 송화프라자 3층</p>
+    <p class="text-stone-600 font-bold mb-4">Tel. 02 ) 905 - 7553 | 서울시 도봉구 도당로 7 벽산 송화프라자 3층</p>
     <p>사업자명: 경희부연한의원 | 대표: 전진영 | 사업자번호: 210-92-17097</p>
-    <p class="text-xs uppercase tracking-widest mt-2">COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED</p>
+    <p class="text-xs uppercase tracking-widest mt-2 italic">COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED</p>
   </div>
 </footer>
 
 <script>
-  function toggleMenu() {
-    const m = document.getElementById('mobileMenu');
-    m.classList.toggle('hidden'); m.classList.toggle('flex');
-  }
-
-  const scrollContainer = document.getElementById('menuScroll');
-  const leftArrow = document.getElementById('leftArrow');
-  const rightArrow = document.getElementById('rightArrow');
-
-  function updateArrows() {
-    if (!scrollContainer) return;
-    const sL = scrollContainer.scrollLeft;
-    const mS = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-    if (leftArrow) leftArrow.style.opacity = sL > 10 ? "1" : "0";
-    if (rightArrow) rightArrow.style.opacity = sL < mS - 10 ? "1" : "0";
-  }
-
-  if (scrollContainer) {
-    scrollContainer.addEventListener('scroll', updateArrows);
-    window.addEventListener('load', updateArrows);
-    window.addEventListener('resize', updateArrows);
-    // 현재 활성화된 메뉴 중앙 정렬
-    window.addEventListener('load', () => {
-      const active = scrollContainer.querySelector('.font-bold');
-      if (active) active.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-    });
+  function toggleMenu(){
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
   }
 </script>
 
