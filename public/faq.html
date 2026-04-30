@@ -26,31 +26,67 @@
 <body class="bg-stone-50 text-stone-800">
 
 <!-- =========================================================
-1️⃣ 상단 헤더
+1️⃣ 상단 헤더 (공통)
 ========================================================= -->
 <header class="w-full border-b bg-white sticky top-0 z-50">
   <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
     <div class="text-lg font-semibold whitespace-nowrap">
       <a href="index.html" class="flex items-center gap-3">
         <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-10 w-auto object-contain block">
-        <span class="text-stone-900 font-bold">경희부연한의원 HOME</span>
+        <span class="text-stone-900">경희부연한의원 HOME</span>
       </a>
     </div>
-    <nav class="hidden md:flex flex-wrap justify-end gap-6 text-sm font-medium text-stone-600">
-      <a href="about.html" class="hover:text-stone-900">한의원 소개</a>
-      <a href="obesity.html" class="hover:text-stone-900">비만</a>
-      <a href="rhinitis.html" class="hover:text-stone-900">비염</a>
-      <a href="pain.html" class="hover:text-stone-900">통증</a>
-      <a href="digestive.html" class="hover:text-stone-900">소화불량</a>
-      <a href="rls.html" class="hover:text-stone-900">하지불안증후군</a>
-      <a href="postnatal.html" class="hover:text-stone-900">산후보양</a>
-      <a href="pediatric.html" class="hover:text-stone-900">소아보양</a>
-      <a href="accident.html" class="hover:text-stone-900">교통사고</a>
-      <a href="faq.html" class="text-stone-900 font-bold border-b-2 border-stone-900">FAQ</a>
+    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm font-medium">
+      <a href="about.html">소개</a>
+      <a href="obesity.html">비만</a>
+      <a href="rhinitis.html">비염</a>
+      <a href="pain.html">통증</a>
+      <a href="digestive.html" class="text-blue-700">소화불량</a>
+      <a href="rls.html">하지불안</a>
+      <a href="postnatal.html">산후보양</a>
+      <a href="pediatric.html">소아보양</a>
+      <a href="accident.html">교통사고</a>
+      <a href="faq.html">FAQ</a>
     </nav>
-    <button class="md:hidden text-2xl text-stone-600"><i class="fa-solid fa-bars"></i></button>
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+  </div>
+
+  <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
+    <a href="index.html" class="py-2 border-b">홈</a>
+    <a href="about.html" class="py-2 border-b">소개</a>
+    <a href="accident.html" class="py-2 border-b">교통사고</a>
+    <a href="faq.html" class="py-2">FAQ</a>
   </div>
 </header>
+
+<!-- =========================================================
+2️⃣ 모바일 가로 스크롤 네비게이션 (공통)
+========================================================= -->
+<nav class="sticky top-[73px] md:top-[81px] z-40 w-full bg-white border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-2 relative group">
+    <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-2 nav-gradient-left opacity-0 transition-opacity pointer-events-none">
+      <span class="text-stone-400 text-xl">❮</span>
+    </div>
+    <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-4 space-x-7 text-[15px] hide-scroll md:justify-center">
+      <li><a href="/about.html" class="text-gray-400">소개</a></li>
+      <li><a href="/obesity.html" class="text-gray-400">비만</a></li>
+      <li><a href="/rhinitis.html" class="text-gray-400">비염</a></li>
+      <li><a href="/pain.html" class="text-gray-400">통증</a></li>
+      <!-- 현재 페이지 활성화 (소화불량) -->
+      <a href="digestive.html" class="hover:text-stone-900">소화불량</a>
+      <li><a href="/rls.html" class="text-gray-400">하지불안</a></li>
+      <li><a href="/postnatal.html" class="text-gray-400">산후보양</a></li>
+      <li><a href="/pediatric.html" class="text-gray-400">소아보양</a></li>
+      <li><a href="/accident.html" class="text-gray-400">교통사고</a></li>
+      <li><a href="/location.html" class="text-gray-400">오시는길</a></li>
+      <a href="faq.html" class="text-stone-900 font-bold border-b-2 border-stone-900">FAQ</a>
+    </ul>
+    <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right opacity-100 transition-opacity pointer-events-none">
+      <span class="text-stone-400 text-xl">❯</span>
+    </div>
+  </div>
+</nav>
+
 
 <!-- =========================================================
 2️⃣ HERO Section
