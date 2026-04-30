@@ -251,46 +251,45 @@ body {
 
 </div>
 
-  <!-- 섹션 3: 한의원 치료요법 (이미지 갤러리) -->
-  <div>
-    <h2 class="text-2xl font-bold mb-10 text-stone-800 flex items-center gap-2">
-      <span class="w-2 h-6 bg-navy-600 block rounded-sm"></span> 경희부연한의원의 치료요법
-    </h2>
-    
-    <!-- 기존 치료 사진 3장 레이아웃 개선 -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-      <div class="overflow-hidden rounded-2xl shadow-md border border-stone-100 group">
-        <img src="/pain_acu.jpg" alt="침 치료" class="w-full h-full object-cover transition-transform group-hover:scale-105">
-      </div>
-      <div class="overflow-hidden rounded-2xl shadow-md border border-stone-100 group">
-        <img src="/pain_moxi.jpg" alt="뜸 치료" class="w-full h-full object-cover transition-transform group-hover:scale-105">
-      </div>
-      <div class="overflow-hidden rounded-2xl shadow-md border border-stone-100 group">
-        <img src="/pain_cupping.jpg" alt="부항 치료" class="w-full h-full object-cover transition-transform group-hover:scale-105">
-      </div>
-    </div>
+ <!-- 섹션 3: 한의원 치료요법 (수정 버전) -->
+<div class="bg-stone-50 p-8 md:p-12 rounded-[3rem] border border-stone-200">
+  <h2 class="text-2xl font-bold mb-10 text-stone-800 text-center">
+    경희부연한의원의 치료요법
+  </h2>
 
-    <!-- 치료 텍스트 설명 -->
-    <div class="bg-stone-50 rounded-2xl p-8 md:p-10 border border-stone-200">
-      <ul class="space-y-6 text-center">
-        <li>
-          <div class="inline-block bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
-            <span class="font-bold text-2xl text-stone-900">침 · 뜸 · 부항</span>
-            <span class="text-stone-300 mx-3 text-2xl">|</span>
-            <span class="text-stone-700 text-lg">기혈순환을 통한 통증완화</span>
-          </div>
-        </li>
-        <li>
-          <div class="inline-block bg-navy-600 p-6 rounded-2xl shadow-md text-white">
-            <span class="font-bold text-2xl text-white">한약 요법</span>
-            <span class="text-navy-300 mx-3 text-2xl">|</span>
-            <span class="text-white/90 text-lg">근본원인을 개선하여 재발을 방지</span>
-          </div>
-        </li>
-      </ul>
+  <!-- 이미지 영역 (기존 경로 유지) -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div class="group overflow-hidden rounded-2xl shadow-lg bg-white p-2 text-center">
+      <img src="/pain_acu.jpg" alt="침 치료" class="w-full h-48 object-cover rounded-xl">
+      <p class="mt-3 font-bold text-stone-600">침 치료</p>
+    </div>
+    <div class="group overflow-hidden rounded-2xl shadow-lg bg-white p-2 text-center">
+      <img src="/pain_moxi.jpg" alt="뜸 치료" class="w-full h-48 object-cover rounded-xl">
+      <p class="mt-3 font-bold text-stone-600">뜸 치료</p>
+    </div>
+    <div class="group overflow-hidden rounded-2xl shadow-lg bg-white p-2 text-center">
+      <img src="/pain_cupping.jpg" alt="부항 치료" class="w-full h-48 object-cover rounded-xl">
+      <p class="mt-3 font-bold text-stone-600">부항 치료</p>
     </div>
   </div>
 
+  <!-- 🚨 문제의 박스 영역: 글자색을 진하게 수정했습니다 -->
+  <div class="flex flex-col gap-4 max-w-2xl mx-auto">
+    <!-- 침/뜸/부항 박스 -->
+    <div class="bg-white px-8 py-6 rounded-2xl shadow-sm border border-stone-100 text-center flex items-center justify-center gap-4">
+      <span class="font-bold text-2xl text-stone-900">침 · 뜸 · 부항</span>
+      <span class="text-stone-300 text-2xl">|</span>
+      <span class="text-stone-600 text-lg">기혈순환을 통한 통증완화</span>
+    </div>
+
+    <!-- 한약 요법 박스: 배경을 포인트 컬러로 넣어 뚜렷하게 강조 -->
+    <div class="bg-blue-900 px-8 py-6 rounded-2xl shadow-md text-center flex items-center justify-center gap-4">
+      <span class="font-bold text-2xl text-white">한약 요법</span>
+      <span class="text-blue-400 text-2xl">|</span>
+      <span class="text-white/90 text-lg font-medium">근본원인을 개선하여 재발을 방지</span>
+    </div>
+  </div>
+</div>
 </section>
 
 <!-- =========================================================
