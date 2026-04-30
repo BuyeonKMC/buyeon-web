@@ -3,30 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>비만 치료 - 경희부연한의원</title>
+<title>비만 클리닉 | 경희부연한의원</title>
+
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  line-height: 1.7;
+}
+/* 가로 스크롤바 숨기기 */
+.hide-scroll::-webkit-scrollbar { display: none; }
+.hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+.nav-gradient-left { background: linear-gradient(to right, white, transparent); }
+.nav-gradient-right { background: linear-gradient(to left, white, transparent); }
+
+/* 하단 바 공간 확보 */
+@media (max-width: 768px) {
+  body { padding-bottom: 64px; }
+}
+</style>
 </head>
 
 <body class="bg-white text-gray-800">
 
 <!-- =========================================================
-🔥 상단 헤더 (PC + 모바일 완전 대응)
+1️⃣ 상단 헤더
 ========================================================= -->
-<!-- 상단 -->
 <header class="w-full border-b bg-white sticky top-0 z-50">
-
   <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
-
-    <!-- 로고 -->
     <div class="text-lg font-semibold whitespace-nowrap">
-      <a href="index.html" class="flex items-center gap-2">
-    <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-8 w-auto object-contain">
-    <span>경희부연한의원 HOME</span>
-  </a>
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-10 w-auto object-contain block">
+        <span class="text-stone-900">경희부연한의원 HOME</span>
+      </a>
     </div>
-
-    <!-- PC 메뉴 -->
-    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm">
+    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm font-medium">
       <a href="about.html">소개</a>
       <a href="obesity.html">비만</a>
       <a href="rhinitis.html">비염</a>
@@ -38,222 +51,247 @@
       <a href="accident.html">교통사고</a>
       <a href="faq.html">FAQ</a>
     </nav>
-
-    <!-- 모바일 버튼 -->
-    <button onclick="toggleMenu()" class="md:hidden text-2xl">
-      ☰
-    </button>
-
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
   </div>
 
-  <!-- 모바일 메뉴 -->
   <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
-    <a href="about.html" class="py-2 border-b">한의원 소개</a>
-    <a href="obesity.html" class="py-2 border-b">비만</a>
-    <a href="rhinitis.html" class="py-2 border-b">비염</a>
-    <a href="pain.html" class="py-2 border-b">통증</a>
-    <a href="digestive.html" class="py-2 border-b">소화불량</a>
-    <a href="rls.html" class="py-2 border-b">하지불안증후군</a>
-    <a href="postnatal.html" class="py-2 border-b">산후보양</a>
-    <a href="pediatric.html" class="py-2 border-b">소아보양</a>
+    <a href="index.html" class="py-2 border-b">홈</a>
+    <a href="about.html" class="py-2 border-b">소개</a>
     <a href="accident.html" class="py-2 border-b">교통사고</a>
     <a href="faq.html" class="py-2">FAQ</a>
   </div>
-
 </header>
 
-<!-- 모바일 가로 스크롤 메뉴 코드 -->
-  <style>
-  .hide-scroll::-webkit-scrollbar { display: none; }
-  .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-  .nav-gradient-left { background: linear-gradient(to right, white, transparent); }
-  .nav-gradient-right { background: linear-gradient(to left, white, transparent); }
-</style>
-
-<nav class="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
+<!-- =========================================================
+2️⃣ 모바일 가로 스크롤 네비게이션
+========================================================= -->
+<nav class="sticky top-0 z-40 w-full bg-white border-b border-gray-100 shadow-sm">
   <div class="max-w-6xl mx-auto px-2 relative group">
-    
     <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-2 nav-gradient-left opacity-0 transition-opacity pointer-events-none">
       <span class="text-stone-400 text-xl">❮</span>
     </div>
-
     <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-4 space-x-7 text-[15px] hide-scroll md:justify-center">
-      <li><a href="/about.html" class="text-gray-400 hover:text-stone-800 transition-colors">소개</a></li>
+      <li><a href="/about.html" class="text-gray-400">소개</a></li>
+      <!-- 현재 페이지 활성화 (비만) -->
       <li><a href="/obesity.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[13px]">비만</a></li>
-      <li><a href="/rhinitis.html" class="text-gray-400 hover:text-stone-800 transition-colors">비염</a></li>
-      <li><a href="/pain.html" class="text-gray-400 hover:text-stone-800 transition-colors">통증</a></li>
-      <li><a href="/digestive.html" class="text-gray-400 hover:text-stone-800 transition-colors">소화불량</a></li>
-      <li><a href="/rls.html" class="text-stone-400">하지불안</a></li>
-      <li><a href="/postnatal.html" class="text-stone-400">산후보양</a></li>
-      <li><a href="/pediatric.html" class="text-stone-400">소아보양</a></li>
-      <li><a href="/accident.html" class="text-stone-400">교통사고</a></li>
-      <li><a href="/faq.html" class="text-stone-400">자주묻는질문</a></li>
+      <li><a href="/rhinitis.html" class="text-gray-400">비염</a></li>
+      <li><a href="/pain.html" class="text-gray-400">통증</a></li>
+      <li><a href="/digestive.html" class="text-gray-400">소화불량</a></li>
+      <li><a href="/rls.html" class="text-gray-400">하지불안</a></li>
+      <li><a href="/postnatal.html" class="text-gray-400">산후보양</a></li>
+      <li><a href="/pediatric.html" class="text-gray-400">소아보양</a></li>
+      <li><a href="/accident.html" class="text-gray-400">교통사고</a></li>
+      <li><a href="/location.html" class="text-gray-400">오시는길</a></li>
+      <li><a href="/faq.html" class="text-gray-400">FAQ</a></li>
     </ul>
-
     <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right opacity-100 transition-opacity pointer-events-none">
       <span class="text-stone-400 text-xl">❯</span>
     </div>
-
   </div>
 </nav>
 
-<script>
-  const scrollContainer = document.getElementById('menuScroll');
-  const leftArrow = document.getElementById('leftArrow');
-  const rightArrow = document.getElementById('rightArrow');
-
-  function updateArrows() {
-    const scrollLeft = scrollContainer.scrollLeft;
-    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-    // 왼쪽 화살표: 조금이라도 오른쪽으로 밀었으면 표시
-    leftArrow.style.opacity = scrollLeft > 10 ? "1" : "0";
-    
-    // 오른쪽 화살표: 끝까지 도달하지 않았으면 표시
-    rightArrow.style.opacity = scrollLeft < maxScroll - 10 ? "1" : "0";
-  }
-
-  // 스크롤 할 때마다 화살표 상태 업데이트
-  scrollContainer.addEventListener('scroll', updateArrows);
-  // 처음 로딩될 때 한 번 실행
-  window.addEventListener('load', updateArrows);
-  // 화면 크기 바뀔 때 실행
-  window.addEventListener('resize', updateArrows);
-</script>
-
-  
-<section class="max-w-4xl mx-auto px-4 py-16">
-
-  <!-- 타이틀 -->
-  <h1 class="text-2xl md:text-3xl font-semibold mb-4">
+<!-- =========================================================
+3️⃣ HERO Section
+========================================================= -->
+<section class="bg-stone-50 py-24 text-center px-4">
+  <h1 class="text-3xl md:text-5xl font-bold mb-4 text-stone-900 tracking-tight">
     대세는 굶지 않는 다이어트!
   </h1>
-<img src="/obesity-hero.png" 
-     style="width:100%; height:420px; object-fit:cover; border-radius:12px; margin:30px 0;">
-  <p class="text-gray-600 mb-10">
+  <p class="text-lg md:text-2xl text-emerald-700 font-medium">
     체질개선 다이어트로 요요 걱정을 덜어내세요
   </p>
+</section>
 
-  <!-- 설명 -->
-  <div class="space-y-6 text-gray-700 leading-loose">
+<!-- =========================================================
+4️⃣ Main Content
+========================================================= -->
+<section class="py-20 px-4 max-w-5xl mx-auto space-y-24">
 
-    <div>
-      <h2 class="font-semibold mb-2">비만, 제대로 알자</h2>
-      <p>
-        잘못된 식습관과 생활습관은 체중 증가뿐 아니라
-        건강에도 악영향을 미칩니다.
-      </p>
+  <!-- 섹션 1: 비만 제대로 알자 -->
+  <div>
+    <h2 class="text-2xl font-bold mb-6 text-stone-800 flex items-center gap-2">
+      <span class="w-2 h-6 bg-emerald-600 block rounded-sm"></span> 비만, 제대로 알자
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8 items-center bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
+      <div class="md:col-span-2 text-stone-700 leading-loose">
+        일반적으로 많은 사람들이 비만은 배가 많이 나오거나 몸 전체적으로 살이 찐 경우라고 알고 있지만, 이러한 경우는 물론이고 체중이 높지 않으면서 복부에만 살이 찌는 경우에도 마른 비만에 해당됩니다. 즉, 체중이나 체지방이 자신의 키에 적합한 범위를 벗어나 초과된 경우도 비만이기 때문에 관리를 통해 개선해야 합니다.
+      </div>
+      <!-- 기존 이미지 대신 깔끔한 일러스트 아이콘으로 대체 (텍스트 훼손 없음) -->
+      <div class="md:col-span-1 flex justify-center opacity-80">
+        <i class="fa-solid fa-person-circle-exclamation text-8xl text-stone-300"></i>
+      </div>
     </div>
-
-    <div>
-      <h2 class="font-semibold mb-2">체질개선 다이어트의 필요성</h2>
-      <p>
-        무리한 다이어트로 요요가 반복되면 살이 잘 찌는 체질로 변합니다.<br>
-        단순 체중 감량이 아닌 체질 개선을 통해
-        요요 없는 다이어트를 목표로 합니다.
-      </p>
-    </div>
-
   </div>
 
-  <!-- 핵심 프로세스 -->
-  <div class="mt-12 grid md:grid-cols-3 gap-6">
+  <!-- 섹션 2: 체질개선 다이어트의 필요성 & 도표 -->
+  <div>
+    <h2 class="text-2xl font-bold mb-6 text-stone-800 flex items-center gap-2">
+      <span class="w-2 h-6 bg-emerald-600 block rounded-sm"></span> 체질개선 다이어트의 필요성
+    </h2>
+    <p class="text-stone-700 leading-loose mb-12">
+      많은 분들이 다이어트를 시작하면 굶거나 심한 운동을 해야 한다고 알고 있지만 이럴 경우 다이어트가 끝난 후에 급격한 요요가 오는 것은 물론, 오히려 살이 더 찌게 되는 경우가 발생하기도 합니다.<br>
+      체질개선 다이어트를 해야 요요가 잘 오지 않으면서도 건강과 미용을 동시에 잡을 수 있습니다.
+    </p>
 
-    <div class="p-6 bg-gray-50 rounded-xl text-center">
-      식습관 분석 & 생활교정
+    <!-- 세련된 다이어그램 (기존의 촌스러운 녹색 상자와 화살표 리뉴얼) -->
+    <div class="bg-stone-50 rounded-3xl p-8 md:p-12 border border-stone-200">
+      
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-8 text-center">
+        <!-- Step 1 -->
+        <div class="bg-white border-2 border-stone-200 text-stone-700 font-bold py-6 px-8 rounded-2xl w-full md:w-1/3 shadow-sm flex items-center justify-center h-28">
+          무리한 운동 <br>& 식이조절
+        </div>
+        
+        <i class="fa-solid fa-caret-down md:fa-caret-right text-3xl text-stone-300"></i>
+        
+        <!-- Step 2 -->
+        <div class="bg-white border-2 border-stone-200 text-stone-700 font-bold py-6 px-8 rounded-2xl w-full md:w-1/3 shadow-sm flex items-center justify-center h-28">
+          근본이 되는 체질을 <br>개선하지 않아 <br>결국 요요가 발생
+        </div>
+        
+        <i class="fa-solid fa-caret-down md:fa-caret-right text-3xl text-stone-300"></i>
+        
+        <!-- Step 3 -->
+        <div class="bg-white border-2 border-stone-200 text-stone-700 font-bold py-6 px-8 rounded-2xl w-full md:w-1/3 shadow-sm flex items-center justify-center h-28">
+          반복되는 요요로 <br>살찌는 체질로까지 <br>변해버리는 내 몸
+        </div>
+      </div>
+
+      <div class="text-center">
+        <i class="fa-solid fa-arrow-down text-4xl text-emerald-600 mb-6 animate-bounce"></i>
+        <div class="bg-emerald-600 text-white font-bold text-xl md:text-2xl py-6 rounded-2xl shadow-md w-full">
+          근본을 해결하는 체질개선 다이어트가 필요!
+        </div>
+      </div>
+      
     </div>
-
-    <div class="p-6 bg-gray-50 rounded-xl text-center">
-      체질에 맞는 한약 처방
-    </div>
-
-    <div class="p-6 bg-gray-50 rounded-xl text-center">
-      생활관리 & 유지
-    </div>
-
   </div>
 
-  <!-- 추천 대상 -->
-  <div class="mt-12">
-    <h2 class="font-semibold mb-3">이런 분들께 추천합니다</h2>
-    <ul class="list-disc pl-5 text-gray-600 space-y-2">
-      <li>굶는 다이어트는 도저히 못 버티는 분</li>
-      <li>바빠서 내원하여 관리받기 어려운 분</li>
-      <li>강도 높은 운동을 싫어하는 분</li>
-      <li>다이어트 후 요요를 반복해온 분</li>
-      <li>식단 스트레스로 지쳐있는 분</li>
-    </ul>
-  </div>
+  <!-- 섹션 3 & 4: 카드형 리스트 레이아웃 -->
+  <div class="grid md:grid-cols-2 gap-12">
+    
+    <!-- 이런 분들에게 추천합니다 -->
+    <div class="bg-white border border-stone-200 rounded-3xl p-8 shadow-sm">
+      <h2 class="text-xl font-bold mb-6 text-stone-800 border-b pb-4">이런 분들에게 추천합니다.</h2>
+      <ul class="space-y-4 text-stone-700">
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-600 font-bold shrink-0">①</span>
+          <span>굶고는 절대 못사는 분</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-600 font-bold shrink-0">②</span>
+          <span>여유시간이 많지 않아 내원해서 관리받기 힘든 분</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-600 font-bold shrink-0">③</span>
+          <span>강도높은 운동을 싫어하는 분</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-600 font-bold shrink-0">④</span>
+          <span>매번 요요로 고생하는 분</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-600 font-bold shrink-0">⑤</span>
+          <span>짜여진 식단에 스트레스 받는 분</span>
+        </li>
+      </ul>
+    </div>
 
-  <!-- 장점 -->
-  <div class="mt-10">
-    <h2 class="font-semibold mb-3">경희부연한의원 비만 치료의 장점</h2>
-    <ul class="list-disc pl-5 text-gray-600 space-y-2">
-      <li>살이 덜 찌는 방향으로 체질 개선</li>
-      <li>무리하지 않고 일상 속에서 지속 가능</li>
-      <li>개인 맞춤 한약으로 건강까지 함께 개선</li>
-      <li>비만과 동반된 증상까지 동시 관리</li>
-      <li>감량 이후 유지까지 체계적으로 관리</li>
-    </ul>
+    <!-- 비만 클리닉의 장점 -->
+    <div class="bg-emerald-50 border border-emerald-100 rounded-3xl p-8 shadow-sm">
+      <h2 class="text-xl font-bold mb-6 text-emerald-900 border-b border-emerald-200 pb-4">경희부연한의원 비만 클리닉의 장점</h2>
+      <ul class="space-y-4 text-emerald-800">
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-600 font-bold shrink-0">①</span>
+          <span>살이 잘 찌지 않는 체질로 개선해줍니다.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-600 font-bold shrink-0">②</span>
+          <span>무리하게 하지 않고 쉽게 할 수 있습니다.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-600 font-bold shrink-0">③</span>
+          <span>내 몸에 꼭 맞춘 한약으로 건강까지 좋아집니다.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-600 font-bold shrink-0">④</span>
+          <span>비만 외 불편한 증상도 함께 치료할 수 있습니다.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-600 font-bold shrink-0">⑤</span>
+          <span>성공한 다이어트의 유지까지 꼼꼼하게 관리합니다.</span>
+        </li>
+      </ul>
+    </div>
+
   </div>
 
 </section>
 
 <!-- =========================================================
-8️⃣ 푸터
+🚀 하단 고정 액션 바 (모바일 전용)
 ========================================================= -->
-<footer class="py-8 text-center text-sm text-gray-500">
-
-  <!-- 🔥 병원명 수정 -->
- Tel.  02 ) 905 - 7553 서울시 도봉구 도당로 7 벽산 송화프라자 3층 <br><br>
-
-사업자명  경희부연한의원  대표  전진영    사업자번호  210-92-17097<br>
-COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED
-
-</footer>
-
 <div class="fixed bottom-0 left-0 right-0 z-[60] md:hidden">
   <div class="flex h-16 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
-    
-    <a href="tel:02-905-7553" 
-       class="flex-1 bg-stone-800 text-white flex items-center justify-center gap-2 active:bg-stone-900 transition-colors">
+    <a href="tel:02-905-7553" class="flex-1 bg-stone-800 text-white flex items-center justify-center gap-2 active:bg-stone-900 transition-colors">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
       </svg>
       <span class="font-bold tracking-tight">전화상담</span>
     </a>
-
-    <a href="/location.html" 
-       target="_blank"
-       class="flex-1 bg-green-600 text-white flex items-center justify-center gap-2 active:bg-green-700 transition-colors">
+    <a href="/location.html" target="_blank" class="flex-1 bg-green-600 text-white flex items-center justify-center gap-2 active:bg-green-700 transition-colors">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
       <span class="font-bold tracking-tight">오시는길</span>
     </a>
-
   </div>
 </div>
 
-<style>
-  @media (max-width: 768px) {
-    body { padding-bottom: 64px; }
-  }
-</style>
-
-
-  
-</body>
-  <!-- =========================================================
-📱 모바일 메뉴 스크립트
+<!-- =========================================================
+5️⃣ 푸터
 ========================================================= -->
+<footer class="py-12 text-center text-sm text-gray-400 bg-white border-t">
+  <div class="max-w-6xl mx-auto px-4 leading-loose">
+    <p class="text-gray-500 font-medium mb-4">Tel. 02 ) 905 - 7553 | 서울시 도봉구 도당로 7 벽산 송화프라자 3층</p>
+    <p>사업자명: 경희부연한의원 | 대표: 전진영 | 사업자번호: 210-92-17097</p>
+    <p class="text-xs uppercase tracking-widest mt-2">COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED</p>
+  </div>
+</footer>
+
 <script>
-function toggleMenu(){
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('hidden');
-}
+  function toggleMenu() {
+    const m = document.getElementById('mobileMenu');
+    m.classList.toggle('hidden'); m.classList.toggle('flex');
+  }
+
+  const scrollContainer = document.getElementById('menuScroll');
+  const leftArrow = document.getElementById('leftArrow');
+  const rightArrow = document.getElementById('rightArrow');
+
+  function updateArrows() {
+    if (!scrollContainer) return;
+    const sL = scrollContainer.scrollLeft;
+    const mS = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    if (leftArrow) leftArrow.style.opacity = sL > 10 ? "1" : "0";
+    if (rightArrow) rightArrow.style.opacity = sL < mS - 10 ? "1" : "0";
+  }
+
+  if (scrollContainer) {
+    scrollContainer.addEventListener('scroll', updateArrows);
+    window.addEventListener('load', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    
+    // 로딩 시 현재 활성화된 메뉴 중앙으로 스크롤 이동
+    window.addEventListener('load', () => {
+      const activeMenu = scrollContainer.querySelector('.font-bold');
+      if (activeMenu) {
+        activeMenu.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+  }
 </script>
 
-  
+</body>
 </html>
