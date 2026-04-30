@@ -107,31 +107,65 @@ body {
 ========================================================= -->
 <section class="py-20 px-4 max-w-6xl mx-auto space-y-24">
 
-  <!-- 섹션 1: 일반 통증 개요 (합친 페이지의 서두) -->
-  <div class="grid md:grid-cols-2 gap-12">
+  <!-- 섹션 1: 일반 통증 개요 (가독성 개선 버전) -->
+<div class="grid md:grid-cols-2 gap-10">
+  
+  <!-- 일반적인 통증이 갑자기 찾아오는 이유 -->
+  <div class="bg-white border border-stone-200 rounded-3xl p-8 md:p-10 shadow-sm flex flex-col justify-between">
+    <div>
+      <h2 class="text-xl md:text-2xl font-bold mb-8 text-stone-800 flex items-center gap-3">
+        <i class="fa-solid fa-circle-exclamation text-amber-500"></i>
+        일반적인 통증이 갑자기 찾아오는 이유
+      </h2>
+      <div class="space-y-6">
+        <p class="text-stone-600 text-lg leading-relaxed">
+          <span class="font-bold text-stone-900 underline decoration-amber-200 decoration-4 underline-offset-4">생활습관, 피로, 스트레스</span>로 인해 느닷없이 찾아오는 것이 바로 일반적인 통증입니다.
+        </p>
+        <div class="bg-stone-50 border-l-4 border-stone-200 p-5 rounded-r-xl">
+          <p class="text-stone-700 leading-loose">
+            가볍게 여기고 방치하다가 <span class="text-red-500 font-semibold italic">치료 시기를 놓치게 되면</span> 만성질환으로까지 발전할 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-8 text-navy-700 font-bold flex items-center gap-2">
+      <i class="fa-solid fa-arrow-up-right-dots"></i>
+      통증 발생 시 빠르게 치료받을수록 예후가 좋습니다.
+    </p>
+  </div>
+
+  <!-- 기타 통증 질환의 종류 -->
+  <div class="bg-navy-50 border border-navy-100 rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden">
+    <!-- 배경 아이콘 데코 -->
+    <i class="fa-solid fa-stethoscope absolute -right-4 -bottom-4 text-9xl text-navy-100/50 rotate-12"></i>
     
-    <!-- 일반적인 통증이 갑자기 찾아오는 이유 -->
-    <div class="bg-white border border-stone-200 rounded-3xl p-8 shadow-sm">
-      <h2 class="text-xl font-bold mb-6 text-stone-800 border-b pb-4">■ 일반적인 통증이 갑자기 찾아오는 이유</h2>
-      <div class="text-stone-700 leading-loose">
-        생활습관/피로/스트레스 로 인해 느닷없이 찾아올 수 있는 것이 바로 일반적인 통증입니다. 가볍게 여기고 방치하다가 치료시기를 놓치게 되면 만성질환으로까지 발전할 수 있기 때문에 통증이 발생했을 때 빠르게 치료받을 수록 예후가 좋습니다.
+    <h2 class="text-xl md:text-2xl font-bold mb-8 text-navy-900 flex items-center gap-3">
+      <i class="fa-solid fa-kit-medical text-navy-500"></i>
+      기타 통증 질환의 종류
+    </h2>
+    <div class="relative z-10">
+      <p class="text-navy-800 text-lg mb-6 leading-relaxed">
+        발목, 허리, 어깨와 같이 흔히 알고 있는 통증 외에도 <span class="font-bold">신체 곳곳의 다양한 통증</span>을 치료합니다.
+      </p>
+      
+      <!-- 질환 리스트 태그형 배치 -->
+      <div class="flex flex-wrap gap-2 text-sm">
+        <span class="px-4 py-2 bg-white rounded-full border border-navy-200 text-navy-700 shadow-sm">#머리</span>
+        <span class="px-4 py-2 bg-white rounded-full border border-navy-200 text-navy-700 shadow-sm">#목</span>
+        <span class="px-4 py-2 bg-white rounded-full border border-navy-200 text-navy-700 shadow-sm">#팔꿈치</span>
+        <span class="px-4 py-2 bg-white rounded-full border border-navy-200 text-navy-700 shadow-sm">#무릎</span>
+        <span class="px-4 py-2 bg-white rounded-full border border-navy-200 text-navy-700 shadow-sm">#손목</span>
+        <span class="px-4 py-2 bg-white rounded-full border border-navy-200 text-navy-700 shadow-sm">#각종 염좌</span>
       </div>
+      
+      <p class="mt-8 text-navy-900 leading-relaxed font-medium">
+        상기 부위에 통증이 발생했을 때 <br class="hidden md:block">
+        <span class="border-b-2 border-navy-400">모두 치료해야 하는 경우</span>라고 할 수 있습니다.
+      </p>
     </div>
+  </div>
 
-    <!-- 기타 통증 질환의 종류 (이미지 통합) -->
-    <div class="bg-navy-50 border border-navy-100 rounded-3xl p-8 shadow-sm">
-      <h2 class="text-xl font-bold mb-6 text-navy-900 border-b border-navy-200 pb-4">■ 기타 통증 질환의 종류</h2>
-      <div class="grid md:grid-cols-12 gap-6 items-center">
-        <div class="md:col-span-8 text-navy-900 leading-loose">
-          발목/허리/어깨와 같이 흔히 알고 있는 통증 외에도 머리/목/팔꿈치/무릎/손목 그리고 기타 각종 염좌 등이 발생했을 때 모두 치료해야하는 경우라고 할 수 있습니다.
-        </div>
-        <!-- 기존 바디맵 이미지 자리 (세련된 아이콘이나 심플한 그래픽으로 대체 가능) -->
-        <div class="md:col-span-4 flex justify-center opacity-60">
-          <i class="fa-solid fa-person-dots-from-line text-8xl text-stone-300"></i>
-        </div>
-      </div>
-    </div>
-
+</div>
   </div>
 
   <!-- 섹션 2: 주요 통증 질환 (기존 첫 번째 장 내용) -->
