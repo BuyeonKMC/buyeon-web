@@ -1,314 +1,343 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>한의원 소개 - 경희부연한의원</title>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한의원 소개 | 경희부연한의원</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+    .hide-scroll::-webkit-scrollbar { display: none; }
+    .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    .nav-gradient-left { background: linear-gradient(to right, white, transparent); }
+    .nav-gradient-right { background: linear-gradient(to left, white, transparent); }
+    
+    @media (max-width: 768px) {
+      body { padding-bottom: 64px; }
+    }
+  </style>
 </head>
 
-<body class="bg-white text-gray-800">
+<body class="bg-stone-50 text-stone-800">
 
-<!-- 상단 -->
+<!-- =========================================================
+1️⃣ 상단 헤더
+========================================================= -->
 <header class="w-full border-b bg-white sticky top-0 z-50">
-
   <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
-
-    <!-- 로고 -->
     <div class="text-lg font-semibold whitespace-nowrap">
-      <a href="index.html" class="flex items-center gap-2">
-    <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-8 w-auto object-contain">
-    <span>경희부연한의원 HOME</span>
-  </a>
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-9 w-auto object-contain block">
+        <span class="text-stone-900 tracking-tight">경희부연한의원 <span class="font-normal text-stone-500 text-sm ml-1">HOME</span></span>
+      </a>
     </div>
-
-    <!-- PC 메뉴 -->
-    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm">
-      <a href="about.html">소개</a>
-      <a href="obesity.html">비만</a>
-      <a href="rhinitis.html">비염</a>
-      <a href="pain.html">통증</a>
-      <a href="digestive.html">소화불량</a>
-      <a href="rls.html">하지불안</a>
-      <a href="postnatal.html">산후보양</a>
-      <a href="pediatric.html">소아보양</a>
-      <a href="accident.html">교통사고</a>
-      <a href="faq.html">FAQ</a>
-    </nav>
-
-    <!-- 모바일 버튼 -->
-    <button onclick="toggleMenu()" class="md:hidden text-2xl">
-      ☰
-    </button>
-
-  </div>
-
-  <!-- 모바일 메뉴 -->
-  <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
-    <a href="about.html" class="py-2 border-b">한의원 소개</a>
-    <a href="obesity.html" class="py-2 border-b">비만</a>
-    <a href="rhinitis.html" class="py-2 border-b">비염</a>
-    <a href="pain.html" class="py-2 border-b">통증</a>
-    <a href="digestive.html" class="py-2 border-b">소화불량</a>
-    <a href="rls.html" class="py-2 border-b">하지불안증후군</a>
-    <a href="postnatal.html" class="py-2 border-b">산후보양</a>
-    <a href="pediatric.html" class="py-2 border-b">소아보양</a>
-    <a href="accident.html" class="py-2 border-b">교통사고</a>
-    <a href="faq.html" class="py-2">FAQ</a>
-  </div>
-
-</header>
-<style>
-  .hide-scroll::-webkit-scrollbar { display: none; }
-  .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-  .nav-gradient-left { background: linear-gradient(to right, white, transparent); }
-  .nav-gradient-right { background: linear-gradient(to left, white, transparent); }
-</style>
-
-<nav class="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
-  <div class="max-w-6xl mx-auto px-2 relative group">
     
+    <nav class="hidden md:flex flex-wrap justify-end gap-5 text-[15px] font-medium text-stone-600">
+      <a href="about.html" class="text-slate-800 font-bold">소개</a>
+      <a href="obesity.html" class="hover:text-slate-800 transition-colors">비만</a>
+      <a href="rhinitis.html" class="hover:text-slate-800 transition-colors">비염</a>
+      <a href="pain.html" class="hover:text-slate-800 transition-colors">통증</a>
+      <a href="digestive.html" class="hover:text-slate-800 transition-colors">소화불량</a>
+      <a href="rls.html" class="hover:text-slate-800 transition-colors">하지불안</a>
+      <a href="postnatal.html" class="hover:text-slate-800 transition-colors">산후보양</a>
+      <a href="pediatric.html" class="hover:text-slate-800 transition-colors">소아보양</a>
+      <a href="accident.html" class="hover:text-slate-800 transition-colors">교통사고</a>
+      <a href="faq.html" class="hover:text-slate-800 transition-colors">FAQ</a>
+    </nav>
+    
+    <button onclick="toggleMenu()" class="md:hidden text-2xl text-stone-600">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- 모바일 토글 메뉴 -->
+  <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white font-medium text-stone-700">
+    <a href="about.html" class="py-3 border-b text-slate-800 font-bold">한의원 소개</a>
+    <a href="obesity.html" class="py-3 border-b">비만</a>
+    <a href="rhinitis.html" class="py-3 border-b">비염</a>
+    <a href="pain.html" class="py-3 border-b">통증</a>
+    <a href="digestive.html" class="py-3 border-b">소화불량</a>
+    <a href="rls.html" class="py-3 border-b">하지불안증후군</a>
+    <a href="postnatal.html" class="py-3 border-b">산후보양</a>
+    <a href="pediatric.html" class="py-3 border-b">소아보양</a>
+    <a href="accident.html" class="py-3 border-b">교통사고</a>
+    <a href="faq.html" class="py-3">FAQ</a>
+  </div>
+</header>
+
+<!-- =========================================================
+2️⃣ 모바일 가로 스크롤 네비게이션
+========================================================= -->
+<nav class="sticky top-[69px] md:top-[77px] z-40 w-full bg-white border-b border-gray-100 shadow-sm md:hidden">
+  <div class="max-w-6xl mx-auto px-2 relative group">
     <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-2 nav-gradient-left opacity-0 transition-opacity pointer-events-none">
-      <span class="text-stone-400 text-xl">❮</span>
+      <i class="fa-solid fa-chevron-left text-stone-400 text-sm"></i>
     </div>
 
-     <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-4 space-x-7 text-[15px] hide-scroll md:justify-center">
-      <li><a href="/about.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[13px]">소개</a></li>
-      <li><a href="/obesity.html" class="text-gray-400 hover:text-stone-800 transition-colors">비만</a></li>
-      <li><a href="/rhinitis.html" class="text-gray-400 hover:text-stone-800 transition-colors">비염</a></li>
-      <li><a href="/pain.html" class="text-gray-400 hover:text-stone-800 transition-colors">통증</a></li>
-      <li><a href="/digestive.html" class="text-gray-400 hover:text-stone-800 transition-colors">소화불량</a></li>
+    <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-3.5 space-x-7 text-[15px] hide-scroll">
+      <li><a href="/about.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[11px]">소개</a></li>
+      <li><a href="/obesity.html" class="text-stone-400">비만</a></li>
+      <li><a href="/rhinitis.html" class="text-stone-400">비염</a></li>
+      <li><a href="/pain.html" class="text-stone-400">통증</a></li>
+      <li><a href="/digestive.html" class="text-stone-400">소화불량</a></li>
       <li><a href="/rls.html" class="text-stone-400">하지불안</a></li>
       <li><a href="/postnatal.html" class="text-stone-400">산후보양</a></li>
       <li><a href="/pediatric.html" class="text-stone-400">소아보양</a></li>
       <li><a href="/accident.html" class="text-stone-400">교통사고</a></li>
-      <li><a href="/faq.html" class="text-stone-400">교통사고</a></li>
+      <li><a href="/faq.html" class="text-stone-400">FAQ</a></li>
     </ul>
 
-    <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right opacity-100 transition-opacity pointer-events-none">
-      <span class="text-stone-400 text-xl">❯</span>
+    <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right transition-opacity pointer-events-none">
+      <i class="fa-solid fa-chevron-right text-stone-400 text-sm"></i>
     </div>
-
   </div>
 </nav>
 
+<!-- =========================================================
+3️⃣ 히어로 섹션 (소개 타이틀)
+========================================================= -->
+<section class="bg-slate-800 py-16 md:py-24 text-center px-4 relative">
+  <div class="max-w-4xl mx-auto relative z-10">
+    <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">경희부연한의원 소개</h1>
+    <p class="text-slate-300 text-lg">환자를 먼저 생각하는 정직하고 따뜻한 진료</p>
+  </div>
+</section>
+
+<!-- =========================================================
+4️⃣ 원장 인사말 & 약력
+========================================================= -->
+<section class="max-w-5xl mx-auto px-4 py-20">
+  <div class="bg-white rounded-[2rem] shadow-sm border border-stone-100 overflow-hidden">
+    <div class="flex flex-col lg:flex-row">
+      
+      <!-- 좌측: 사진 및 인사말 -->
+      <div class="lg:w-1/2 p-8 md:p-12 bg-white flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-stone-800 flex items-center gap-3 mb-8">
+            <span class="w-2 h-6 bg-slate-600 block rounded-full"></span>
+            인사말
+          </h2>
+          <div class="space-y-5 text-stone-600 leading-relaxed text-[16px]">
+            <p>경희부연한의원은 정성과 신뢰를 바탕으로 진료합니다.</p>
+            <p>내원하시는 모든 환자분들이 바로 회복을 위해 최선은 다할 것을 약속드립니다.</p>
+            <p>병원의 가장 기본인 위생과 청결을 유지하며, 환자분들이 편안한 환경에서 치료받을 수 있도록 늘 힘쓰고 있습니다.</p>
+            <p>경희부연한의원에서 치료받는 분들이 믿음을 가지고 치료받을 수 있도록 늘 정직하고 진심을 담은 마음으로 치료에 임하겠습니다.</p>
+            <p>언제까지나 한결같은 자세로 환자분들의 건강을 위해 최선을 다하겠습니다. 감사합니다.</p>
+          </div>
+        </div>
+        <div class="mt-10 text-right">
+          <p class="text-stone-500 text-sm mb-1">경희부연한의원 대표원장</p>
+          <p class="text-2xl font-bold text-stone-800 tracking-widest">전 진 영</p>
+        </div>
+      </div>
+
+      <!-- 우측: 원장님 사진 & 약력 -->
+      <div class="lg:w-1/2 bg-stone-50 p-8 md:p-12 border-t lg:border-t-0 lg:border-l border-stone-100">
+        <div class="aspect-video lg:aspect-[4/3] rounded-2xl overflow-hidden mb-8 shadow-sm">
+          <img src="/doctor.avif" alt="전진영 원장" class="w-full h-full object-cover">
+        </div>
+        
+        <h3 class="text-lg font-bold text-stone-800 mb-4 border-b border-stone-200 pb-2">원장 약력</h3>
+        <ul class="space-y-2 text-stone-600 text-[15px]">
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-400 mt-1.5 text-xs"></i> 경희대학교 한의과대학 졸업</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-400 mt-1.5 text-xs"></i> 경희의료원 한방병원 임상과정 수료</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-400 mt-1.5 text-xs"></i> 전) 전남 진도군 보건소 한방진료과장</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-400 mt-1.5 text-xs"></i> 전) 경기도 양평군 보건소 한방진료과장</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-400 mt-1.5 text-xs"></i> 前) 경희백동진한의원 덕천점 원장</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-400 mt-1.5 text-xs"></i> 前) 조은몸한의원 진료원장</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-400 mt-1.5 text-xs"></i> 現) 경희부연한의원 원장</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-400 mt-1.5 text-xs"></i> 네이버 지식 iN 상담한의사</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-400 mt-1.5 text-xs"></i> 신천침법연구회 정회원</li>
+          <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-400 mt-1.5 text-xs"></i> 대한한의학회 정회원</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+5️⃣ 원내 둘러보기 (갤러리)
+========================================================= -->
+<section class="bg-stone-50 py-20 px-4 border-y border-stone-100">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-stone-800 mb-3">원내 둘러보기</h2>
+      <p class="text-stone-500">항상 청결하고 편안한 진료 환경을 유지합니다.</p>
+    </div>
+
+    <!-- 이미지 그리드 (비율 통일) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm group bg-white cursor-pointer" onclick="openModal('/clinic1.JPG')">
+        <img src="/clinic1.JPG" alt="원내 전경" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+      </div>
+      <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm group bg-white cursor-pointer" onclick="openModal('/clinic2.JPG')">
+        <img src="/clinic2.JPG" alt="원내 시설" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+      </div>
+      <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm group bg-white cursor-pointer" onclick="openModal('/clinic3.JPG')">
+        <img src="/clinic3.JPG" alt="원내 시설" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+      </div>
+      <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm group bg-white cursor-pointer" onclick="openModal('/clinic4.JPG')">
+        <img src="/clinic4.JPG" alt="원내 시설" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+      </div>
+      <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm group bg-white cursor-pointer" onclick="openModal('/clinic5.JPG')">
+        <img src="/clinic5.JPG" alt="치료실" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+      </div>
+      <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm group bg-white cursor-pointer" onclick="openModal('/clinic6.JPG')">
+        <img src="/clinic6.JPG" alt="치료실 시설" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+      </div>
+      <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm group bg-white cursor-pointer" onclick="openModal('/clinic7.JPG')">
+        <img src="/clinic7.JPG" alt="대기실" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+      </div>
+      <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm group bg-white cursor-pointer" onclick="openModal('/clinic8.JPG')">
+        <img src="/clinic8.JPG" alt="탕전실" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+6️⃣ 오시는 길
+========================================================= -->
+<section class="max-w-5xl mx-auto py-20 px-4">
+  <h2 class="text-2xl md:text-3xl font-bold text-stone-800 flex items-center gap-3 mb-10">
+    <span class="w-2 h-6 bg-slate-600 block rounded-full"></span>
+    오시는 길
+  </h2>
+
+  <div class="flex flex-col md:flex-row gap-10 items-center">
+    <!-- 약도 이미지 -->
+    <div class="w-full md:w-1/2">
+      <div class="bg-white p-4 rounded-2xl shadow-sm border border-stone-100 relative group cursor-pointer" onclick="openModal('map.jpg')">
+        <img src="map.jpg" alt="경희부연한의원 약도" class="w-full h-auto rounded-xl">
+        <div class="absolute inset-0 bg-black/5 rounded-2xl group-hover:bg-transparent transition-colors"></div>
+        <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur text-stone-600 px-3 py-1.5 rounded-lg text-sm shadow-sm flex items-center gap-2">
+          <i class="fa-solid fa-magnifying-glass-plus"></i> 지도 크게보기
+        </div>
+      </div>
+    </div>
+
+    <!-- 오시는 길 상세 텍스트 -->
+    <div class="w-full md:w-1/2 space-y-8">
+      <div>
+        <h3 class="text-xl font-bold text-stone-800 mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-location-dot text-slate-500"></i> 주소
+        </h3>
+        <p class="text-stone-600 leading-relaxed text-lg">
+          서울시 도봉구 도당로 7 벽산송화프라자 3층<br>
+          <span class="inline-block mt-2 bg-stone-100 text-stone-700 px-3 py-1 rounded-md text-sm font-medium">다이소 건물 3층입니다.</span>
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-bold text-stone-800 mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-phone text-slate-500"></i> 전화번호
+        </h3>
+        <p class="text-2xl font-bold text-slate-700">02-905-7553</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+🔥 모달 (이미지 확대)
+========================================================= -->
+<div id="modal" class="fixed inset-0 bg-black/90 backdrop-blur-sm hidden items-center justify-center z-[100] opacity-0 transition-opacity duration-300" onclick="closeModal()">
+  <div class="relative w-full h-full flex items-center justify-center p-4">
+    <button class="absolute top-6 right-6 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
+    <img id="modalImg" class="max-w-full max-h-full rounded-xl shadow-2xl transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+  </div>
+</div>
+
+<!-- =========================================================
+7️⃣ 모바일 하단 고정 버튼
+========================================================= -->
+<div class="fixed bottom-0 left-0 right-0 z-[60] md:hidden">
+  <div class="flex h-[64px] shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+    <a href="tel:02-905-7553" class="flex-1 bg-stone-800 text-white flex items-center justify-center gap-2 active:bg-stone-900 transition-colors">
+      <i class="fa-solid fa-phone-volume text-lg"></i>
+      <span class="font-bold tracking-tight">전화상담</span>
+    </a>
+    <a href="/location.html" class="flex-1 bg-slate-700 text-white flex items-center justify-center gap-2 active:bg-slate-800 transition-colors">
+      <i class="fa-solid fa-map-location-dot text-lg"></i>
+      <span class="font-bold tracking-tight">오시는길</span>
+    </a>
+  </div>
+</div>
+
+<!-- =========================================================
+8️⃣ 푸터
+========================================================= -->
+<footer class="py-12 text-center text-sm text-stone-400 bg-white border-t border-stone-100">
+  <div class="max-w-6xl mx-auto px-4 leading-loose">
+    <p class="text-stone-600 font-bold mb-4">Tel. 02 ) 905 - 7553 | 서울시 도봉구 도당로 7 벽산 송화프라자 3층</p>
+    <p>사업자명: 경희부연한의원 | 대표: 전진영 | 사업자번호: 210-92-17097</p>
+    <p class="text-xs uppercase tracking-widest mt-2 italic">COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED</p>
+  </div>
+</footer>
+
+<!-- =========================================================
+⚙️ 스크립트 모음
+========================================================= -->
 <script>
+  // 모바일 메뉴 토글
+  function toggleMenu(){
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
+  }
+
+  // 모바일 스크롤 네비게이션 화살표 처리
   const scrollContainer = document.getElementById('menuScroll');
   const leftArrow = document.getElementById('leftArrow');
   const rightArrow = document.getElementById('rightArrow');
 
-  function updateArrows() {
-    const scrollLeft = scrollContainer.scrollLeft;
-    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-    // 왼쪽 화살표: 조금이라도 오른쪽으로 밀었으면 표시
-    leftArrow.style.opacity = scrollLeft > 10 ? "1" : "0";
-    
-    // 오른쪽 화살표: 끝까지 도달하지 않았으면 표시
-    rightArrow.style.opacity = scrollLeft < maxScroll - 10 ? "1" : "0";
+  if(scrollContainer) {
+    function updateArrows() {
+      const scrollLeft = scrollContainer.scrollLeft;
+      const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      leftArrow.style.opacity = scrollLeft > 10 ? "1" : "0";
+      rightArrow.style.opacity = scrollLeft < maxScroll - 10 ? "1" : "0";
+    }
+    scrollContainer.addEventListener('scroll', updateArrows);
+    window.addEventListener('load', updateArrows);
+    window.addEventListener('resize', updateArrows);
   }
 
-  // 스크롤 할 때마다 화살표 상태 업데이트
-  scrollContainer.addEventListener('scroll', updateArrows);
-  // 처음 로딩될 때 한 번 실행
-  window.addEventListener('load', updateArrows);
-  // 화면 크기 바뀔 때 실행
-  window.addEventListener('resize', updateArrows);
-</script>
+  // 모달 제어
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modalImg');
 
-<!-- 본문 -->
-<section class="max-w-4xl mx-auto px-4 py-16">
-
-  <!-- 타이틀 -->
-  <h1 class="text-2xl md:text-3xl font-semibold text-center mb-12">
-    인사말
-  </h1>
-
-  <!-- 사진 + 약력 -->
-  <div class="flex flex-col md:flex-row gap-10 items-start">
-
-    <!-- 사진 -->
-    <img src="/doctor.avif"
-         class="w-full md:w-[300px] rounded-xl shadow">
-
-    <!-- 약력 -->
-    <div class="flex-1">
-      <h2 class="text-lg font-semibold mb-4">약력</h2>
-
-      <ul class="space-y-2 text-gray-600 leading-relaxed">
-        <li>경희대학교 한의과대학 졸업</li>
-        <li>경희의료원 한방병원 임상과정 수료</li>
-        <li>전) 전남 진도군 보건소 한방진료과장</li>
-        <li>전) 경기도 양평군 보건소 한방진료과장</li>
-        <li>前) 경희백동진한의원 덕천점 원장</li>
-        <li>前) 조은몸한의원 진료원장</li>
-        <li>現) 경희부연한의원 원장</li>
-        <li>네이버 지식 iN 상담한의사</li>
-        <li>신천침법연구회 정회원</li>
-        <li>대한한의학회 정회원</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- 인사말 -->
-  <div class="mt-12 space-y-5 text-gray-700 leading-loose">
-
-    <p>경희부연한의원은 정성과 신뢰를 바탕으로 진료합니다.</p>
-
-    <p>
-      내원하시는 모든 환자분들이 바로 회복을 위해 최선을 다할 것을 약속드립니다.
-    </p>
-
-    <p>
-      병원의 가장 기본인 위생과 청결을 유지하며,
-      환자분들이 편안한 환경에서 치료받을 수 있도록 늘 힘쓰고 있습니다.
-    </p>
-
-    <p>
-      경희부연한의원에서 치료받는 분들이 믿음을 가지고 치료받을 수 있도록
-      늘 정직하고 진심을 담은 마음으로 치료에 임하겠습니다.
-    </p>
-
-    <p>
-      언제까지나 한결같은 자세로 환자분들의 건강을 위해 최선을 다하겠습니다.
-    </p>
-
-    <p>감사합니다.</p>
-
-  </div>
-
-  <!-- 서명 -->
-  <div class="mt-10 text-right font-semibold">
-    원장 전진영
-  </div>
-
-</section>
-<!원내 둘러보기 이미지 나열-->
-<section class="bg-gray-50 py-16 px-4">
-
-  <h2 class="text-2xl font-semibold text-center mb-10">
-    원내 둘러보기
-  </h2>
-
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-
-    <!-- 🔥 이미지 1 -->
-    <img src="/clinic1.JPG" onclick="openModal(this.src)"
-         class="cursor-pointer rounded-lg hover:opacity-80">
-
-    <img src="/clinic2.JPG" onclick="openModal(this.src)"
-         class="cursor-pointer rounded-lg hover:opacity-80">
-
-    <img src="/clinic3.JPG" onclick="openModal(this.src)"
-         class="cursor-pointer rounded-lg hover:opacity-80">
-
-    <img src="/clinic4.JPG" onclick="openModal(this.src)"
-         class="cursor-pointer rounded-lg hover:opacity-80">
-
-    <img src="/clinic5.JPG" onclick="openModal(this.src)"
-         class="cursor-pointer rounded-lg hover:opacity-80">
-
-    <img src="/clinic6.JPG" onclick="openModal(this.src)"
-         class="cursor-pointer rounded-lg hover:opacity-80">
-
-    <img src="/clinic7.JPG" onclick="openModal(this.src)"
-         class="cursor-pointer rounded-lg hover:opacity-80">
-
-    <img src="/clinic8.JPG" onclick="openModal(this.src)"
-         class="cursor-pointer rounded-lg hover:opacity-80">
-
-  </div>
-
-</section>
-<section class="py-16 px-4 text-center">
-
-  <h2 class="text-2xl font-semibold mb-6">오시는 길</h2>
-
-  <!-- 🔥 지도 이미지 or 지도 iframe -->
-<img src="map.jpg" onclick="openModal(this.src)"
-     class="cursor-pointer rounded-lg hover:opacity-80 h-auto mx-auto block
-            w-full md:w-3/4 max-w-lg"
-     alt="경희부연한의원 오시는 길 지도">
-
-  <p class="text-gray-600">
-    서울시 도봉구 도당로 7 벽산송화프라자 3층 경희부연한의원
-    <br>다이소 건물 3층입니다.
-  </p>
-
-  <p class="text-gray-600">
-    Tel. 02-905-7553
-  </p>
-
-</section>
-  
-<!-- 🔥 모달 (이미지 확대) -->
-<div id="modal"
-     class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50"
-     onclick="closeModal()">
-
-  <img id="modalImg" class="max-w-[90%] max-h-[90%] rounded-lg">
-</div>
-
-<script>
-function openModal(src) {
-  document.getElementById('modal').style.display = 'flex';
-  document.getElementById('modalImg').src = src;
-}
-
-function closeModal() {
-  document.getElementById('modal').style.display = 'none';
-}
-</script>
-  <div class="fixed bottom-0 left-0 right-0 z-[60] md:hidden">
-  <div class="flex h-16 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
-    
-    <a href="tel:02-905-7553" 
-       class="flex-1 bg-stone-800 text-white flex items-center justify-center gap-2 active:bg-stone-900 transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-      </svg>
-      <span class="font-bold tracking-tight">전화상담</span>
-    </a>
-
-    <a href="/location.html"
-       class="flex-1 bg-green-600 text-white flex items-center justify-center gap-2 active:bg-green-700 transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-      <span class="font-bold tracking-tight">오시는길</span>
-    </a>
-
-  </div>
-</div>
-
-<style>
-  @media (max-width: 768px) {
-    body { padding-bottom: 64px; }
+  function openModal(src) {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    // 약간의 딜레이 후 opacity 변경으로 페이드인 효과
+    setTimeout(() => {
+      modal.classList.remove('opacity-0');
+      modalImg.classList.remove('scale-95');
+    }, 10);
+    modalImg.src = src;
   }
-</style>
+
+  function closeModal() {
+    modal.classList.add('opacity-0');
+    modalImg.classList.add('scale-95');
+    // 페이드아웃 애니메이션 대기 후 숨김
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      modalImg.src = '';
+    }, 300);
+  }
+</script>
 
 </body>
-  <!-- =========================================================
-📱 모바일 메뉴 스크립트
-========================================================= -->
-<script>
-function toggleMenu(){
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('hidden');
-}
-</script>
-<!-- =========================================================
-8️⃣ 푸터
-========================================================= -->
-<footer class="py-8 text-center text-sm text-gray-500">
-
-  <!-- 🔥 병원명 수정 -->
- Tel.  02 ) 905 - 7553 서울시 도봉구 도당로 7 벽산 송화프라자 3층 <br><br>
-
-사업자명  경희부연한의원  대표  전진영    사업자번호  210-92-17097<br>
-COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED
-
-</footer>
 </html>
