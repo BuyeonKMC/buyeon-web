@@ -150,46 +150,69 @@
   </div>
 
   <!-- 섹션 2: 한방치료가 필요한 이유 -->
-  <div>
-    <h2 class="text-2xl font-bold mb-8 text-stone-800 flex items-center gap-2">
-      <span class="w-2 h-6 bg-blue-600 block rounded-sm"></span> 한방치료가 꼭 필요한 이유
-    </h2>
-    <p class="text-stone-700 leading-loose mb-12">
-      단순히 불편한 증상만 잠시 가려주고 억제하는 <span class="text-red-500 font-bold text-lg">일시적 완화가 아닌</span>,<br>
-      근본 치료를 통해서 위장의 회복에 힘씁니다.
+ <div class="space-y-12">
+  <div class="text-center space-y-4">
+    <h2 class="text-3xl font-bold text-stone-900 font-['GmarketSans']">한방치료가 꼭 필요한 이유</h2>
+    <p class="text-stone-600 text-lg">
+      단순히 불편한 증상만 잠시 가려주고 억제하는 <span class="text-red-500 font-bold">일시적 완화</span>가 아닌, <br class="hidden md:block">
+      <span class="text-stone-900 font-bold underline decoration-blue-400 decoration-4 underline-offset-4">근본 치료</span>를 통해 위장의 회복에 힘씁니다.
     </p>
+  </div>
 
-    <!-- 비교 인포그래픽 -->
-    <div class="grid md:grid-cols-2 gap-8 items-stretch">
-      <!-- 기존 방식 -->
-      <div class="bg-stone-50 border border-stone-200 p-8 rounded-3xl text-center">
-        <div class="text-stone-400 font-bold text-sm mb-6">위산 과다분비로 인한 소화불량</div>
-        <div class="space-y-4">
-          <div class="bg-white border-2 border-stone-100 p-4 rounded-xl text-stone-600 font-bold">위산 과다분비</div>
-          <i class="fa-solid fa-arrow-down text-stone-300"></i>
-          <div class="bg-stone-800 text-white p-4 rounded-xl font-bold">제산제 복용</div>
-          <div class="grid grid-cols-2 gap-3 mt-4">
-            <div class="bg-white p-3 rounded-lg text-xs text-stone-400">불편감 해소</div>
-            <div class="bg-white p-3 rounded-lg text-xs text-stone-400">산성도 하락</div>
-          </div>
-          <p class="text-red-500 text-sm mt-4 font-bold">"BUT, 회복되지 못한 위장은 계속 반복"</p>
+  <div class="grid md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+    <div class="bg-stone-100/50 p-8 rounded-3xl border border-stone-200 shadow-inner">
+      <h3 class="text-lg font-bold text-stone-500 mb-6 uppercase tracking-widest text-center justify-center">
+        Standard Treatment
+      </h3>
+      <div class="space-y-4 text-center">
+        <div class="bg-white p-4 rounded-xl border border-stone-200 text-stone-800 font-bold">위산 과다분비</div>
+        
+        <i class="fa-solid fa-arrow-down text-blue-300 text-xl"></i>
+        
+        <div class="bg-blue-900 text-white p-4 rounded-xl font-bold shadow-lg shadow-blue-900/20">제산제 복용</div>
+        
+        <i class="fa-solid fa-arrow-down text-blue-300 text-xl"></i>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white p-4 rounded-xl border border-stone-100 text-stone-700 text-sm font-medium">불편감 해소</div>
+          <div class="bg-white p-4 rounded-xl border border-stone-100 text-stone-700 text-sm font-medium">산성도 하락</div>
         </div>
-      </div>
-
-      <!-- 경희부연 방식 -->
-      <div class="bg-blue-50 border-2 border-blue-100 p-8 rounded-3xl text-center shadow-sm relative overflow-hidden">
-        <div class="text-blue-700 font-bold text-sm mb-6">경희부연의 근본 회복 치료</div>
-        <div class="space-y-4 relative z-10">
-          <div class="bg-white p-4 rounded-xl text-blue-900 font-bold border border-blue-100">침 또는 한약으로 <br> 위장에 에너지 공급</div>
-          <i class="fa-solid fa-arrow-down text-blue-300"></i>
-          <div class="bg-blue-600 text-white p-4 rounded-xl font-bold shadow-lg">위장의 운동능력을 <br> 자연적으로 회복</div>
-          <i class="fa-solid fa-arrow-down text-blue-300"></i>
-          <div class="bg-white p-4 rounded-xl text-blue-900 font-bold border border-blue-100">회복된 위장 스스로 <br> 위산을 조절</div>
-          <p class="text-blue-600 font-bold mt-4">"생활관리로 편안함 유지"</p>
+        
+        <div class="mt-6 p-4 bg-red-50 rounded-xl border border-red-100 text-red-600 font-bold italic">
+          "BUT, 회복되지 못한 위장은 계속 반복됩니다"
         </div>
       </div>
     </div>
+
+    <div class="bg-blue-900 p-8 rounded-3xl shadow-2xl shadow-blue-900/30 relative overflow-hidden flex flex-col justify-between">
+      <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full"></div>
+      
+      <div>
+        <h3 class="text-lg font-bold text-blue-200 mb-6 uppercase tracking-widest text-center justify-center">
+          Kyunghee Buyeon Solution
+        </h3>
+        <div class="space-y-6 text-center relative z-10">
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-5 rounded-xl text-white">
+            <strong class="text-blue-300">침 또는 한약</strong>으로 <br> 위장에 에너지 공급
+          </div>
+          
+          <div class="bg-white p-5 rounded-xl text-blue-900 font-bold shadow-xl text-lg">
+            위장의 운동능력을 <br> 자연적으로 회복
+          </div>
+          
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-5 rounded-xl text-white">
+            회복된 위장 스스로 <br> 위산을 조절
+          </div>
+        </div>
+      </div>
+      
+      <div class="pt-6 text-blue-200 font-bold flex items-center justify-center gap-2 text-xl border-t border-white/10 mt-6">
+        <i class="fa-solid fa-circle-check text-green-400"></i>
+        생활관리로 편안함 유지
+      </div>
+    </div>
   </div>
+</div>
 
   <!-- 섹션 3: 방치 시 위험 질병 (검은색 박스 리뉴얼) -->
   <div class="bg-stone-900 rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden">
