@@ -1,235 +1,243 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>산후보양 | 경희부연한의원</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-  body { font-family: 'Pretendard', sans-serif; line-height: 1.7; }
-  .hide-scroll::-webkit-scrollbar { display: none; }
-  .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>산후보양 | 경희부연한의원</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+    .hide-scroll::-webkit-scrollbar { display: none; }
+    .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    .nav-gradient-left { background: linear-gradient(to right, white, transparent); }
+    .nav-gradient-right { background: linear-gradient(to left, white, transparent); }
+
+    /* 로즈골드 메인 포인트 컬러 정의 */
+    .text-rose-gold { color: #b76e79; }
+    .bg-rose-gold { background-color: #b76e79; }
+    .border-rose-gold { border-color: #b76e79; }
+
+    @media (max-width: 768px) {
+      body { padding-bottom: 64px; }
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
-  <!-- =========================================================
-🔥 상단 헤더 (PC+ 모바일 완전 대응)
+
+<body class="bg-white text-stone-800">
+
+<!-- =========================================================
+1️⃣ 상단 헤더 (공통 스타일)
 ========================================================= -->
-<!-- 상단 -->
 <header class="w-full border-b bg-white sticky top-0 z-50">
-
   <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
-
-    <!-- 로고 -->
     <div class="text-lg font-semibold whitespace-nowrap">
-      <a href="index.html" class="flex items-center gap-2">
-    <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-8 w-auto object-contain">
-    <span>경희부연한의원 HOME</span>
-  </a>
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-10 w-auto object-contain block">
+        <span class="text-stone-900">경희부연한의원 HOME</span>
+      </a>
     </div>
-
-    <!-- PC 메뉴 -->
-    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm">
+    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm font-medium text-stone-600">
       <a href="about.html">소개</a>
       <a href="obesity.html">비만</a>
       <a href="rhinitis.html">비염</a>
       <a href="pain.html">통증</a>
       <a href="digestive.html">소화불량</a>
       <a href="rls.html">하지불안</a>
-      <a href="postnatal.html">산후보양</a>
+      <a href="postnatal.html" class="text-rose-600 font-bold">산후보양</a>
       <a href="pediatric.html">소아보양</a>
       <a href="accident.html">교통사고</a>
       <a href="faq.html">FAQ</a>
     </nav>
-
-    <!-- 모바일 버튼 -->
-    <button onclick="toggleMenu()" class="md:hidden text-2xl">
-      ☰
-    </button>
-
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
   </div>
-
-  <!-- 모바일 메뉴 -->
-  <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
-    <a href="index.html" class="py-2 border-b">홈</a>
-    <a href="about.html" class="py-2 border-b">한의원 소개</a>
-    <a href="obesity.html" class="py-2 border-b">비만</a>
-    <a href="rhinitis.html" class="py-2 border-b">비염</a>
-    <a href="pain.html" class="py-2 border-b">통증</a>
-    <a href="digestive.html" class="py-2 border-b">소화불량</a>
-    <a href="rls.html" class="py-2 border-b">하지불안증후군</a>
-    <a href="postnatal.html" class="py-2 border-b">산후보양</a>
-    <a href="pediatric.html" class="py-2 border-b">소아보양</a>
-    <a href="accident.html" class="py-2 border-b">교통사고</a>
-    <a href="faq.html" class="py-2">FAQ</a>
-  </div>
-
 </header>
 
-<!-- 모바일 가로 스크롤 메뉴 코드 -->
-  <style>
-  .hide-scroll::-webkit-scrollbar { display: none; }
-  .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-  .nav-gradient-left { background: linear-gradient(to right, white, transparent); }
-  .nav-gradient-right { background: linear-gradient(to left, white, transparent); }
-</style>
-
-<nav class="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
-  <div class="max-w-6xl mx-auto px-2 relative group">
-    
-    <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-2 nav-gradient-left opacity-0 transition-opacity pointer-events-none">
-      <span class="text-stone-400 text-xl">❮</span>
-    </div>
-
+<!-- =========================================================
+2️⃣ 모바일 가로 스크롤 네비게이션
+========================================================= -->
+<nav class="sticky top-[73px] md:top-[81px] z-40 w-full bg-white border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-2 relative">
     <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-4 space-x-7 text-[15px] hide-scroll md:justify-center">
-      <li><a href="/about.html" class="text-gray-400 hover:text-stone-800 transition-colors">소개</a></li>
-      <li><a href="/obesity.html" class="text-gray-400 hover:text-stone-800 transition-colors">비만</a></li>
-      <li><a href="/rhinitis.html" class="text-gray-400 hover:text-stone-800 transition-colors">비염</a></li>
-      <li><a href="/pain.html" class="text-gray-400 hover:text-stone-800 transition-colors">통증</a></li>
-      <li><a href="/digestive.html" class="text-gray-400 hover:text-stone-800 transition-colors">소화불량</a></li>
-      <li><a href="/rls.html" class="text-stone-400">하지불안</a></li>
+      <li><a href="/about.html" class="text-gray-400">소개</a></li>
+      <li><a href="/obesity.html" class="text-gray-400">비만</a></li>
+      <li><a href="/rhinitis.html" class="text-gray-400">비염</a></li>
+      <li><a href="/pain.html" class="text-gray-400">통증</a></li>
+      <li><a href="/digestive.html" class="text-gray-400">소화불량</a></li>
+      <li><a href="/rls.html" class="text-gray-400">하지불안</a></li>
       <li><a href="/postnatal.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[13px]">산후보양</a></li>
-      <li><a href="/pediatric.html" class="text-stone-400">소아보양</a></li>
-      <li><a href="/accident.html" class="text-stone-400">교통사고</a></li>
-      <li><a href="/faq.html" class="text-stone-400">자주묻는질문</a></li>
+      <li><a href="/pediatric.html" class="text-gray-400">소아보양</a></li>
+      <li><a href="/accident.html" class="text-gray-400">교통사고</a></li>
+      <li><a href="/location.html" class="text-gray-400">오시는길</a></li>
     </ul>
-
-    <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right opacity-100 transition-opacity pointer-events-none">
-      <span class="text-stone-400 text-xl">❯</span>
-    </div>
-
   </div>
 </nav>
 
-<script>
-  const scrollContainer = document.getElementById('menuScroll');
-  const leftArrow = document.getElementById('leftArrow');
-  const rightArrow = document.getElementById('rightArrow');
-
-  function updateArrows() {
-    const scrollLeft = scrollContainer.scrollLeft;
-    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-    // 왼쪽 화살표: 조금이라도 오른쪽으로 밀었으면 표시
-    leftArrow.style.opacity = scrollLeft > 10 ? "1" : "0";
-    
-    // 오른쪽 화살표: 끝까지 도달하지 않았으면 표시
-    rightArrow.style.opacity = scrollLeft < maxScroll - 10 ? "1" : "0";
-  }
-
-  // 스크롤 할 때마다 화살표 상태 업데이트
-  scrollContainer.addEventListener('scroll', updateArrows);
-  // 처음 로딩될 때 한 번 실행
-  window.addEventListener('load', updateArrows);
-  // 화면 크기 바뀔 때 실행
-  window.addEventListener('resize', updateArrows);
-</script>
-
-<section class="bg-gray-50 py-16 text-center px-4">
-  <h1 class="text-3xl md:text-4xl font-semibold mb-6 text-stone-800">
-    출산 후 몸이 내 몸 같지 않다면
-  </h1>
-  <p ctext  p1¹ĺppp¹1¹¹p¹⅙
-  <div class="max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-sm">
-    <img src="/postnatal-hero.png" class="w-full h-auto block" alt="산후보양 이미지">
+<!-- =========================================================
+3️⃣ HERO Section
+========================================================= -->
+<section class="bg-rose-50 py-24 text-center px-4 relative overflow-hidden">
+  <div class="max-w-4xl mx-auto relative z-10">
+    <h1 class="text-3xl md:text-5xl font-bold mb-6 text-stone-900 tracking-tight leading-tight">
+      출산 후 내 몸이 내 몸같지 않다?
+    </h1>
+    <p class="text-lg md:text-2xl text-rose-700 font-bold">
+      여자에게 정말 중요한 순간을 놓치지 마세요!
+    </p>
   </div>
+  <i class="fa-solid fa-heart absolute -bottom-10 -left-10 text-[15rem] text-rose-100/50 rotate-12"></i>
 </section>
 
-<section class="py-16 px-6 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-semibold mb-6">산후풍이란 무엇인가요?</h2>
-  <p class="text-gray-700">산후풍은 출산 후 신체가 약해진 상태에서 적절한 회복이 이루어지지 않을 때 나타나는 질환입니다.<br>
-  이렇게 몸이 쇠약해졌을 때 적절히 조리가 되지 않을 경우에는 만성적인 질환으로 발전할 수 있기 때문에 놓치지 않고 관리해야 합니다.</p>
+<!-- =========================================================
+4️⃣ Main Content
+========================================================= -->
+<section class="py-20 px-4 max-w-5xl mx-auto space-y-28">
 
-  <div class="mt-12 bg-stone-50 p-8 rounded-2xl border border-stone-100">
-    <h3 class="text-xl font-semibold mb-8 text-center">산후풍 주요 증상</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
-      <div class="flex gap-2"><span>✔</span> 관절 통증 (허리, 무릎, 손목)</div>
-      <div class="flex gap-2"><span>✔</span> 신체가 시리거나 찬바람 느낌</div>
-      <div class="flex gap-2"><span>✔</span> 팔/다리 저림 및 부종</div>
-      <div class="flex gap-2"><span>✔</span> 어깨 결림, 목·등 통증</div>
-      <div class="flex gap-2"><span>✔</span> 오한 및 과도한 발한</div>
-      <div class="flex gap-2"><span>✔</span> 심한 피로감과 무기력</div>
-      <div class="flex gap-2"><span>✔</span> 두통, 빈혈, 메스꺼움</div>
-      <div class="flex gap-2"><span>✔</span> 식욕부진, 불안, 우울감</div>
+  <!-- 섹션 1: 정의 -->
+  <div class="flex flex-col md:flex-row items-center gap-12">
+    <div class="flex-1 space-y-6">
+      <h2 class="text-3xl font-bold text-stone-800 flex items-center gap-3">
+        <span class="w-10 h-10 bg-rose-gold text-white rounded-lg flex items-center justify-center text-sm">Q</span>
+        산후풍이 무엇인가요?
+      </h2>
+      <div class="text-stone-700 text-lg leading-relaxed space-y-4">
+        <p class="font-bold text-rose-800">
+          산후에 조리를 적절히 하지 못하여 신체의 일부가 시리거나 관절에 통증이 나타나는 질환을 말합니다.
+        </p>
+        <p>
+          어른들이 산모에게 찬 바람 쐬지 말아라, 찬 물 닿지 않게 조심해라, 말씀하시는 것은 몸이 많이 쇠약한 상태이니 그 만큼 몸을 함부로 하지 말고 조심스럽고 소중하게 하라는 이유입니다.
+        </p>
+        <p class="p-4 bg-stone-50 border-l-4 border-rose-gold text-base">
+          이렇게 몸이 쇠약해졌을 때 적절히 조리가 되지 않을 경우에는 만성적인 질환으로 발전할 수 있기 때문에 놓치지 않고 관리해야 합니다.
+        </p>
+      </div>
+    </div>
+    <div class="w-full md:w-1/3">
+        <!-- 기존 이미지의 실루엣 느낌을 세련되게 배치 -->
+        <div class="bg-rose-100 rounded-full p-12 relative">
+            <i class="fa-solid fa-person-breastfeeding text-9xl text-rose-400"></i>
+            <i class="fa-solid fa-umbrella absolute top-4 right-4 text-4xl text-rose-300"></i>
+        </div>
     </div>
   </div>
+
+  <!-- 섹션 2: 증상 리스트 -->
+  <div class="bg-stone-50 rounded-3xl p-8 md:p-12 border border-stone-100">
+    <h2 class="text-2xl font-bold mb-10 text-stone-800 text-center">산후풍의 증상</h2>
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
+      <!-- 증상 1~8 -->
+      <div class="flex gap-4 items-start">
+        <span class="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm text-rose-600 font-bold shrink-0">1</span>
+        <p class="text-stone-700">허리/무릎/발목/손목 등 한 두 관절부터 전신 관절까지 통증이 온다.</p>
+      </div>
+      <div class="flex gap-4 items-start">
+        <span class="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm text-rose-600 font-bold shrink-0">2</span>
+        <p class="text-stone-700">신체의 일부 또는 전신이 시리거나 찬바람이 들어온다.</p>
+      </div>
+      <div class="flex gap-4 items-start">
+        <span class="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm text-rose-600 font-bold shrink-0">3</span>
+        <p class="text-stone-700">좌 or 우 한 측 또는 일부분의 팔/다리가 저리다.</p>
+      </div>
+      <div class="flex gap-4 items-start">
+        <span class="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm text-rose-600 font-bold shrink-0">4</span>
+        <p class="text-stone-700">어깨 결림이 심하고 뒷목이 당기며 등이 아프다.</p>
+      </div>
+      <div class="flex gap-4 items-start">
+        <span class="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm text-rose-600 font-bold shrink-0">5</span>
+        <p class="text-stone-700">오한이 나며 땀이 지나치게 많이 난다.</p>
+      </div>
+      <div class="flex gap-4 items-start">
+        <span class="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm text-rose-600 font-bold shrink-0">6</span>
+        <p class="text-stone-700">피로가 심하고 모든 일에 의욕이 없다.</p>
+      </div>
+      <div class="flex gap-4 items-start">
+        <span class="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm text-rose-600 font-bold shrink-0">7</span>
+        <p class="text-stone-700">빈혈/두통/메스꺼움 등의 증상이 나타난다.</p>
+      </div>
+      <div class="flex gap-4 items-start">
+        <span class="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm text-rose-600 font-bold shrink-0">8</span>
+        <p class="text-stone-700">식욕부진/불안/우울증 등의 증상이 나타난다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 섹션 3: 원인 및 치료 (인포그래픽 고도화) -->
+  <div class="space-y-12">
+    <div class="text-center">
+      <h2 class="text-2xl font-bold text-stone-800 mb-4">산후풍의 원인 및 치료법</h2>
+      <p class="text-stone-600 max-w-2xl mx-auto">
+        출산 후에는 호르몬 및 환경의 변화로 인해 많은 산후 풍의 증상이 나타날 수 있으므로 <span class="text-rose-700 font-bold">침과 한약 요법</span>을 통해 원기를 회복하고 건강한 생활을 할 수 있도록 도움을 주어야 합니다.
+      </p>
+    </div>
+
+    <!-- 인포그래픽 -->
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+      <!-- 원인 카드 -->
+      <div class="flex-1 w-full space-y-4">
+        <div class="bg-stone-800 text-white p-5 rounded-xl text-center font-bold shadow-lg">순환기능의 저하</div>
+        <div class="bg-stone-800 text-white p-5 rounded-xl text-center font-bold shadow-lg">호르몬의 급격한 변화</div>
+        <div class="bg-stone-800 text-white p-5 rounded-xl text-center font-bold shadow-lg">지속적인 육아 스트레스</div>
+      </div>
+
+      <!-- 화살표 및 치료 -->
+      <div class="flex flex-col items-center gap-4">
+        <i class="fa-solid fa-arrow-right text-rose-300 text-3xl hidden md:block"></i>
+        <i class="fa-solid fa-arrow-down text-rose-300 text-3xl md:hidden"></i>
+        <div class="bg-rose-gold text-white px-8 py-10 rounded-full font-bold text-center shadow-xl border-4 border-rose-100">
+          침 + 한약<br>요법
+        </div>
+        <i class="fa-solid fa-arrow-right text-rose-300 text-3xl hidden md:block"></i>
+        <i class="fa-solid fa-arrow-down text-rose-300 text-3xl md:hidden"></i>
+      </div>
+
+      <!-- 결과 그리드 -->
+      <div class="flex-1 w-full grid grid-cols-2 gap-4">
+        <div class="bg-white border-2 border-rose-200 p-4 rounded-xl text-center text-sm font-bold text-stone-800">관절통증 예방</div>
+        <div class="bg-white border-2 border-rose-200 p-4 rounded-xl text-center text-sm font-bold text-stone-800">산후 우울증 예방</div>
+        <!-- 중앙 원기회복 강조 -->
+        <div class="col-span-2 bg-rose-50 border-2 border-rose-600 p-4 rounded-xl text-center font-bold text-rose-900 shadow-inner">원기회복</div>
+        <div class="bg-white border-2 border-rose-200 p-4 rounded-xl text-center text-sm font-bold text-stone-800">정상적인 순환기능</div>
+        <div class="bg-white border-2 border-rose-200 p-4 rounded-xl text-center text-sm font-bold text-stone-800">관절 조직의 정상화</div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
-<section class="bg-gray-100 py-16 px-4 text-center">
-  <h2 class="text-2xl font-semibold mb-6">치료 원리</h2>
-  <p class="text-gray-600 max-w-2xl mx-auto mb-10">
-    기력을 회복하고 어혈을 제거하여 몸의 균형을 바로잡습니다.
-  </p>
- <img src="/postnatal-diagram.jpg" onclick="openModal(this.src)"
-         class="mx-auto max-w-xl w-full">
- 
-
-</section>
-<!-- 🔥 모달 (이미지 확대) -->
-<div id="modal"
-     class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50"
-     onclick="closeModal()">
-
-  <img id="modalImg" class="max-w-[90%] max-h-[90%] rounded-lg">
-</div> 
-
-
-
-<footer class="py-12 text-center text-sm text-gray-500 border-t">
-  Tel. 02) 905 - 7553 | 서울시 도봉구 도당로 7 벽산 송화프라자 3층 <br><br>
-  사업자명: 경희부연한의원 | 대표: 전진영 | 사업자번호: 210-92-17097<br>
-  COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED
+<!-- =========================================================
+5️⃣ 푸터 (User Summary 기반 정보 반영)
+========================================================= -->
+<footer class="py-12 text-center text-sm text-stone-400 bg-white border-t">
+  <div class="max-w-6xl mx-auto px-4 leading-loose">
+    <p class="text-stone-600 font-bold mb-4">Tel. 02 ) 905 - 7553 | 서울시 도봉구 도봉로 7 벽산 송화프라자 3층</p>
+    <p>사업자명: 경희부연한의원 | 대표: 전진영 | 사업자번호: 210-92-17097</p>
+    <p class="text-xs uppercase tracking-widest mt-2">COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED</p>
+  </div>
 </footer>
-<script>
-function openModal(src) {
-  document.getElementById('modal').style.display = 'flex';
-  document.getElementById('modalImg').src = src;
-}
 
-function closeModal() {
-  document.getElementById('modal').style.display = 'none';
-}
-</script>
-
-  
 <script>
   function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('hidden');
-    menu.classList.toggle('flex');
+    const m = document.getElementById('mobileMenu');
+    m.classList.toggle('hidden'); m.classList.toggle('flex');
+  }
+
+  const scrollContainer = document.getElementById('menuScroll');
+  if (scrollContainer) {
+    window.addEventListener('load', () => {
+      const activeMenu = scrollContainer.querySelector('.font-bold');
+      if (activeMenu) {
+        activeMenu.scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+      }
+    });
   }
 </script>
-<div class="fixed bottom-0 left-0 right-0 z-[60] md:hidden">
-  <div class="flex h-16 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
-    
-    <a href="tel:02-905-7553" 
-       class="flex-1 bg-stone-800 text-white flex items-center justify-center gap-2 active:bg-stone-900 transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-      </svg>
-      <span class="font-bold tracking-tight">전화상담</span>
-    </a>
 
-    <a href="/location.html" 
-       target="_blank"
-       class="flex-1 bg-green-600 text-white flex items-center justify-center gap-2 active:bg-green-700 transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-      <span class="font-bold tracking-tight">오시는길</span>
-    </a>
-
-  </div>
-</div>
-
-<style>
-  @media (max-width: 768px) {
-    body { padding-bottom: 64px; }
-  }
-</style>
-
-
-  
 </body>
 </html>
