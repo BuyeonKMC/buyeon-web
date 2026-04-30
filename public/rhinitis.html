@@ -149,14 +149,42 @@ body {
       </ul>
     </div>
 
-    <!-- 알러지 비염을 치료해야 하는 이유 -->
-    <div class="bg-blue-50 border border-blue-100 rounded-3xl p-8 shadow-sm">
-      <h2 class="text-xl font-bold mb-6 text-blue-900 border-b border-blue-200 pb-4">알러지 비염을 치료해야 하는 이유</h2>
-      <div class="text-blue-900 leading-loose">
-        비염이 심하면 단순히 콧물이나 코막힘 때문에 생활이 불편한 것만 잠시 참고 넘기면 된다고 생각하는 경우가 많이 있습니다. 하지만 이러한 증상이 계속되고 방치된 상태에서 비염을 지속적으로 앓게 될 경우에는 산소부족으로 인해 재채기/콧물/코막힘/눈, 코 가려움증 등의 증상이 나타나는 것은 물론이고 중이염/부비동염/인후두염 등의 합병증으로 발전될 수 있으므로 근본적인 치료가 필요합니다.
-      </div>
+   <!-- 알러지 비염을 치료해야 하는 이유 (기존 코드의 해당 부분만 교체) -->
+<div class="bg-blue-50 border border-blue-100 rounded-3xl p-8 shadow-sm">
+  <h2 class="text-xl font-bold mb-6 text-blue-900 border-b border-blue-200 pb-4">
+    <i class="fa-solid fa-circle-exclamation mr-2"></i>알러지 비염을 치료해야 하는 이유
+  </h2>
+  
+  <div class="text-blue-900 leading-loose space-y-6">
+    <!-- 서두 부분 -->
+    <p class="font-medium border-l-4 border-blue-300 pl-4">
+      비염이 심하면 단순히 콧물이나 코막힘 때문에 생활이 불편한 것만 잠시 참고 넘기면 된다고 생각하는 경우가 많이 있습니다.
+    </p>
+
+    <!-- 핵심 경고 메시지 -->
+    <div class="bg-white/50 rounded-xl p-5 border border-blue-100">
+      <p class="mb-4">
+        하지만 이러한 증상이 계속되고 방치된 상태에서 <span class="font-bold text-blue-700 underline underline-offset-4 text-lg">비염을 지속적으로 앓게 될 경우에는</span>
+      </p>
+      
+      <ul class="grid gap-3">
+        <li class="flex items-center gap-3">
+          <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+          <span><strong class="text-blue-800">산소부족</strong>으로 인해 재채기 / 콧물 / 코막힘 / 눈, 코 가려움증 등의 증상 발생</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-1.5 h-1.5 bg-red-400 rounded-full"></span>
+          <span><strong class="text-red-700 underline decoration-red-200">중이염 / 부비동염 / 인후두염</strong> 등의 합병증으로 발전 가능</span>
+        </li>
+      </ul>
     </div>
 
+    <!-- 결론 -->
+    <p class="text-center font-bold text-blue-800 pt-2">
+      따라서 <span class="bg-blue-200 px-1">근본적인 치료가 필요합니다.</span>
+    </p>
+  </div>
+</div>
   </div>
 
   <!-- 섹션 4: 치료원리 & 도표 -->
