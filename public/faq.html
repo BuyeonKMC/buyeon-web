@@ -204,5 +204,37 @@
   </div>
 </footer>
 
+<script>
+  function toggleMenu() {
+    const m = document.getElementById('mobileMenu');
+    m.classList.toggle('hidden'); m.classList.toggle('flex');
+  }
+
+  const scrollContainer = document.getElementById('menuScroll');
+  const leftArrow = document.getElementById('leftArrow');
+  const rightArrow = document.getElementById('rightArrow');
+
+  function updateArrows() {
+    if (!scrollContainer) return;
+    const sL = scrollContainer.scrollLeft;
+    const mS = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    if (leftArrow) leftArrow.style.opacity = sL > 10 ? "1" : "0";
+    if (rightArrow) rightArrow.style.opacity = sL < mS - 10 ? "1" : "0";
+  }
+
+  if (scrollContainer) {
+    scrollContainer.addEventListener('scroll', updateArrows);
+    window.addEventListener('load', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    
+    window.addEventListener('load', () => {
+      const activeMenu = scrollContainer.querySelector('.font-bold');
+      if (activeMenu) {
+        activeMenu.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+  }
+</script>
+  
 </body>
 </html>
