@@ -3,40 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>비염 | 경희부연한의원</title>
+<title>비염 클리닉 | 경희부연한의원</title>
 
-<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-/* 🔥 전체 공통 스타일 */
 body {
-  font-family: 'Pretendard', sans-serif;
-  line-height: 1.7; /* 가독성 핵심 */
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  line-height: 1.7;
+}
+/* 가로 스크롤바 숨기기 */
+.hide-scroll::-webkit-scrollbar { display: none; }
+.hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+.nav-gradient-left { background: linear-gradient(to right, white, transparent); }
+.nav-gradient-right { background: linear-gradient(to left, white, transparent); }
+
+/* 하단 바 공간 확보 */
+@media (max-width: 768px) {
+  body { padding-bottom: 64px; }
 }
 </style>
 </head>
 
 <body class="bg-white text-gray-800">
 
-  <!-- =========================================================
-🔥 상단 헤더 (PC + 모바일 완전 대응)
+<!-- =========================================================
+1️⃣ 상단 헤더
 ========================================================= -->
-<!-- 상단 -->
 <header class="w-full border-b bg-white sticky top-0 z-50">
-
   <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
-
-    <!-- 로고 -->
     <div class="text-lg font-semibold whitespace-nowrap">
-      <a href="index.html" class="flex items-center gap-2">
-    <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-8 w-auto object-contain">
-    <span>경희부연한의원 HOME</span>
-  </a>
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-10 w-auto object-contain block">
+        <span class="text-stone-900">경희부연한의원 HOME</span>
+      </a>
     </div>
-
-    <!-- PC 메뉴 -->
-    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm">
+    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm font-medium">
       <a href="about.html">소개</a>
       <a href="obesity.html">비만</a>
       <a href="rhinitis.html">비염</a>
@@ -48,238 +51,225 @@ body {
       <a href="accident.html">교통사고</a>
       <a href="faq.html">FAQ</a>
     </nav>
-
-    <!-- 모바일 버튼 -->
-    <button onclick="toggleMenu()" class="md:hidden text-2xl">
-      ☰
-    </button>
-
+    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
   </div>
 
-  <!-- 모바일 메뉴 -->
   <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
     <a href="index.html" class="py-2 border-b">홈</a>
-    <a href="about.html" class="py-2 border-b">한의원 소개</a>
-    <a href="obesity.html" class="py-2 border-b">비만</a>
-    <a href="rhinitis.html" class="py-2 border-b">비염</a>
-    <a href="pain.html" class="py-2 border-b">통증</a>
-    <a href="digestive.html" class="py-2 border-b">소화불량</a>
-    <a href="rls.html" class="py-2 border-b">하지불안증후군</a>
-    <a href="postnatal.html" class="py-2 border-b">산후보양</a>
-    <a href="pediatric.html" class="py-2 border-b">소아보양</a>
+    <a href="about.html" class="py-2 border-b">소개</a>
     <a href="accident.html" class="py-2 border-b">교통사고</a>
     <a href="faq.html" class="py-2">FAQ</a>
   </div>
-
 </header>
 
-<!-- 모바일 가로 스크롤 메뉴 코드 -->
-  <style>
-  .hide-scroll::-webkit-scrollbar { display: none; }
-  .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-  .nav-gradient-left { background: linear-gradient(to right, white, transparent); }
-  .nav-gradient-right { background: linear-gradient(to left, white, transparent); }
-</style>
-
-<nav class="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-sm">
+<!-- =========================================================
+2️⃣ 모바일 가로 스크롤 네비게이션
+========================================================= -->
+<nav class="sticky top-0 z-40 w-full bg-white border-b border-gray-100 shadow-sm">
   <div class="max-w-6xl mx-auto px-2 relative group">
-    
     <div id="leftArrow" class="absolute left-0 top-0 bottom-0 w-12 z-10 flex items-center justify-start pl-2 nav-gradient-left opacity-0 transition-opacity pointer-events-none">
       <span class="text-stone-400 text-xl">❮</span>
     </div>
-
     <ul id="menuScroll" class="flex overflow-x-auto whitespace-nowrap py-4 space-x-7 text-[15px] hide-scroll md:justify-center">
-      <li><a href="/about.html" class="text-gray-400 hover:text-stone-800 transition-colors">소개</a></li>
-      <li><a href="/obesity.html" class="text-gray-400 hover:text-stone-800 transition-colors">비만</a></li>
+      <li><a href="/about.html" class="text-gray-400">소개</a></li>
+      <li><a href="/obesity.html" class="text-gray-400">비만</a></li>
+      <!-- 현재 페이지 활성화 (비염) -->
       <li><a href="/rhinitis.html" class="text-stone-800 font-bold border-b-2 border-stone-800 pb-[13px]">비염</a></li>
-      <li><a href="/pain.html" class="text-gray-400 hover:text-stone-800 transition-colors">통증</a></li>
-      <li><a href="/digestive.html" class="text-gray-400 hover:text-stone-800 transition-colors">소화불량</a></li>
-      <li><a href="/rls.html" class="text-stone-400">하지불안</a></li>
-      <li><a href="/postnatal.html" class="text-stone-400">산후보양</a></li>
-      <li><a href="/pediatric.html" class="text-stone-400">소아보양</a></li>
-      <li><a href="/accident.html" class="text-stone-400">교통사고</a></li>
-      <li><a href="/faq.html" class="text-stone-400">자주묻는질문</a></li>
+      <li><a href="/pain.html" class="text-gray-400">통증</a></li>
+      <li><a href="/digestive.html" class="text-gray-400">소화불량</a></li>
+      <li><a href="/rls.html" class="text-gray-400">하지불안</a></li>
+      <li><a href="/postnatal.html" class="text-gray-400">산후보양</a></li>
+      <li><a href="/pediatric.html" class="text-gray-400">소아보양</a></li>
+      <li><a href="/accident.html" class="text-gray-400">교통사고</a></li>
+      <li><a href="/location.html" class="text-gray-400">오시는길</a></li>
+      <li><a href="/faq.html" class="text-gray-400">FAQ</a></li>
     </ul>
-
     <div id="rightArrow" class="absolute right-0 top-0 bottom-0 w-12 z-10 flex items-center justify-end pr-2 nav-gradient-right opacity-100 transition-opacity pointer-events-none">
       <span class="text-stone-400 text-xl">❯</span>
     </div>
-
   </div>
 </nav>
 
-<script>
-  const scrollContainer = document.getElementById('menuScroll');
-  const leftArrow = document.getElementById('leftArrow');
-  const rightArrow = document.getElementById('rightArrow');
-
-  function updateArrows() {
-    const scrollLeft = scrollContainer.scrollLeft;
-    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-    // 왼쪽 화살표: 조금이라도 오른쪽으로 밀었으면 표시
-    leftArrow.style.opacity = scrollLeft > 10 ? "1" : "0";
-    
-    // 오른쪽 화살표: 끝까지 도달하지 않았으면 표시
-    rightArrow.style.opacity = scrollLeft < maxScroll - 10 ? "1" : "0";
-  }
-
-  // 스크롤 할 때마다 화살표 상태 업데이트
-  scrollContainer.addEventListener('scroll', updateArrows);
-  // 처음 로딩될 때 한 번 실행
-  window.addEventListener('load', updateArrows);
-  // 화면 크기 바뀔 때 실행
-  window.addEventListener('resize', updateArrows);
-</script>
-  
 <!-- =========================================================
-1️⃣ HERO (공감 + 첫인상)
-👉 가장 중요한 이미지 위치
+3️⃣ HERO Section
 ========================================================= -->
-<section class="bg-gray-50 py-20 text-center px-4">
-
-  <!-- 🔥 핵심 메시지 -->
-  <h1 class="text-3xl md:text-4xl font-semibold mb-4">
-    환절기마다 반복되는 비염
+<section class="bg-stone-50 py-24 text-center px-4">
+  <h1 class="text-3xl md:text-5xl font-bold mb-4 text-stone-900 tracking-tight">
+    환절기 · 겨울만 되면 전쟁을 치르는 비염,
   </h1>
-
-  <p class="text-gray-600 mb-10">
-    생활습관까지 함께 관리해야 합니다
+  <p class="text-lg md:text-2xl text-blue-600 font-medium">
+    생활습관까지 함께 관리해야 합니다.
   </p>
-
-  <!-- 🔥 HERO 이미지 (직접 만든 이미지 넣는 자리)
-  ✔ 파일명: rhinitis-hero.png
-  ✔ 위치: public 폴더
-  ✔ 사이즈: 가로형 (1600x900 추천)
-  -->
-  <img src="/rhinitis-hero.png"
-       class="mx-auto rounded-xl w-full max-w-3xl h-auto block object-contain">
-
 </section>
 
-
 <!-- =========================================================
-2️⃣ 증상 (카드형)
-👉 텍스트를 읽기 쉽게 만드는 핵심 구간
+4️⃣ Main Content
 ========================================================= -->
-<section class="py-16 px-4 max-w-4xl mx-auto">
+<section class="py-20 px-4 max-w-5xl mx-auto space-y-24">
 
-  <h2 class="text-2xl font-semibold mb-6">이런 증상이 있나요?</h2>
+  <!-- 섹션 1: 알러지 비염이란? -->
+  <div>
+    <h2 class="text-2xl font-bold mb-6 text-stone-800 flex items-center gap-2">
+      <span class="w-2 h-6 bg-blue-600 block rounded-sm"></span> 알러지 비염이란?
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8 items-center bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
+      <div class="md:col-span-2 text-stone-700 leading-loose">
+        코 점막이 특정 물질에 과민반응을 나타내는 코 질환으로, 면역력이 저하되어 신체 내의 물과 불의 균형이 흐트러지면서 발생하는 질병입니다. 비염을 유발하는 요인은 꽃가루, 곰팡이, 애완동물의 털 등의 호흡기를 통해 흡입되는 것들이 대표적이지만 음식물, 음식물 첨가제, 약물 등에 의해서도 유발될 수 있으므로 복합적인 관리가 필요합니다.
+      </div>
+      <!-- 기존 스마일 이미지 대신 세련된 아이콘 적용 -->
+      <div class="md:col-span-1 flex justify-center opacity-80">
+        <i class="fa-solid fa-head-side-cough text-8xl text-stone-300"></i>
+      </div>
+    </div>
+  </div>
 
-  <!-- 🔥 카드 UI -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+  <!-- 섹션 2 & 3: 카드형 리스트 레이아웃 -->
+  <div class="grid md:grid-cols-2 gap-12">
+    
+    <!-- 알러지 비염을 의심해볼 증상 -->
+    <div class="bg-white border border-stone-200 rounded-3xl p-8 shadow-sm">
+      <h2 class="text-xl font-bold mb-6 text-stone-800 border-b pb-4">알러지 비염을 의심해볼 증상</h2>
+      <ul class="space-y-4 text-stone-700">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600 font-bold shrink-0">1.</span>
+          <span>재채기</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600 font-bold shrink-0">2.</span>
+          <span>콧물</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600 font-bold shrink-0">3.</span>
+          <span>코막힘</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-600 font-bold shrink-0">4.</span>
+          <span>눈이나 코 주변의 가려움증</span>
+        </li>
+      </ul>
+    </div>
 
-    <div class="bg-gray-100 p-4 rounded">재채기</div>
-    <div class="bg-gray-100 p-4 rounded">콧물</div>
-    <div class="bg-gray-100 p-4 rounded">코막힘</div>
-    <div class="bg-gray-100 p-4 rounded">눈이나 코 가려움</div>
+    <!-- 알러지 비염을 치료해야 하는 이유 -->
+    <div class="bg-blue-50 border border-blue-100 rounded-3xl p-8 shadow-sm">
+      <h2 class="text-xl font-bold mb-6 text-blue-900 border-b border-blue-200 pb-4">알러지 비염을 치료해야 하는 이유</h2>
+      <div class="text-blue-900 leading-loose">
+        비염이 심하면 단순히 콧물이나 코막힘 때문에 생활이 불편한 것만 잠시 참고 넘기면 된다고 생각하는 경우가 많이 있습니다. 하지만 이러한 증상이 계속되고 방치된 상태에서 비염을 지속적으로 앓게 될 경우에는 산소부족으로 인해 재채기/콧물/코막힘/눈, 코 가려움증 등의 증상이 나타나는 것은 물론이고 중이염/부비동염/인후두염 등의 합병증으로 발전될 수 있으므로 근본적인 치료가 필요합니다.
+      </div>
+    </div>
 
+  </div>
+
+  <!-- 섹션 4: 치료원리 & 도표 -->
+  <div>
+    <h2 class="text-2xl font-bold mb-6 text-stone-800 flex items-center gap-2">
+      <span class="w-2 h-6 bg-blue-600 block rounded-sm"></span> 경희부연한의원의 치료원리
+    </h2>
+    <p class="text-stone-700 leading-loose mb-12">
+      비염은 한약만 복용해서 낫는 것이 아닙니다. 알러지인 만큼 복합적인 이유로 비염이 발병하기 때문에 자극적인 환경에서의 노출을 줄여주고 음식 등의 생활습관까지 함께 개선하여 한약과 시너지 효과를 내게 됩니다.
+    </p>
+
+    <!-- 세련된 다이어그램 (기존 복잡한 삼각형 구조를 직관적으로 개선) -->
+    <div class="bg-stone-50 rounded-3xl p-8 md:p-12 border border-stone-200">
+      
+      <div class="flex flex-col md:flex-row items-center justify-center gap-8 text-center">
+        
+        <!-- 원인 3요소 클러스터 -->
+        <div class="flex flex-col items-center gap-4 relative">
+          <div class="bg-white border-2 border-blue-200 text-stone-800 font-bold w-24 h-24 rounded-full shadow-sm flex items-center justify-center text-lg z-10">
+            약
+          </div>
+          <div class="flex gap-4 z-10">
+            <div class="bg-white border-2 border-blue-200 text-stone-800 font-bold w-24 h-24 rounded-full shadow-sm flex items-center justify-center text-lg leading-tight">
+              생활<br>습관
+            </div>
+            <div class="bg-white border-2 border-blue-200 text-stone-800 font-bold w-24 h-24 rounded-full shadow-sm flex items-center justify-center text-lg leading-tight">
+              자극<br>회피
+            </div>
+          </div>
+          <!-- 배경 연결선 느낌의 장식 -->
+          <div class="absolute inset-0 border-2 border-dashed border-blue-100 rounded-full scale-125 opacity-50 pointer-events-none"></div>
+        </div>
+
+        <!-- 화살표 -->
+        <i class="fa-solid fa-arrow-right text-4xl text-blue-300 hidden md:block"></i>
+        <i class="fa-solid fa-arrow-down text-4xl text-blue-300 md:hidden my-4"></i>
+        
+        <!-- 결과 도출 -->
+        <div class="bg-blue-600 text-white font-bold text-xl md:text-2xl py-6 px-10 rounded-2xl shadow-md w-full md:w-auto">
+          시원하고 편안한 생활!
+        </div>
+        
+      </div>
+      
+    </div>
   </div>
 
 </section>
 
-
 <!-- =========================================================
-3️⃣ 치료 필요성 강조
-👉 “왜 치료해야 하는지” 설득 구간
+🚀 하단 고정 액션 바 (모바일 전용)
 ========================================================= -->
-<section class="bg-red-50 py-16 px-4 text-center">
-
-  <h2 class="text-xl font-semibold mb-4">
-    단순 감기가 아닙니다
-  </h2>
-
-  <p class="max-w-2xl mx-auto">
-    비염을 방치하면 중이염/부비동염/인후두염 등의 합병증으로 발전할 수 있습니다.
-  </p>
-
-</section>
-
-
-<!-- =========================================================
-4️⃣ 치료 원리 (🔥 도표 자리)
-👉 기존에 만든 도식 이미지 넣는 핵심 위치
-========================================================= -->
-<section class="py-16 px-4 max-w-4xl mx-auto text-center">
-
-  <h2 class="text-2xl font-semibold mb-8">치료 원리</h2>
-
-  <!-- 🔥 도표 이미지 자리
-  ✔ 파일명: rhinitis-flow.png
-  ✔ 내용: 면역 / 환경 / 치료 흐름
-  ✔ 사이즈: 세로형 or 정사각형
-  -->
-   <img src="/rhinitis-flow.png" onclick="openModal(this.src)"
-         class="mx-auto max-w-xl w-full">
- 
-
-</section>
-<!-- 🔥 모달 (이미지 확대) -->
-<div id="modal"
-     class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50"
-     onclick="closeModal()">
-
-  <img id="modalImg" class="max-w-[90%] max-h-[90%] rounded-lg">
-</div>
-
- <!-- =========================================================
-8️⃣ 푸터
-========================================================= -->
-<footer class="py-8 text-center text-sm text-gray-500">
-
-  <!-- 🔥 병원명 수정 -->
- Tel.  02 ) 905 - 7553 서울시 도봉구 도당로 7 벽산 송화프라자 3층 <br><br>
-
-사업자명  경희부연한의원  대표  전진영    사업자번호  210-92-17097<br>
-COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED
-
-</footer>
-
-<script>
-function openModal(src) {
-  document.getElementById('modal').style.display = 'flex';
-  document.getElementById('modalImg').src = src;
-}
-
-function closeModal() {
-  document.getElementById('modal').style.display = 'none';
-}
-</script>
-
-
 <div class="fixed bottom-0 left-0 right-0 z-[60] md:hidden">
   <div class="flex h-16 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
-    
-    <a href="tel:02-905-7553" 
-       class="flex-1 bg-stone-800 text-white flex items-center justify-center gap-2 active:bg-stone-900 transition-colors">
+    <a href="tel:02-905-7553" class="flex-1 bg-stone-800 text-white flex items-center justify-center gap-2 active:bg-stone-900 transition-colors">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
       </svg>
       <span class="font-bold tracking-tight">전화상담</span>
     </a>
-
-    <a href="/location.html" 
-       target="_blank"
-       class="flex-1 bg-green-600 text-white flex items-center justify-center gap-2 active:bg-green-700 transition-colors">
+    <a href="/location.html" target="_blank" class="flex-1 bg-green-600 text-white flex items-center justify-center gap-2 active:bg-green-700 transition-colors">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
       <span class="font-bold tracking-tight">오시는길</span>
     </a>
-
   </div>
 </div>
 
-<style>
-  @media (max-width: 768px) {
-    body { padding-bottom: 64px; }
+<!-- =========================================================
+5️⃣ 푸터
+========================================================= -->
+<footer class="py-12 text-center text-sm text-gray-400 bg-white border-t">
+  <div class="max-w-6xl mx-auto px-4 leading-loose">
+    <p class="text-gray-500 font-medium mb-4">Tel. 02 ) 905 - 7553 | 서울시 도봉구 도당로 7 벽산 송화프라자 3층</p>
+    <p>사업자명: 경희부연한의원 | 대표: 전진영 | 사업자번호: 210-92-17097</p>
+    <p class="text-xs uppercase tracking-widest mt-2">COPYRIGHT(C) 2015 KYUNGHEEBUYEON KOREAN MEDICINE CLINIC. ALL RIGHTS RESERVED</p>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const m = document.getElementById('mobileMenu');
+    m.classList.toggle('hidden'); m.classList.toggle('flex');
   }
-</style>
 
+  const scrollContainer = document.getElementById('menuScroll');
+  const leftArrow = document.getElementById('leftArrow');
+  const rightArrow = document.getElementById('rightArrow');
 
-  
+  function updateArrows() {
+    if (!scrollContainer) return;
+    const sL = scrollContainer.scrollLeft;
+    const mS = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    if (leftArrow) leftArrow.style.opacity = sL > 10 ? "1" : "0";
+    if (rightArrow) rightArrow.style.opacity = sL < mS - 10 ? "1" : "0";
+  }
+
+  if (scrollContainer) {
+    scrollContainer.addEventListener('scroll', updateArrows);
+    window.addEventListener('load', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    
+    // 로딩 시 현재 활성화된 메뉴 중앙으로 스크롤 이동
+    window.addEventListener('load', () => {
+      const activeMenu = scrollContainer.querySelector('.font-bold');
+      if (activeMenu) {
+        activeMenu.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+  }
+</script>
+
 </body>
-
- 
 </html>
