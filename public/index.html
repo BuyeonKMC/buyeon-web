@@ -88,38 +88,37 @@
 🔥 상단 헤더 (PC + 모바일 완전 대응)
 ========================================================= -->
 <header class="w-full border-b bg-white sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto flex items-center justify-center md:justify-between px-4 py-4 relative">
-
-    <div class="text-lg font-semibold whitespace-nowrap flex items-center">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="/logo.jpg" 
-             alt="경희부연한의원 로고" 
-             class="h-10 w-auto object-contain block"> <span class="text-stone-900">경희부연한의원</span>
-      </a>
-    </div>
-
-    <!-- PC 메뉴 -->
-    <nav class="hidden md:flex flex-wrap justify-end gap-4 text-sm">
-      <a href="/about.html">소개</a>
-      <a href="/obesity.html">비만</a>
-      <a href="/rhinitis.html">비염</a>
-      <a href="/pain.html">통증</a>
-      <a href="/digestive.html">소화불량</a>
-      <a href="/rls.html">하지불안</a>
-      <a href="/postnatal.html">산후보양</a>
-      <a href="/pediatric.html">소아보양</a>
-      <a href="/accident.html">교통사고</a>
-      <a href="/faq.html">FAQ</a>
-    </nav>
-
-    <!-- 모바일 버튼 -->
-    <button onclick="toggleMenu()" class="md:hidden text-2xl">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+    
+    <button onclick="toggleMenu()" class="md:hidden text-2xl z-20">
       ☰
     </button>
 
+    <div class="absolute left-0 right-0 flex justify-center pointer-events-none md:static md:pointer-events-auto md:justify-start">
+      <a href="index.html" class="flex items-center gap-3 pointer-events-auto">
+        <img src="/logo.jpg" alt="경희부연한의원 로고" class="h-10 w-auto object-contain block">
+        <span class="text-lg font-semibold text-stone-900 whitespace-nowrap">경희부연한의원</span>
+      </a>
+    </div>
+
+    <nav class="hidden md:flex gap-4 text-sm font-medium text-stone-600">
+      <a href="/about.html" class="hover:text-stone-900">소개</a>
+      <a href="/obesity.html" class="hover:text-stone-900">비만</a>
+      <a href="/rhinitis.html" class="hover:text-stone-900">비염</a>
+      <a href="/pain.html" class="hover:text-stone-900">통증</a>
+      <a href="/digestive.html" class="hover:text-stone-900">소화불량</a>
+      <a href="/rls.html" class="hover:text-stone-900">하지불안</a>
+      <a href="/postnatal.html" class="hover:text-stone-900">산후보양</a>
+      <a href="/pediatric.html" class="hover:text-stone-900">소아보양</a>
+      <a href="/accident.html" class="hover:text-stone-900">교통사고</a>
+      <a href="/location.html" class="hover:text-stone-900">오시는길</a>
+      <a href="/faq.html" class="hover:text-stone-900">FAQ</a>
+    </nav>
+
+    <div class="md:hidden"></div>
+
   </div>
 
-  <!-- 모바일 메뉴 -->
   <div id="mobileMenu" class="hidden flex-col border-t px-4 pb-4 text-sm bg-white">
     <a href="/index.html" class="py-2 border-b">홈</a>
     <a href="/about.html" class="py-2 border-b">한의원 소개</a>
@@ -131,9 +130,9 @@
     <a href="/postnatal.html" class="py-2 border-b">산후보양</a>
     <a href="/pediatric.html" class="py-2 border-b">소아보양</a>
     <a href="/accident.html" class="py-2 border-b">교통사고</a>
+    <a href="/location.html" class="py-2 border-b">오시는길</a>
     <a href="/faq.html" class="py-2">FAQ</a>
   </div>
-
 </header>
 
 
@@ -143,7 +142,7 @@
 ========================================================= -->
 <section class="hidden md:block relative w-full bg-white">
   
-  <img src="/hero.png" class="w-full h-auto block" alt="경희부연한의원 메인">
+  <img src="/hero2.png" class="w-full h-auto block" alt="경희부연한의원 메인">
   
   <div class="py-12 text-center bg-white border-b border-gray-100">
     <a href="#services" class="inline-block bg-stone-800 text-white px-16 py-4 rounded-full shadow-lg hover:bg-stone-700 transition-all font-bold text-lg tracking-wide">
