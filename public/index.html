@@ -56,62 +56,7 @@
 
 
 <body class="bg-white text-gray-800">
-<!- 팝업창 설정!! -->
-  <div id="noticePopup" class="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-50 hidden">
-  
-  <div class="relative w-11/12 max-w-sm bg-white rounded-2xl shadow-2xl overflow-hidden text-center">
 
-    <div class="bg-green-50 p-8 border-b">
-      <h2 class="text-xl font-bold text-green-900 mb-4">5월 진료 안내</h2>
-      <p class="text-gray-700 leading-relaxed text-sm">
-        5월 1일 (금), 2일 (토) <br>
-        <span class="text-red-500 font-bold">오전 9시 ~ 오후 1시</span><br>
-        5월 3일 (일), 4일 (월)<br>휴진<br>
-        5월 5일 (화)<br>
-        <span class="text-red-500 font-bold">오전 9시 ~ 오후 1시</span><br>
-        진료합니다.<br>
-        내원에 착오 없으시길 바랍니다.
-      </p>
-    </div>
-
-    <div class="flex bg-gray-50">
-      <button onclick="closePopupForToday()" class="flex-1 py-3 text-sm text-gray-500 border-r border-gray-200 hover:bg-gray-100">
-        오늘 하루 보지 않기
-      </button>
-      <button onclick="closePopup()" class="flex-1 py-3 text-sm font-bold text-gray-800 hover:bg-gray-100">
-        닫기
-      </button>
-    </div>
-
-  </div>
-</div>
-
-<script>
-  // 1. 홈페이지가 켜질 때 팝업을 띄울지 말지 결정하는 기능
-  document.addEventListener("DOMContentLoaded", function() {
-    const popup = document.getElementById('noticePopup');
-    const hideUntil = localStorage.getItem('hidePopupUntil'); // 브라우저 기억력 확인
-    const today = new Date().toDateString(); // 오늘 날짜 확인 (예: Tue Apr 28 2026)
-
-    // 기억해둔 날짜가 오늘과 다르면(오늘 처음 온 거라면) 팝업을 보여줌
-    if (hideUntil !== today) {
-      popup.classList.remove('hidden');
-    }
-  });
-
-  // 2. 그냥 [닫기] 버튼 눌렀을 때
-  function closePopup() {
-    document.getElementById('noticePopup').classList.add('hidden');
-  }
-
-  // 3. [오늘 하루 보지 않기] 버튼 눌렀을 때
-  function closePopupForToday() {
-    const today = new Date().toDateString();
-    // 브라우저의 기억력(localStorage)에 오늘 날짜를 "안 보는 날"로 저장함
-    localStorage.setItem('hidePopupUntil', today); 
-    closePopup(); // 그리고 창을 닫음
-  }
-</script>
 
 
 
