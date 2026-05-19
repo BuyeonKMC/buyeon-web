@@ -87,7 +87,7 @@
 
 <body class="bg-white text-gray-800">
 
-<div id="noticePopup" class="fixed inset-0 z-[100] items-center justify-center bg-black bg-opacity-50 hidden">
+<div id="noticePopup" class="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-50 hidden">
   
   <div class="relative w-11/12 max-w-sm bg-white rounded-2xl shadow-2xl overflow-hidden text-center">
 
@@ -126,6 +126,19 @@
       popup.classList.remove('hidden');
     }
   });
+  // 2. 그냥 [닫기] 버튼 눌렀을 때
+  function closePopup() {
+    document.getElementById('noticePopup').classList.add('hidden');
+  }
+
+  // 3. [오늘 하루 보지 않기] 버튼 눌렀을 때
+  function closePopupForToday() {
+    const today = new Date().toDateString();
+    // 브라우저의 기억력(localStorage)에 오늘 날짜를 "안 보는 날"로 저장함
+    localStorage.setItem('hidePopupUntil', today); 
+    closePopup(); // 그리고 창을 닫음
+  }
+</script>
 
 
 
